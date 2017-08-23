@@ -1,0 +1,85 @@
+#wrapppp{
+    margin: 0px;padding: 0px;width: auto;height: auto;display: none;
+}
+
+#signupbutton{
+    cursor: pointer;width: 100%; height:100%;background-color:none; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #62AEC9;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+#logoutbutton{
+    cursor: pointer;width: 100%; height:100%;background-color:none; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #62AEC9;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+/***********************SUBMIT BUTTON STYLING*********************/
+
+#addmemberbutton{
+    margin: 5px auto;
+}
+
+.addmemberbutton{
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9; border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+}
+
+#signinmemberbutton{
+    margin: 5px auto;display: none;
+}
+
+.signinmemberbutton{
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9;border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+}
+
+.signinmemberbutton p{
+    
+}
+/******************************************************************/
+
+
+
+#signupbuttoncont{
+    clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;
+}
+#logoutbuttoncont{
+    clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;
+}
+
+
+#signupbuttoncont p{
+    margin:0px;padding:0px;
+}
+#logoutbuttoncont p{
+    margin:0px;padding:0px;
+}
+
+#clicklogin{
+    cursor: pointer;width: 100%; height:100%;background-color:none; border-radius: 4px; font-size: 16px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #62AEC9;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+
+#loginpopout{
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;background-color:rgba(205,205,205,.975);
+}
+
+#newmember{
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+}
+
+#newmember input{
+    z-index: 100;
+}
+
+#inputusrname{margin:10px auto;width:90%;height:30px;}
+
+.menue-item{
+    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px; width: 80%;text-align: center;cursor: pointer;text-decoration:none;
+}
+
+#close-modal-sign-up{
+    align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 5%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
+}
+
+#xdiv{
+    width:30px;;height: 30px;margin: 10px;
+}
+
+#xdiv h1{
+    width:30px;;height: 30px;margin: 0px;-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+}
+

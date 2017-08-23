@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title= title
+        if msg == 'dooropen'
+            link(rel='stylesheet', href='stylesheets/login2.css')
+        else
+            link(rel='stylesheet', href='stylesheets/login.css')
+  
+    body
+        block content
+        //script(src = 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+        script(src = '/javascripts/login-effs.js')
+        //script(src = '/javascripts/global.js')

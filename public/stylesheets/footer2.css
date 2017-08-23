@@ -1,0 +1,11 @@
+#footer{
+    height: auto; width: 100%; bottom:0px; display: block;padding: 20px 0px;background-color:rgba(244,244,244,.95);border-top: 5px solid #340E30;clear: both;
+}
+
+.poweredbylegi{
+    display: block; margin: 0px 10px; padding: 3px 0px;height: 15px;width: calc(100%-20px);
+}
+
+#legilogobottom{
+    top:0px;opacity:1;float: left;
+}

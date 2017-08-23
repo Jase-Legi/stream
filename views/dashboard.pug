@@ -1,0 +1,75 @@
+extends dashlayout
+
+block content
+    //h1= msg
+    include header
+    
+    #compcreate_wrap(style='visibility:visible;')
+        #compny_create_popout
+        
+        #compny_create_close_popout
+            #compny_create_xdiv
+                h1 X
+        #newcompany_form
+            fieldset#new_form(action='admin/compcreate/')
+                h2#compFormtitle.notincluded Company profile
+                
+                input#compName(type='text',name='compname',placeholder='Company Name')
+                p.notincluded(style='margin:10px 0px 0px 5%;width:90%;height:15px;') Industry
+                select#compIndustry(name='industry') Industry
+                    option(value='')
+                    option(value='Technology') Technology
+                    option(value='Retail') Retail
+                    option(value='Food') Restaurant
+                    option(value='Hotel') Hotel
+                    option(value='Service') Service
+                    option(value='Financial') Financial
+                #rangeExtremes.notincluded
+                    p(style='display:inline-block;margin:0px;width:20%;height:15px;') $0
+                    p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $50,000
+                input#compAmount(type='range', value=0,min= 0,max=50000, name='amount')
+                
+                textarea#compDescr(name='description',rows='5',type='text',placeholder='Description')
+                
+                
+                #create_comp_button.create_compbuffer.notincluded
+                    #create_compclls.create_comp_button
+                        p(style="margin:0px;padding:0px;") SUBMIT
+                 
+    
+        
+    #warpdaasst
+        #dashboard_startups_boxcont
+            #featured_startups_box
+                .startup_boxes
+                    //p Attract Funding
+                .startup_boxes
+                    //p Attract Funding
+                .startup_boxes
+                    //p Attract Funding
+        .dashboardiconboxcont
+            include writepost        
+            #ziggsidebar
+                #admindatadock_one
+                    p Search Investors
+                #admindatadock_one
+                    p Startups
+                #admindatadock_one
+                    p Explore        
+            #dshboardboxcont.dashboardboxcont
+                #utilitybar_dashboard
+                    #dwrraap
+                        p Post Startup
+            #dashboardboxcont.dashboardboxcont
+            
+                //.featured-investments-iconbox
+                    #dwrraap(style='border: dashed 1px #222222;')
+                        h1(style='font-size:100px;margin:0px;clear:both;float:none;') +
+                    .dwrraapfeatured-investments-iconinfo
+                        h2 POST NEW COMPANY
+         
+
+
+
+    
+    include footer

@@ -1,0 +1,38 @@
+extends headerlayout
+
+block content
+    if msg == 'dooropen'
+        -srcc = 'images/iibanc resources/logo alternates/iibanc(dark-grey).png'
+    else
+        -srcc = 'images/iibanc resources/logo alternates/iibanc(grey).png'
+        
+        
+    #headrwrapper
+        
+        #header
+            a(href="#",rel="/", id="logoheader")
+                img#legilogo(height='100%', src=srcc)
+
+            #menuheader
+                .buttoncontt
+                    include login
+                #menusymbol
+                    .bar1
+                    .bar2
+                    .bar3
+            #menupopout
+                #menucont(style="width:80%;margin:20px auto;height:auto;width:auto;display:inline-block")
+                .menue-item
+                    #closemenu.close-item
+                        h1(style="font-size:20px;cursor:pointer;") x
+                
+                a#AboutUS.menue-item(rel="/about", href="#")
+                    h1 About us
+                a#investorlink.menue-item(rel="/investors", href='#')
+                    h1 Top Investors
+                .menue-item
+                    h1 Find a Startup
+
+    if mypageurl == '/'
+        include index
+    

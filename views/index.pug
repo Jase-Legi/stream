@@ -1,0 +1,100 @@
+
+block content
+    
+    //include header
+        //#menupopout    
+    #wrapper
+        //h1= title
+        //p Welcome to #{title}
+        //h2 User List
+        h1= msg
+        if msg === 'doorclosed' 
+        else
+            #userlist
+                #username
+                    .nostyle
+                        h4 username
+                #email
+                    .nostyle
+                        h4 email
+                #delete
+                    .nostyle
+                        h4 delete?
+        
+        #introbox.divsegments(style='background-color:rgba(0,0,0,.5);')
+            .boxcont
+                h1(style='font-size:5vw;color:#fff;opacity:1.0;width:100%;margin:0px auto;') Connect with hospitality investors at the click of a button.
+                //.buttoncont
+                    include login
+        //h1=isloggedin()
+        .divsegments
+            .iconboxcont
+                .iconbox
+                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/FCC-registered.png")
+                    .iconinfo
+                        h4 FULLY REGULATED
+                        p We are registered and regulated by the FCC. We are also managed and owned by financial and hospitality professionals.
+                .iconbox
+                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/connect.png")
+                    .iconinfo
+                        h4 CONNECT
+                        p Connect with other industry startups in the same industry.
+
+                .iconbox
+                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/get-investment-to-foster-growth.png")
+                    .iconinfo
+                        h4 ATTRACT INVESTORS
+                        p Allocate funds via the trusted investors and industriy leaders on our platform, to fuel your growth and increase your impact.
+                .iconbox
+                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/invest-in-potentially-lucrative.png")
+                    .iconinfo
+                        h4 INVEST IN THE FUTURE
+                        p Investors, or industry leaders interested in help shaping the future can choose from a myriad of startup projects to invest for the greatest returns.
+        
+        #aboutpltfrm.divsegments(style="background: url(../images/background/nycc.jpg) no-repeat center center fixed; ;color:#FFF;font-size:15px;")
+            .iconboxcont(style="background-color:rgba(0,0,0,0);")
+                #abtpltfm
+                    h1 ABOUT THE PLATFORM
+                    p The platform will connect, Investors seeking lucrative and innovative investment oppportunities with inovative startups/individuals seeking financial backing to propel their business into profitability and consistent and exponential growth. 
+        
+        //#addmember
+            fieldset(style='border:none;')
+                h2(style = 'clear:both;margin:10px auto;') Sign UP
+                input#inputusrname(type='text',placeholder='Username',style='margin:10px auto;width:90%;height:30px;')
+                input#inputemail(type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
+                input#inputage(type='text',placeholder='Age',style='margin:10px auto;width:30%;height:30px;')
+                input#inputgender(type='text',placeholder='Gender',style='margin:10px 0px;width:30%;height:30px;')
+                input#inputlocation(type='text',placeholder='Location',style='margin:10px 0px;width:30%;height:30px;')
+                #addmemberbutton.addmemberbutton 
+                    div(style="clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;")
+                        p(style="margin:0px;padding:0px;") SUBMIT
+
+        //#wrapit
+          #plyr-wrap
+            #ctrlcnt
+              #vidbox
+                video#coolvid.coolvid(loop='', preload='auto')
+                  object(width='640', height='360', type='application/x-shockwave-flash', data='__FLASH__.SWF')
+                    // Firefox uses the `data` attribute above, IE/Safari uses the param below
+                    param(name='movie', value='__FLASH__.SWF')
+                    param(name='flashvars', value='controlbar=over&image=__POSTER__.JPG&file=__VIDEO__.MP4')
+                    // fallback image. note the title field below, put the title of the video there
+                    img(src='__VIDEO__.JPG', width='640', height='360', alt='__TITLE__', title='No video playback capabilities, please download the video below')
+              #vidCtrl
+                #playbttn(title='Play')
+                  img#playpause(width='18px', height='18px', style='margin-top:1px;clear:both;opacity:1;', src='images/playbutton.png')
+                #progwrpp
+                  #progress
+                    p#prgress(style='position:relative; left:0; top:0; background-color:#ccc; height:100%; width:0%; font-size:0px;border-right:2px solid #F00;')  
+                #optnwrp(style='float:right; display:inline-block;position:relative;margin:0px;padding:0px;')
+                  #currtme(style='text-align: center;')
+                    p#cchldtme(style='font-size:8px;font-family:sans-serif;')
+                  #volbttn
+                    img#volimg(title='click to mute', width='17px', height='17px', style='clear:both;opacity:1;cursor: pointer;', src='images/volbttn.png')
+                    #volwrp
+                      #voladj
+                        p#volprg  
+                  #fullscrn
+                    img#fullscreen(title='Enter fullscreen', width='17px', height='17px', style='cursor:pointer;', src='images/fullscreen.png')
+
+    include footer

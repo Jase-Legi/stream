@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        title= title
+        if msg == 'dooropen'
+            link(rel='stylesheet', href='stylesheets/footer2.css')
+        else
+            link(rel='stylesheet', href='stylesheets/footer.css')
+    body
+        block content
+        //script(src='/javascript/footer.js')

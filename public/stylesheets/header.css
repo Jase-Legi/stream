@@ -1,0 +1,50 @@
+body {
+    margin: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background: url(../images/background/nycbackground.jpg) no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;
+}
+
+#headrwrapper{
+    width:100%;height:100%;min-width: 445px;
+}
+
+#header{
+    height: 50px;max-height: auto; width: 100%;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(0,0,0,.9);border-bottom: 5px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 7px 20px #111111;
+}
+
+#logoheader{
+    top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;;text-decoration: none;cursor: pointer;
+}
+
+#legilogo{
+    top:0px;opacity:1;clear:both;
+}
+
+.buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+
+}
+#menuheader{
+    height: 50px;width: auto;margin: 0px 10px;padding: none;float: right;display: inline-block;
+}
+
+#menusymbol{
+    display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
+}
+
+
+.bar1,.bar2,.bar3{
+    width: 35px;height: 5px; background-color: #FFFFFF;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
+}
+
+#menupopout{
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;visibility: hidden;background-color:rgba(98,174,201,.95);
+}
+
+.menue-item{
+    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
+}
+
+.close-item{
+    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
+    
+    color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+}

@@ -1,0 +1,146 @@
+body{
+    
+}
+
+#warpdaasst{
+    margin:80px auto 0px auto;display:block;clear:both;min-width: 430px; width: calc(100%-20px);padding: 10px;
+}
+
+#utilitybar_dashboard{
+    width: 100%;margin:0px 0px 10px 0px; display: inline-block;height: :50px;
+}
+
+#dwrraap{
+    padding: 0px;align-items: center; width: 100%;height: 100%;margin:0px;padding:0px;box-sizing: border-box;overflow: hidden;text-align: center;cursor: pointer;border: dashed 1px #340E30;
+}
+
+
+.dashboardiconboxcont{
+    display: block;clear: both;float: none; margin:5px auto;width: 100%;max-width: 1000px;min-width: 430px; align-items: center;align-content: center;height: auto;
+}
+
+#ziggsidebar{
+    height: 100%;width:29%;max-width: 300px; background-color: #340E30/*rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+}
+#admindatadock_one{
+    height: 50px;width:calc(100%-20px);display:block;float: none; clear: both;margin: 0px;padding: 10px;box-sizing: content-box;
+}
+
+#dshboardboxcont{
+    opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
+}
+
+#dashboardboxcont{
+    opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
+}
+
+#dashboard_startups_boxcont{
+    display: block;clear: both;float: none; margin:5px auto;width: 100%;max-width: 1000px;  align-items: center;align-content: center;height: auto;box-sizing: border-box;border: 1px solid #F2F2F2;padding: 5px;
+}
+
+#featured_startups_box{
+    opacity:1;clear:both; display:inline-block; float: none; height: 250px; width:100%; max-width:1000px; margin: 0px 0px 0px 0px;cursor:pointer;background-color: #FFFFFF;padding: 0px;box-sizing: border-box;overflow: hidden;
+}
+
+.startup_boxes{
+    height:100%;width: 32%;margin: 0px .66%;display: inline-block;box-sizing: border-box;border: 1px solid #F2F2F2;clear: both;
+}
+
+.featured-investments-iconbox{
+    opacity:1;clear:both; display:block; float: none; height: 220px;width: calc(100%-10px);max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;
+}
+
+.featured-investments-logo{
+    padding: 0px;align-items: center; width: 90%;height: 60%;margin: 0px 5%;box-sizing: border-box;overflow: hidden;text-align: center;
+}
+
+
+.featured-investments-logo-bufferbox{
+    padding: 0px;align-items: center; width: auto;height:100%;margin: 0px auto;max-width: 100%;clear: both;float: none;display: block;
+}
+
+.featured-investments-logo img{
+    align-self: center; clear: both; margin: 0px auto;float: none;max-height: 100%;position:relative;display: block;
+}
+
+.featured-investments-iconinfo{
+    opacity:1;float: none;height: 40%;width:90%;margin: 0px 5%;/*background-color: #F2F2F2;*/font-size:14px;word-wrap: break-word;
+}
+
+.dwrraapfeatured-investments-iconinfo{
+    text-align: center; opacity:1;float: none;height: 40%;overflow: hidden; width:90%;margin: 0px 5%;/*background-color: #F2F2F2;*/font-size:14px;word-wrap: break-word;
+}
+
+
+
+.iconinfo h1{
+    margin: 0px;padding: 0px;clear: both;display: block;height: 15px;width: calc(100%-20px);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#compcreate_wrap{
+    margin: 0px;padding: 0px;width: auto;height: auto;display:none;
+}
+
+#compny_create_popout{
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;background-color:rgba(205,205,205,.975);
+}
+
+#compny_create_close_popout{
+    align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 5%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
+}
+
+#compny_create_xdiv{
+    width:30px;;height: 30px;margin: 10px;
+}
+
+#compny_create_xdiv h1{
+    width:30px;;height: 30px;margin: 0px;-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+}
+
+#newcompany_form{
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+}
+
+#newcompany_form input, select {
+    z-index: 100; margin:10px 5%;width:90%;height:30px;
+}
+
+#newcompany_form textarea {
+    margin:10px 5%;width:90%;height:10%;color:#cccccc;
+}
+
+
+
+#new_form{
+    border:none;
+}
+
+#compFormtitle{
+    clear:both;width:90%;margin:0px 5%;
+}
+
+#compName{
+    
+}
+
+#rangeExtremes{
+    margin:10px 0px 0px 5%;width:90%;height:15px;
+}
+
+/***********************SUBMIT BUTTON STYLING*********************/
+
+#create_comp_button{
+    margin: 5px auto;cursor: pointer;
+}
+
+.create_comp_button{
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9; border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+}
+
+
