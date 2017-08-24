@@ -54,12 +54,12 @@ var dispcompprofiles = function(compprofurls,divele){
             }else if(findings.content){
                 for(var p = 0;p<findings.content.length;p++){
                     
-                    console.log(findings.content[p]);
+                    //console.log(findings.content[p]);
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
                     d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4>'+findings.content[p].profile.fundraiser.compname+'</h4><p>email: '+ findings.content[p].email+'<br/>bio: '+findings.content[p].profile.fundraiser.description+' | </p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p>';
-                    console.log(divele)
+                    //console.log(divele)
                     divele.appendChild(d);
                     
                 }

@@ -49,7 +49,7 @@ doc.addEventListener("DOMContentLoaded",function(event){
     var firstimgurl;
     headrlogocontnr.addEventListener("mouseover", ()=>{
         firstimgurl = headrlogo.getAttribute('src');
-        headrlogo.setAttribute('src','images/iibanc resources/logo alternates/iibanc.png');
+        headrlogo.setAttribute('src','images/iibanc resources/logo alternates/iibanc2.svg');
     });
     
     headrlogocontnr.addEventListener("mouseout", ()=>{
