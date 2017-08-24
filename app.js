@@ -14,7 +14,8 @@ var mongo = require('mongodb');
 var mongoclient = mongo.MongoClient;
 //var monk = require('monk');
 //var passport = require('passport');
-var session = require('express-session');
+//var session = require('express-session');
+var session = require('cookie-session');
 //var flash = require('connect-flash');
 var userloggedinfo = require('./config/models/user.js');
 var loggedstatus = userloggedinfo.methods.loggedstat;
@@ -53,7 +54,7 @@ app.use(session({
     saveUninitialized:true//,
     //cookie: { maxAge: 1800*6000*1000 }
 }));
-
+console.log(session);
 app.use(function(req,res,next){
     req.db = db;
     req.ObjectId = ObjectId;

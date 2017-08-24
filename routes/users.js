@@ -46,7 +46,9 @@ router.get('/logout/', isloggedin, (req, res, next)=>{
     //req.session.user.destroy();
     //req.session.destroy();
     
-    req.session.destroy((err)=>{
+    req.session = null;
+    res.send({msg:'doorclosed'});
+    /*.destroy((err)=>{
         if(err){
             //req.session = null
             res.send({msg:err})
@@ -55,7 +57,7 @@ router.get('/logout/', isloggedin, (req, res, next)=>{
             //req.end();
             res.send({msg:'doorclosed'});
         }
-    });
+    });*/
     //req.session.user = null;
     //console.log(req.session.user);
     
@@ -81,6 +83,8 @@ router.post('/login/', isloggedin, (req, res,next)=>{
                     req.session.user = usr[p];
                     if(req.session.user == usr[p]){
                         musjfkhgwhgh = true;
+                        console.log(req.session);
+                        console.log(req.session.user);
                     }else{
                         musjfkhgwhgh = false;
                     }
@@ -109,10 +113,10 @@ router.post('/login/', isloggedin, (req, res,next)=>{
             res.send({msg: 'Count error. Hackers not welcomed!'});
         }else if(dbinstnce > 1){
             for(var v=0;v<dbinstnce;v++){
-                console.log(usr[index["_"+v]]);
+                //console.log(usr[index["_"+v]]);
             }
             
-            console.log(dbinstnce)
+            //console.log(dbinstnce)
             res.send({msg: 'multiple users found : '+dbinstnce});
         }
     });
