@@ -48,7 +48,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
-    secret:process.env.SESSIONSECRRET,
+    secret:(process.env.SESSIONSECRRET || 'jhhkgjghjgjh'),
     resave:false,
     saveUninitialized:true//,
     //cookie: { maxAge: 1800*6000*1000 }
