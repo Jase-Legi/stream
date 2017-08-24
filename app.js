@@ -1,7 +1,7 @@
-const express = require('express'),
-      app = express(),
-      http = require('http'),
-      path = require('path');
+var express = require('express');
+var app = express();
+var http = require('http');
+var path = require('path');
     require('dotenv').config();
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -24,7 +24,7 @@ var configdburl = require('./config/database.js');
 var db;
 var ObjectId = mongo.ObjectID;
 // Connect to the db
-mongoclient.connect( process.env.DB_URI, function(err, datab) {
+mongoclient.connect( (process.env.DB_URI||'mongodb://127.0.0.1:27017/testapp'), function(err, datab) {
     if(!err) {
         db = datab;
         db.listCollections().toArray((er,coll)=>{
