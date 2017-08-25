@@ -3,16 +3,16 @@ extends loginlayout
 block content
     //=localmsg = msg
     if msg === 'doorclosed'
-        #usrsignuploginiconbutton
+        #usrsignuploginiconbutton(tabindex="-1")
             #usrsignuploginiconbuttoncont
                 img( src="images/iibanc resources/icons/usricon.svg")
-        #usrlogincontainerbox
-            #signupbutton.loginout(class=msg,title='Click to create new account.')
-                #signupbuttoncont
-                    p Sign Up
-            #logintoplatfrmpbutton.loginout(class=msg,title='Click to create new account.')
-                #logintoplatfrmpbuttoncont
-                    p Log in
+            #usrlogincontainerbox(tabindex="-1")
+                #signupbutton.loginout(class=msg,title='Click to create new account.')
+                    #signupbuttoncont
+                        p Sign Up
+                #logintoplatfrmpbutton.loginout(class=msg,title='Click to create new account.')
+                    #logintoplatfrmpbuttoncont
+                        p Log in
  
     else
         #logoutbutton(class=msg,title='Click to log out.')

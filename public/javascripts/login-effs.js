@@ -1,75 +1,115 @@
-'use strict';
-var doc = document,
-    win = window,
-    loginpopout = doc.getElementById("loginpopout"),
-    loginbutton = doc.getElementById("loginbutton"),
-    firstNamebx = doc.getElementById("inputFirstname"),
-    lastNamebx = doc.getElementById("inputLastname"),
-    formtitle = doc.getElementById("formtitle"),
-    formm = doc.getElementById("formm"),
-    loginbutton = doc.getElementById("loginbutton"),
-    signupbttn = doc.getElementById("signupbutton"),
-    closemod = doc.getElementById("close-modal-sign-up"),
-    newmemform = doc.getElementById("newmember"),
-    inputfields = newmemform.getElementsByTagName("input"),
-    wrapholder = doc.getElementById("wrapppp"),
-    addmmbr = doc.getElementById("addmemberbutton"),
-    addmbackid = doc.getElementById("addmbackid"),
-    signinmemberbutton = doc.getElementById("signinmemberbutton"),
-    newmemform = doc.getElementById("newmember");
+"use strict";
+var doc = document;
+var win = window;
+var usrlogincontainerbox = doc.getElementById("usrlogincontainerbox");
+var usrsignuploginiconbutton = doc.getElementById("usrsignuploginiconbutton");
+var loginpopout = doc.getElementById("loginpopout");
+var loginbutton = doc.getElementById("loginbutton");
+var firstNamebx = doc.getElementById("inputFirstname");
+var lastNamebx = doc.getElementById("inputLastname");
+var formtitle = doc.getElementById("formtitle");
+var formm = doc.getElementById("formm");
+var signupbttn = doc.getElementById("signupbutton");
+var closemod = doc.getElementById("close-modal-sign-up");
+var newmemform = doc.getElementById("newmember");
+var inputfields = newmemform.getElementsByTagName("input");
+var wrapholder = doc.getElementById("wrapppp");
+var addmmbr = doc.getElementById("addmemberbutton");
+var addmbackid = doc.getElementById("addmbackid");
+var signinmemberbutton = doc.getElementById("signinmemberbutton");
 
 var showlogin = function(form,inputfields, emailfield, passwordfield, loginbttn,signupppbttn, htwo){
-    htwo.style.display = 'none';
+    htwo.style.display = "none";
     for(var i =0;i <inputfields.length;i++){
-        if(inputfields[i].getAttribute('name') != 'email' && inputfields[i].getAttribute('name') != 'password'){
-            inputfields[i].style.display = 'none';
-            inputfields[i].classList.add('inactive');
+        if(inputfields[i].getAttribute("name") != "email" && inputfields[i].getAttribute("name") != "password"){
+            inputfields[i].style.display = "none";
+            inputfields[i].classList.add("inactive");
         }
     }
     
-    if(!doc.getElementById('formtitle2')){
-        var z = doc.createElement('h2');
-        z.innerHTML = 'SIGN IN';
+    if(!doc.getElementById("formtitle2")){
+        var z = doc.createElement("h2");
+        z.innerHTML = "SIGN IN";
         z.id = "formtitle2";
         form.prepend(z);
     }
     
-    signupppbttn.style.display = 'none';
+    signupppbttn.style.display = "none";
     //signupppbttn.style.visibility = 'hidden';
-    signupppbttn.classList.add('inactive');
+    signupppbttn.classList.add("inactive");
     //this.style.display = 'none';
-    loginbttn.style.display = 'block';
+    loginbttn.style.display = "block";
 };
 
 var closefunc = function(form,inputfields, emailfield, passwordfield, loginbttn,signupbttn, htwo, divv){
-    htwo.style.display = 'block';
+    htwo.style.display = "block";
+    
     for(var i =0;i <inputfields.length;i++){
-        if(inputfields[i].getAttribute('name') != 'email' || inputfields[i].getAttribute('name') != 'password'){
-            inputfields[i].style.display = 'contents';
-            inputfields[i].classList.remove('inactive')
+        if(inputfields[i].getAttribute("name") != "email" || inputfields[i].getAttribute("name") != "password"){
+            inputfields[i].style.display = "contents";
+            inputfields[i].classList.remove("inactive")
         }
     }
     
-    if(doc.getElementById('formtitle2')){
-        doc.getElementById('formtitle2').style.display = 'none';
+    if(doc.getElementById("formtitle2")){
+        doc.getElementById("formtitle2").style.display = "none";
     }
     
-    if(signupbttn.style.display == 'none'){
-        signupbttn.style.display = 'contents';
+    if(signupbttn.style.display == "none"){
+        signupbttn.style.display = "contents";
     }
     
-    if(loginbttn.style.display != 'none'){
-        loginbttn.style.display = 'none';
+    if(loginbttn.style.display != "none"){
+        loginbttn.style.display = "none";
     }
     
     //this.style.display = 'none';
-    divv.style.display = 'none';
+    divv.style.display = "none";
 };
 
 doc.addEventListener("DOMContentLoaded",function(event){
+//(function(){
     
-    closemod.addEventListener("click", function(){ 
-        closefunc(newmemform,inputfields,doc.getElementById('inputemail'),doc.getElementById('inputpassword'),signinmemberbutton,addmmbr,formtitle, wrapholder);
+    usrsignuploginiconbutton.addEventListener("focus", (ev)=>{
+        ev.preventDefault();
+        usrlogincontainerbox.style.display = "block";
+        usrlogincontainerbox.classList.add("active");
+        
+    });
+    
+    usrsignuploginiconbutton.addEventListener("mouseover", (ev)=>{
+        ev.preventDefault();
+        usrlogincontainerbox.classList.add("active");
+        usrlogincontainerbox.classList.remove("inactive");
+        
+    });
+    usrsignuploginiconbutton.addEventListener("mouseout", (ev)=>{
+        //ev.preventDefault();
+        usrlogincontainerbox.classList.add("inactive");
+        usrlogincontainerbox.classList.remove("active");
+    });
+    usrlogincontainerbox.addEventListener("mouseover", (ev)=>{
+        //ev.preventDefault();
+        usrlogincontainerbox.classList.add("active");
+        usrlogincontainerbox.classList.remove("inactive");
+    });
+    
+    usrlogincontainerbox.addEventListener("mouseout", (ev)=>{
+        //ev.preventDefault();
+        usrlogincontainerbox.classList.add("inactive");
+        usrlogincontainerbox.classList.remove("active");
+    });
+    
+    usrsignuploginiconbutton.addEventListener("focusout", (ev)=>{
+        //ev.preventDefault();
+        if(usrlogincontainerbox.getAttribute("class") == "inactive"){
+            usrlogincontainerbox.style.display = "none";
+        }
+    });
+    
+    closemod.addEventListener("click", (ev)=>{
+        ev.preventDefault();
+        closefunc(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle, wrapholder);
     });
     
     if(signupbttn){
@@ -79,11 +119,11 @@ doc.addEventListener("DOMContentLoaded",function(event){
     }
     
     loginpopout.addEventListener("click", function(){
-        closefunc(newmemform,inputfields,doc.getElementById('inputemail'),doc.getElementById('inputpassword'),signinmemberbutton,addmmbr,formtitle, wrapholder);
+        closefunc(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle, wrapholder);
     });
     
     loginbutton.addEventListener("click", ()=>{
-        showlogin(newmemform,inputfields,doc.getElementById('inputemail'),doc.getElementById('inputpassword'),signinmemberbutton,addmmbr,formtitle);
+        showlogin(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle);
         
         /*
         //var ths = loginbutton;
