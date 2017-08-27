@@ -25,7 +25,7 @@ var configdburl = require('./config/database.js');
 var db;
 var ObjectId = mongo.ObjectID;
 // Connect to the db
-mongoclient.connect( (process.env.DB_URI), function(err, datab) {
+mongoclient.connect( (process.env.DB_URI ), function(err, datab) {
     if(!err) {
         db = datab;
         db.listCollections().toArray((er,coll)=>{
@@ -35,7 +35,21 @@ mongoclient.connect( (process.env.DB_URI), function(err, datab) {
         });
     console.log("We are connected----");
   }else{
-      console.log(err);
+      
+      //console.log(err);
+      mongoclient.connect( ( process.env.LOCALDB_URI), function(er, dat) {
+            if(!er) {
+                db = dat;
+                db.listCollections().toArray((er,coll)=>{
+                    for(var i=0;i<coll.length;i++){
+                        console.log((i+1)+') collection name: '+coll[i].name);
+                    }
+                });
+            console.log("We are connected----");
+          }else{
+              
+          }
+      });
   }});
 
 //MAKE ROUTES ACCESSIBLE

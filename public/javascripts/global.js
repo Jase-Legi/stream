@@ -12,9 +12,11 @@ var doc = document,
     emmail = doc.getElementById("email"),
     addmemberbutton = doc.getElementById("addmemberbutton"),
     addmember = doc.getElementById("newmember"),
-    delusr = doc.getElementById("delete"),
-    inputs = addmember.getElementsByTagName("input"),
-    inputFirstname = doc.getElementById('inputFirstname'),
+    delusr = doc.getElementById("delete");
+    if(addmember){
+        var inputs = addmember.getElementsByTagName("input");
+    }
+var inputFirstname = doc.getElementById('inputFirstname'),
     inputLastname = doc.getElementById('inputLastname'),
     inputemail = doc.getElementById("inputemail"),
     inputlocation = doc.getElementById("inputlocation"),
@@ -354,11 +356,12 @@ var delmember = function(url, callbck, divv){
         }
         
     }); 
+    if(loginbuttn){
+        loginbuttn.addEventListener('click', (event)=>{
+                loginn(postthisdata,loginbuttn,userdata);
+        });    
     
-    loginbuttn.addEventListener('click', (event)=>{
-            loginn(postthisdata,loginbuttn,userdata);
-    });    
-    
+    }
     if(log_out){
         log_out.addEventListener('click', function(event){
             //event.preventDefault();

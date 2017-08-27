@@ -6,21 +6,22 @@ block content
         #usrsignuploginiconbutton(tabindex="-1")
             #usrsignuploginiconbuttoncont
                 img( src="images/iibanc resources/icons/usricon.svg")
-            #usrlogincontainerbox(tabindex="-1")
-                #signupbutton.loginout(class=msg,title='Click to create new account.')
-                    #signupbuttoncont
-                        p Sign Up
-                #logintoplatfrmpbutton.loginout(class=msg,title='Click to create new account.')
-                    #logintoplatfrmpbuttoncont
-                        p Log in
- 
-    else
-        #logoutbutton(class=msg,title='Click to log out.')
-            #logoutbuttoncont
-                p Log out
-                
-    if loginnow == true
-        #wrapppp(style='display: block;')
+        #usrlogincontainerbox(tabindex="-1")
+            #signupbutton.loginout(tabindex="-1",class=msg,title='Click to create new account.')
+                #signupbuttoncont
+                    p Sign Up         
+                    
+            #logintoplatfrmpbutton.loginout(class=msg,title='Click to create new account.')
+                #logintoplatfrmpbuttoncont
+                    p Log in
+
+        //-if (loginnow == true){
+            #loginwrapppp.wrappppactive
+        //-}else{
+            #loginwrapppp.wrappppinactive
+        //-}
+        
+        #loginwrapppp(class=(loginnow?'wrappppactive':'wrappppinactive'))
             #loginpopout
             #close-modal-sign-up
                 #xdiv
@@ -28,39 +29,18 @@ block content
             #newmember
                 fieldset#formm(style='border:none;')
                     h2#formtitle(style = 'clear:both;margin:10px auto;') SIGN IN
-                    input#inputFirstname(type='text',placeholder='Fist Name',style='display:none;margin:10px 0px;width:90%;height:30px;')
-                    input#inputLastname(name='Lastname', type='text',placeholder='Last Name',style='display:none;margin:10px 0px;width:90%;height:30px;')
                     input#inputemail(name='email',type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
                     input#inputpassword(name='password',type='password',placeholder='password',style='margin:10px 0px;width:90%;height:30px;color:#cccccc;')
-                    #addmemberbutton.admbmbufferclass(style='display:none;')
-                        #addmbackid.addmemberbutton
-                            p(style="margin:0px;padding:0px;") SUBMIT 
                     #signinmemberbutton(style='display:block;',rel='users/login/')
                         .signinmemberbutton
-                            p(style="margin:0px;padding:0px;") SUBMIT
-                    #loginbutton(style='width:85%;margin:3px 10%;')
-                        p Already a member?<span style="color:red;"> Click "log in" below</span>
-                        #loginbox(style="width:75%;margin:0px auto;clear:both;")
-                            #clicklogin
-                                p(style="margin:0px auto;padding:0px; color:#222222;") Log in
-    else
-        #wrapppp(style='display: none;')             
-    
+                            p(style="margin:0px;padding:0px;") SUBMIT 
+
+        #wrapppp.wrappppinactive
             #loginpopout
             #close-modal-sign-up
                 #xdiv
                     h1 X
             #newmember
-                //fieldset(style='border:none;')
-                    h2(style = 'clear:both;margin:10px auto;') SIGN UP
-                    input#inputusrname(type='text',placeholder='Username')
-                    input#inputemail(type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
-                    input#inputage(type='text',placeholder='Age',style='margin:10px auto;width:30%;height:30px;')
-                    input#inputgender(type='text',placeholder='Gender',style='margin:10px 0px;width:30%;height:30px;')
-                    input#inputlocation(type='text',placeholder='Location',style='margin:10px 0px;width:30%;height:30px;')
-                    #addmemberbutton.addmemberbutton 
-                        div(style="clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;")
-                            p(style="margin:0px;padding:0px;") SUBMIT
                 fieldset#formm(style='border:none;')
                     h2#formtitle(style = 'clear:both;margin:10px auto;') SIGN UP
                     input#inputFirstname(type='text',placeholder='Fist Name',style='margin:10px 0px;width:90%;height:30px;')
@@ -78,7 +58,20 @@ block content
                         p Already a member?<span style="color:red;"> Click "log in" below</span>
                         #loginbox(style="width:75%;margin:0px auto;clear:both;")
                             #clicklogin
-                                p(style="margin:0px auto;padding:0px; color:#222222;") Log in
+                                p(style="margin:0px auto;padding:0px; color:#222222;") Log in   
+                            
+    else
+        #usrsignuploginiconbutton(tabindex="-1")
+            #usrsignuploginiconbuttoncont
+                img( src="images/iibanc resources/icons/usricon.svg")
+        #usrlogincontainerbox(tabindex="-1")
+            #logoutbutton(class=msg,title='Click to log out.')
+                #logoutbuttoncont
+                    p Log out
+    
+        
+    //else
+        
             //#newmember
                 fieldset(style='border:none;')
                     h2(style = 'clear:both;margin:10px auto;') Sign UP

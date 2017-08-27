@@ -35,6 +35,10 @@ body {
     width: 35px;height: 5px; background-color: #114684;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
 }
 
+#menusymbol:hover .barrr, #menusymbol:active .barrr  {
+    background-color: #62AEC9;border-radius: 0px;-ms-transform: rotate(360deg); /* IE 9 */-webkit-transform: rotate(360deg); /* Safari */transform: rotate(360deg);
+}
+
 #menupopout{
     top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;visibility: hidden;background-color:rgba(98,174,201,.95);
 }
@@ -45,6 +49,9 @@ body {
 
 .close-item{
     color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
-    
     color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+}
+
+.close-item:hover{
+    background-color: red;
 }
