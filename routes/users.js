@@ -139,7 +139,7 @@ router.post('/signup/',isloggedin,(req, res)=>{
     var cursor = collctn.find();
     cursor.toArray((e, item)=>{
         if(e){
-            console.log(e);
+            console.log("Error occured while searching database: " + e);
             res.send({msg:e})
         }
         
@@ -151,13 +151,9 @@ router.post('/signup/',isloggedin,(req, res)=>{
         }
         //console.log(user)
         if(dbinstance == 0){
-            
             collctn.insert(user,(err,r)=>{
                 if(!err){
-                    console.log(err);
                     req.session.user = user;
-                    
-                    console.log(user)
                     //console.log(r)
                     //user.local.password = '';
                     if(user._id){
@@ -165,10 +161,10 @@ router.post('/signup/',isloggedin,(req, res)=>{
                     }
                     console.log(user);
                     
-                    res.send({msg:'newuser'});
+                    res.send({msg : "newuser"});
                     
                 }else{
-                    res.send({msg: 'ERROR occured, error status:'+err});
+                    res.send({msg: "ERROR occured, error status:" + err});
                 }
                     
             });
@@ -177,7 +173,7 @@ router.post('/signup/',isloggedin,(req, res)=>{
             for(var v=0;v<dbinstance;v++){
                 console.log(item[index["_"+v]]);
             }
-            res.send({msg: 'alreadyexsits'});
+            res.send({msg: "alreadyexsits"});
         }
     });
 });

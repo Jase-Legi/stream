@@ -43,7 +43,7 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
     companymodel.profile.fundraiser.industry = req.body.industry;
     companymodel.profile.fundraiser.amount = req.body.amount;
     companymodel.profile.fundraiser.description = req.body.description;
-    console.log(companymodel);
+    //console.log(companymodel);
     
     crsor.toArray((e,usr)=>{
         console.log(e);
@@ -110,5 +110,7 @@ router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
     });
     
 });
+
+
 
 module.exports = router;

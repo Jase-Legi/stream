@@ -93,7 +93,12 @@ Userschema.methods.isloggedin = function(req, res, next){
             next();
         }
 
-    }else{
+        if(req.originalUrl == '/investors'){
+            next();
+        }
+
+    }
+    else{
         //res.status(200).send({msg:'yanotloggedin'});
         //res.send({title:'login',msg:'doorclosed'});
         //res.send({title:'login',msg:'doorclosed', url: req.originalUrl});
@@ -134,6 +139,10 @@ Userschema.methods.isloggedin = function(req, res, next){
         
         if(req.originalUrl == '/admin/compcreate/'){
             res.send({msg:req.body});
+        }
+        
+        if(req.originalUrl == '/investors'){
+            res.render('header',myPagesmsg.dashboard.loggedout)
         }        
     }
 };

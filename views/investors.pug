@@ -1,16 +1,16 @@
-extends dashlayout
+extends investorslayout
 
 block content
-    //h1= msg
+    
     include header
     
     #compcreate_wrap(style='visibility:visible;')
         #compny_create_popout
         
-        #compny_create_close_popout
+        #compny_create_close_popout(style="display:none;")
             #compny_create_xdiv
                 h1 X
-        #newcompany_form
+        #newcompany_form(style="display:none;")
             fieldset#new_form(action='admin/compcreate/')
                 h2#compFormtitle.notincluded Company profile
                 
@@ -50,26 +50,16 @@ block content
         .dashboardiconboxcont
             include writepost        
             #ziggsidebar
-                .admindatadock_one(rel="/investors",style="text-decoration: none;")
+                #admindatadock_one
                     p Search Investors
-                .admindatadock_one
+                #admindatadock_one
                     p Startups
-                .admindatadock_one
+                #admindatadock_one
                     p Explore        
             #dshboardboxcont.dashboardboxcont
                 #utilitybar_dashboard
                     #dwrraap
                         p Post Startup
             #dashboardboxcont.dashboardboxcont
-            
-                //.featured-investments-iconbox
-                    #dwrraap(style='border: dashed 1px #222222;')
-                        h1(style='font-size:100px;margin:0px;clear:both;float:none;') +
-                    .dwrraapfeatured-investments-iconinfo
-                        h2 POST NEW COMPANY
-         
-
-
-
     
     include footer

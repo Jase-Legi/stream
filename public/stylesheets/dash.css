@@ -22,7 +22,7 @@ body{
 #ziggsidebar{
     height: 100%;width:29%;max-width: 300px; background-color: #340E30/*rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
 }
-#admindatadock_one{
+.admindatadock_one{
     height: 50px;width:calc(100%-20px);display:block;float: none; clear: both;margin: 0px;padding: 10px;box-sizing: content-box;
 }
 

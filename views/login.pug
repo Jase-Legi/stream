@@ -11,7 +11,7 @@ block content
                 #signupbuttoncont
                     p Sign Up         
                     
-            #logintoplatfrmpbutton.loginout(class=msg,title='Click to create new account.')
+            #logintoplatfrmpbutton.loginout(class=msg,title='Click to login.')
                 #logintoplatfrmpbuttoncont
                     p Log in
 
@@ -23,14 +23,14 @@ block content
         
         #loginwrapppp(class=(loginnow?'wrappppactive':'wrappppinactive'))
             #loginpopout
-            #close-modal-sign-up
+            #close_modal_login
                 #xdiv
                     h1 X
-            #newmember
+            #login_to_memberprofle
                 fieldset#formm(style='border:none;')
                     h2#formtitle(style = 'clear:both;margin:10px auto;') SIGN IN
-                    input#inputemail(name='email',type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
-                    input#inputpassword(name='password',type='password',placeholder='password',style='margin:10px 0px;width:90%;height:30px;color:#cccccc;')
+                    input#loginmembremail(name='email',type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
+                    input#loginmembrpassword(name='password',type='password',placeholder='password',style='margin:10px 0px;width:90%;height:30px;color:#cccccc;')
                     #signinmemberbutton(style='display:block;',rel='users/login/')
                         .signinmemberbutton
                             p(style="margin:0px;padding:0px;") SUBMIT 
@@ -50,15 +50,6 @@ block content
                     #addmemberbutton.admbmbufferclass
                         #addmbackid.addmemberbutton
                             p(style="margin:0px;padding:0px;") Signup
-                    #signinmemberbutton(rel='users/login/')
-                        //login button
-                        .signinmemberbutton
-                            p(style="margin:0px;padding:0px;") SUBMIT
-                    #loginbutton(style='width:85%;margin:3px 10%;')
-                        p Already a member?<span style="color:red;"> Click "log in" below</span>
-                        #loginbox(style="width:75%;margin:0px auto;clear:both;")
-                            #clicklogin
-                                p(style="margin:0px auto;padding:0px; color:#222222;") Log in   
                             
     else
         #usrsignuploginiconbutton(tabindex="-1")

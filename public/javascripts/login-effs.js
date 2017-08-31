@@ -12,6 +12,7 @@ var formm = doc.getElementById("formm");
 var signupbttn = doc.getElementById("signupbutton");
 var logintoplatfrmpbutton = doc.getElementById("logintoplatfrmpbutton");
 var closemod = doc.getElementById("close-modal-sign-up");
+var close_modal_login = doc.getElementById("close_modal_login");
 var newmemform = doc.getElementById("newmember");
 if(newmemform){
     var inputfields = newmemform.getElementsByTagName("input");
@@ -82,6 +83,15 @@ doc.addEventListener("DOMContentLoaded",function(event){
         });
     }
     
+    if(close_modal_login){
+        close_modal_login.addEventListener("click", (ev)=>{
+            ev.preventDefault();
+            loginwrapppp.classList.remove("wrappppactive");
+            loginwrapppp.classList.add("wrappppinactive");
+            //closefunc(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle, wrapholder);
+        });
+    }
+    
     if(signupbttn){
         signupbttn.addEventListener("click", function(){
             wrapholder.classList.remove("wrappppinactive");
@@ -123,15 +133,5 @@ doc.addEventListener("DOMContentLoaded",function(event){
         });
     
         
-    }
-
-    if(closemod){
-        closemod.addEventListener("mouseover", function(){
-            closemod.style.backgroundColor = "red";
-        });
-
-        closemod.addEventListener("mouseout", function(){
-            closemod.style.backgroundColor = "#222222";
-        });
     }
 });

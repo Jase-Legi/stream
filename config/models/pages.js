@@ -43,6 +43,20 @@ var myPagesmsg = {
             loginnow:true,
             mypageurl:'/dashboard'
         }        
+    },
+    investors:{
+        loggedin:{ 
+            title:'Investors',
+            msg: 'dooropen',
+            loginnow:false,
+            mypageurl:'/investors'
+        },
+        loggedout:{ 
+            title:'Investors',
+            msg: 'doorclosed',
+            loginnow:true,
+            mypageurl:'/investors'
+        }
     }
 };
 

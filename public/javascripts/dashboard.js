@@ -45,6 +45,7 @@ var creatnewcompprofile = function(createurl, callback){
 };
 
 var dispcompprofiles = function(compprofurls,divele){
+
     getjsn(compprofurls, (e, findings)=>{
         if(e){
             console.log(e);
@@ -58,8 +59,9 @@ var dispcompprofiles = function(compprofurls,divele){
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
-                    d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4>'+findings.content[p].profile.fundraiser.compname+'</h4><p>email: '+ findings.content[p].email+'<br/>bio: '+findings.content[p].profile.fundraiser.description+' | </p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p>';
+                    d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4>'+findings.content[p].profile.fundraiser.compname+'</h4><p>email: '+ findings.content[p].email+'<br/>bio: '+findings.content[p].profile.fundraiser.description+' | </p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div><div id="pluss"><p style="font-weight:bold;position:absolute;margin-top:-200px;z-index:2px;font-size:20px;border:1px solid #222222; " title="Invest in this company!">+</p></div>';
                     //console.log(divele)
+                    d.setAttribute("data-thisob-id", findings.content[p]._id);
                     divele.appendChild(d);
                     
                 }

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var doc = document, 
     win = window,
     userlistdata = [],
@@ -10,12 +10,13 @@ var doc = document,
     usrlist = doc.getElementById("userlist"),
     uusrnme = doc.getElementById("username"),
     emmail = doc.getElementById("email"),
-    addmemberbutton = doc.getElementById("addmemberbutton"),
-    addmember = doc.getElementById("newmember"),
-    delusr = doc.getElementById("delete");
-    if(addmember){
-        var inputs = addmember.getElementsByTagName("input");
-    }
+    addmemberbutton = doc.getElementById("addmemberbutton");
+var delusr = doc.getElementById("delete");
+var addmember = doc.getElementById("newmember");
+var inputs =(addmember)? addmember.getElementsByTagName("input"):null;
+
+var login_to_memberprofle = doc.getElementById("login_to_memberprofle");
+var logininputs =(login_to_memberprofle)? login_to_memberprofle.getElementsByTagName("input"):null;
 var inputFirstname = doc.getElementById('inputFirstname'),
     inputLastname = doc.getElementById('inputLastname'),
     inputemail = doc.getElementById("inputemail"),
@@ -89,33 +90,36 @@ var postthisdata = function(url, callbck, data){
 var loginn = function(postfunct,div,data){
     var errcount = 0;
     var fieldemptyerror = {};
+    
     fieldemptyerror.errmsg = function(em,pss){
         if((pss == 1) && (em == 1)){
             return 'Please complete all fields.'; 
-        }else if(pss == 1){
+        }
+        if(pss == 1){
             return 'Please enter your password.'; 
-        }else if (em == 1){
+        }
+        if (em == 1){
             return 'Please enter your email address.'; 
         }
     };
     var loginurl = div.getAttribute('rel');
     
-    for(var i=0; i<inputs.length; i++){
-        if(inputs[i].value === ''){
-            if(inputs[i].getAttribute('name') =='email'){
+    for(var i=0; i<logininputs.length; i++){
+        if(logininputs[i].value == ''){
+            if(logininputs[i].getAttribute('name') =='email'){
                 errcount++;
                 fieldemptyerror.email = 1;
-            }else if(inputs[i].getAttribute('name') =='password'){
+            }else if(logininputs[i].getAttribute('name') =='password'){
                 errcount++;
                 fieldemptyerror.password = 1;
             }
         }else{
-            if(inputs[i].getAttribute('name') == 'email'){
-                data.email = inputs[i].value;
+            if(logininputs[i].getAttribute('name') == 'email'){
+                data.email = logininputs[i].value;
             }
 
-            if(inputs[i].getAttribute('name') == 'password'){
-                data.password = inputs[i].value;
+            if(logininputs[i].getAttribute('name') == 'password'){
+                data.password = logininputs[i].value;
             }
         }
     }
@@ -127,8 +131,8 @@ var loginn = function(postfunct,div,data){
                 fieldemptyerror.email=0;
                 fieldemptyerror.password=0;
                 console.log(info.msg+'---'+er);
-                for(var i=0; i<inputs.length; i++){
-                    inputs[i].value = '';
+                for(var i=0; i<logininputs.length; i++){
+                    logininputs[i].value = '';
                 }
                 //wrapholder.style.visibility = "hidden";
                 window.location.href = '/dashboard';
@@ -147,7 +151,7 @@ var logout = function(logoutur){
     getjsn(logoutur,(e, data)=>{
         if(e == null){
             console.log('after logout msg sent is: '+data.msg);
-            window.location.href = '/'
+            window.location.href = '/';
             //populateTable(url,usrlist,data.msg);
         }else{
             console.log("an error occured. ERROR: "+data.msg)
@@ -320,9 +324,11 @@ var delmember = function(url, callbck, divv){
                 if(e == null){
                     console.log(data.msg);
                     populateTable(url,usrlist,data.msg);
+                    
                     for(var i=0; i<inputs.length; i++){
                         inputs[i].value = '';
                     }
+                    
                     window.location.href = '/dashboard';
                 }else{
                     console.log('error occured at global in admember function at line 280. Error deatails:'+data.msg)
@@ -351,19 +357,19 @@ var delmember = function(url, callbck, divv){
                     console.log(data.msg);
                     populateTable(url,usrlist);
 
-                }   
+                }
             }, event.target.getAttribute('id'));
         }
         
-    }); 
+    });
     if(loginbuttn){
-        loginbuttn.addEventListener('click', (event)=>{
+        loginbuttn.addEventListener("click", (event)=>{
                 loginn(postthisdata,loginbuttn,userdata);
-        });    
+        });
     
     }
     if(log_out){
-        log_out.addEventListener('click', function(event){
+        log_out.addEventListener("click", function(event){
             //event.preventDefault();
             logout(logouturl);
         });

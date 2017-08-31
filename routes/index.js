@@ -4,7 +4,7 @@ var userloggedinfo = require('../config/models/user.js');
 var myPagesmsg = require('../config/models/pages.js');
 var isloggedin = userloggedinfo.methods.isloggedin;
 /* GET home page. */
-var myPages = ['/','/about','/dashboard'];
+var myPages = ["/","/about","/dashboard","/investors"];
 
 
 
@@ -22,6 +22,10 @@ for(var o = 0; o < myPages.length;o++){
         
         if(req.originalUrl== '/dashboard'){
             res.render('dashboard',myPagesmsg.dashboard.loggedin);
+        }
+        
+        if(req.originalUrl == '/investors'){
+            res.render('investors',  myPagesmsg.investors.loggedin);
         }
         
     });
