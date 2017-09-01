@@ -59,7 +59,7 @@ var dispcompprofiles = function(compprofurls,divele){
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
-                    d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4>'+findings.content[p].profile.fundraiser.compname+'</h4><p>email: '+ findings.content[p].email+'<br/>bio: '+findings.content[p].profile.fundraiser.description+' | </p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div><div id="pluss"><p style="font-weight:bold;position:absolute;margin-top:-200px;z-index:2px;font-size:20px;border:1px solid #222222; " title="Invest in this company!">+</p></div>';
+                    d.innerHTML = '<div class="pluss" style="background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:30px;width:30px;border-radius:15px;text-align:center;" title="Invest in this company!"><a href="/investors" style="text-decoration:none;"><img id="invstincmp" class="svggg" height="100%" src="/images/iibanc resources/icons/invsticon.svg"/></a></div><div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.fundraiser.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     d.setAttribute("data-thisob-id", findings.content[p]._id);
                     divele.appendChild(d);
@@ -75,21 +75,32 @@ var dispcompprofiles = function(compprofurls,divele){
 //doc.addEventListener("DOMContentLoaded",function(event){
     
     dispcompprofiles(comp_prof_urls,dashboardboxcont);
+    var invstincmp = doc.getElementById("invstincmp");
+    var pluss = doc.getElementsByClassName("pluss");
     
+    /*
+    doc.querySelector('body').addEventListener("mouseover", function(event) {
+        //event.preventDefault();
+        
+        if (event.target.getAttribute('id') == "invstincmp") {
+            event.target.setAttribute("src","/images/iibanc resources/icons/invsticon2.svg");
+        }
+    });
+    
+    doc.querySelector('body').addEventListener("mouseout", function(event) {
+        //event.preventDefault();
+        
+        if (event.target.getAttribute('id') == "invstincmp") {
+            event.target.setAttribute("src","/images/iibanc resources/icons/invsticon.svg");
+        }
+    });
+    */
     dwrraap.addEventListener('click',()=>{
         compcreate_wrap.style.display ='block';
     });
     
     compny_create_close_popout.addEventListener('click',()=>{
         compcreate_wrap.style.display ='none';
-    });
-    
-    compny_create_close_popout.addEventListener('mouseover',()=>{
-        compny_create_close_popout.style.backgroundColor = 'red';
-    });
-    
-    compny_create_close_popout.addEventListener('mouseout',()=>{
-        compny_create_close_popout.style.backgroundColor ='#222222';
     });
 
     compny_create_popout.addEventListener('click',()=>{
@@ -111,7 +122,7 @@ var dispcompprofiles = function(compprofurls,divele){
                     var pooop = parseInt(info.id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
-                    d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4>'+info.comp.profile.fundraiser.compname+'</h4><p>email: '+ info.comp.email+'<br/>bio: '+info.comp.profile.fundraiser.description+' | </p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p>';
+                    d.innerHTML = '<div class="pluss" style="background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:30px;width:30px;border-radius:15px;text-align:center;" title="Invest in this company!"><a href="/investors" style="text-decoration:none;"><img id="invstincmp" class="svggg" height="100%" src="/images/iibanc resources/icons/invsticon.svg"/></a></div><div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     dashboardboxcont.prepend(d);
                 

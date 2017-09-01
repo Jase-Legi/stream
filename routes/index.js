@@ -12,15 +12,15 @@ for(var o = 0; o < myPages.length;o++){
     router.get(myPages[o],isloggedin, function(req, res, next) {
     
     //console.log("This is the current session: "+req.session.user);
-        if(req.originalUrl== '/'){
+        if(req.originalUrl == '/'){
             res.render('header', myPagesmsg.index.loggedin);
         }
         
-        if(req.originalUrl== '/about'){
+        if(req.originalUrl == '/about'){
             res.render('about', myPagesmsg.about.loggedin);
         }
         
-        if(req.originalUrl== '/dashboard'){
+        if(req.originalUrl == '/dashboard'){
             res.render('dashboard',myPagesmsg.dashboard.loggedin);
         }
         

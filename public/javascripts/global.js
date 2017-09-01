@@ -318,7 +318,7 @@ var delmember = function(url, callbck, divv){
     
     if(addmemberbutton){
         addmemberbutton.addEventListener('click', (event)=>{
-            event.preventDefault();
+            //event.preventDefault();
 
             addnewMEMBER(addmemberurl,(e, data)=>{
                 if(e == null){
@@ -339,7 +339,7 @@ var delmember = function(url, callbck, divv){
     
     
     doc.querySelector('body').addEventListener('click', function(event) {
-        event.preventDefault();
+        //event.preventDefault();
         
         if (event.target.getAttribute('class') === "delthis") {
             

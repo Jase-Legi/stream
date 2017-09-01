@@ -53,6 +53,19 @@ mongoclient.connect( (/*process.env.LOCALDB_URI ||*/ process.env.DB_URI ), funct
   }
 });
 
+//var request = require('request');
+/*
+app.get(
+    'https://api.printful.com/products',
+    { json: { "fr6poyaa-0o86-zcih":"ofax-5e54isqv3684"} },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }
+    }
+);
+*/
+
 //MAKE ROUTES ACCESSIBLE
 app.use(express.static(path.join(__dirname, 'public')));
 // uncomment after placing your favicon in /public
@@ -70,6 +83,7 @@ app.use(session({
     //cookie: { maxAge: 1800*6000*1000 }
 }));
 console.log(session);
+
 app.use(function(req,res,next){
     req.db = db;
     req.ObjectId = ObjectId;

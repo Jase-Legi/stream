@@ -20,11 +20,17 @@ body{
 }
 
 #ziggsidebar{
-    height: 100%;width:29%;max-width: 300px; background-color: #340E30/*rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+    height: 100%;width:29%;max-width: 300px; background-color: #414042/*#340E30 rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
 }
+
 .admindatadock_one{
     height: 50px;width:calc(100%-20px);display:block;float: none; clear: both;margin: 0px;padding: 10px;box-sizing: content-box;
 }
+
+a {
+  color:inherit;
+  text-decoration: none;
+ }
 
 #dshboardboxcont{
     opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
@@ -40,6 +46,16 @@ body{
 
 #featured_startups_box{
     opacity:1;clear:both; display:inline-block; float: none; height: 250px; width:100%; max-width:1000px; margin: 0px 0px 0px 0px;cursor:pointer;background-color: #FFFFFF;padding: 0px;box-sizing: border-box;overflow: hidden;
+}
+
+.svggg {
+    -webkit-filter : grayscale(100%);
+    filter : grayscale(100%);
+}
+
+.svggg:hover {
+    -webkit-filter : grayscale(0%);
+    filter : grayscale(0%);
 }
 
 .startup_boxes{
@@ -92,6 +108,10 @@ body{
 
 #compny_create_close_popout{
     align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 5%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
+}
+
+#compny_create_close_popout:hover{
+    background-color: Red;z-index: 102;cursor: pointer;
 }
 
 #compny_create_xdiv{
