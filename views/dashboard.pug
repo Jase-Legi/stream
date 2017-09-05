@@ -5,6 +5,9 @@ block content
     include header
     #invstnowwrap(style="display:none;")
         .modal_popout
+            #close_investmodal.compny_create_close_popout
+                .compny_create_xdiv
+                    h1 X
             .newcompany_form
                 fieldset#investoform
                     h2.compFormtitle Invest
@@ -19,8 +22,8 @@ block content
     #compcreate_wrap(style='visibility:visible;')
         #compny_create_popout.modal_popout
         
-        #compny_create_close_popout
-            #compny_create_xdiv
+        #compny_create_close_popout.compny_create_close_popout
+            #compny_create_xdiv.compny_create_xdiv
                 h1 X
         #newcompany_form.newcompany_form
             fieldset#new_form(action='admin/compcreate/')

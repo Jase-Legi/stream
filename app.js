@@ -25,7 +25,7 @@ var configdburl = require('./config/database.js');
 var db;
 var ObjectId = mongo.ObjectID;
 // Connect to the db
-mongoclient.connect( ( process.env.DB_URI ), function(err, datab) {
+mongoclient.connect(process.env.DB_URI, (err, datab)=>{
     if(!err) {
         db = datab;
         db.listCollections().toArray((er,coll)=>{
@@ -33,11 +33,12 @@ mongoclient.connect( ( process.env.DB_URI ), function(err, datab) {
                 console.log((i+1)+') collection name: '+coll[i].name);
             }
         });
+        
         console.log("We are connected----");
     }else{
-        console.log(err);
+        //console.log(err);
       
-        mongoclient.connect( ( process.env.LOCALDB_URI), function(er, dat) {
+        mongoclient.connect ( ( process.env.LOCALDB_URI), function(er, dat) {
             if(!er) {
                 db = dat;
                 db.listCollections().toArray((er,coll)=>{
@@ -77,7 +78,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
-    secret:(process.env.SESSIONSECRRET),
+    secret:(process.env.SESSIONSECRET),
     resave:false,
     saveUninitialized:true//,
     //cookie: { maxAge: 1800*6000*1000 }

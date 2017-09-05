@@ -15,6 +15,7 @@ var doc = document,
     dwrraap = doc.getElementById('dwrraap'),
     comp_prof_urls = 'admin/getothercomps/',
     compny_create_close_popout = doc.getElementById('compny_create_close_popout'),
+    close_investmodal = doc.getElementById("close_investmodal"),
     dashboardboxcont = doc.getElementById('dashboardboxcont'),
     weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     Month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -134,6 +135,10 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
     
     compny_create_close_popout.addEventListener('click',()=>{
         compcreate_wrap.style.display ='none';
+    });
+    
+    close_investmodal.addEventListener('click',()=>{
+        invstnowwrap.style.display ='none';
     });
 
     compny_create_popout.addEventListener('click',()=>{
