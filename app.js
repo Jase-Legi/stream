@@ -25,7 +25,7 @@ var configdburl = require('./config/database.js');
 var db;
 var ObjectId = mongo.ObjectID;
 // Connect to the db
-mongoclient.connect( (/*process.env.LOCALDB_URI ||*/ process.env.DB_URI ), function(err, datab) {
+mongoclient.connect( ( process.env.DB_URI ), function(err, datab) {
     if(!err) {
         db = datab;
         db.listCollections().toArray((er,coll)=>{
@@ -33,9 +33,9 @@ mongoclient.connect( (/*process.env.LOCALDB_URI ||*/ process.env.DB_URI ), funct
                 console.log((i+1)+') collection name: '+coll[i].name);
             }
         });
-    console.log("We are connected----");
-  }else{
-      //console.log(err);
+        console.log("We are connected----");
+    }else{
+        console.log(err);
       
         mongoclient.connect( ( process.env.LOCALDB_URI), function(er, dat) {
             if(!er) {
@@ -45,12 +45,12 @@ mongoclient.connect( (/*process.env.LOCALDB_URI ||*/ process.env.DB_URI ), funct
                         console.log((i+1)+') collection name: '+coll[i].name);
                     }
                 });
-            console.log("We are connected----");
+            console.log("We are connected- To local");
           }else{
               
           }
       });
-  }
+    }
 });
 
 //var request = require('request');

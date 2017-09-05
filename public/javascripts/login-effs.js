@@ -46,15 +46,8 @@ var showlogin = function(form,inputfields, emailfield, passwordfield, loginbttn,
     loginbttn.style.display = "block";
 };
 
-var closefunc = function(form,inputfields, emailfield, passwordfield, loginbttn,signupbttn, htwo, divv){
-    htwo.style.display = "block";
-    
-    for(var i =0;i <inputfields.length;i++){
-        if(inputfields[i].getAttribute("name") != "email" || inputfields[i].getAttribute("name") != "password"){
-            inputfields[i].style.display = "contents";
-            inputfields[i].classList.remove("inactive")
-        }
-    }
+var closefunc = function(form, divv){
+    htwo.style.display = "block"
     
     if(doc.getElementById("formtitle2")){
         doc.getElementById("formtitle2").style.display = "none";
@@ -76,7 +69,7 @@ doc.addEventListener("DOMContentLoaded",function(event){
 //(function(){
     if(closemod){
         closemod.addEventListener("click", (ev)=>{
-            ev.preventDefault();
+            //ev.preventDefault();
             wrapholder.classList.remove("wrappppactive");
             wrapholder.classList.add("wrappppinactive");
             //closefunc(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle, wrapholder);
@@ -85,7 +78,7 @@ doc.addEventListener("DOMContentLoaded",function(event){
     
     if(close_modal_login){
         close_modal_login.addEventListener("click", (ev)=>{
-            ev.preventDefault();
+            //ev.preventDefault();
             loginwrapppp.classList.remove("wrappppactive");
             loginwrapppp.classList.add("wrappppinactive");
             //closefunc(newmemform,inputfields,doc.getElementById("inputemail"),doc.getElementById("inputpassword"),signinmemberbutton,addmmbr,formtitle, wrapholder);

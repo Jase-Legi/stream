@@ -2,6 +2,19 @@ body{
     
 }
 
+a {
+  color:inherit;
+  text-decoration: none;
+ }
+
+input, select {
+    z-index: 100; margin:10px 5%;width:90%;height:30px;
+}
+
+textarea {
+    margin:10px 5%;width:90%;min-height: 75px;color:#cccccc;
+}
+
 #warpdaasst{
     margin:80px auto 0px auto;display:block;clear:both;min-width: 430px; width: calc(100%-20px);padding: 10px;
 }
@@ -26,11 +39,6 @@ body{
 .admindatadock_one{
     height: 50px;width:calc(100%-20px);display:block;float: none; clear: both;margin: 0px;padding: 10px;box-sizing: content-box;
 }
-
-a {
-  color:inherit;
-  text-decoration: none;
- }
 
 #dshboardboxcont{
     opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
@@ -87,8 +95,6 @@ a {
     text-align: center; opacity:1;float: none;height: 40%;overflow: hidden; width:90%;margin: 0px 5%;/*background-color: #F2F2F2;*/font-size:14px;word-wrap: break-word;
 }
 
-
-
 .iconinfo h1{
     margin: 0px;padding: 0px;clear: both;display: block;height: 15px;width: calc(100%-20px);
 }
@@ -102,7 +108,7 @@ a {
     margin: 0px;padding: 0px;width: auto;height: auto;display:none;
 }
 
-#compny_create_popout{
+.modal_popout{
     top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;background-color:rgba(205,205,205,.975);
 }
 
@@ -123,16 +129,14 @@ a {
     -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
 }
 
-#newcompany_form{
-    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+/*
+#dhjghjgdhj:focus #invstnowwrap{
+    display: block;
 }
+*/
 
-#newcompany_form input, select {
-    z-index: 100; margin:10px 5%;width:90%;height:30px;
-}
-
-#newcompany_form textarea {
-    margin:10px 5%;width:90%;height:10%;color:#cccccc;
+.newcompany_form{
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 200px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
 }
 
 
@@ -141,7 +145,12 @@ a {
     border:none;
 }
 
-#compFormtitle{
+/*fieldset for investing style*/
+#investoform{
+    border:none;
+}
+
+.compFormtitle{
     clear:both;width:90%;margin:0px 5%;
 }
 
@@ -159,8 +168,12 @@ a {
     margin: 5px auto;cursor: pointer;
 }
 
+.submit_contnr{
+    margin: 5px auto;cursor: pointer;
+}
+
 .create_comp_button{
-    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9; border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9; border-radius: 3px;font-size: 20px;font-weight: bold; text-align: center;
 }
 
 
