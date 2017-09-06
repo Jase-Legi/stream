@@ -34,7 +34,7 @@ var getjsn = function(url,callback, method){
     if (window.XMLHttpRequest) {
         // code for modern browsers
         xhr = new XMLHttpRequest();
-     } else {
+     } else if (window.ActiveXObject){
         // code for old IE browsers
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -63,7 +63,7 @@ var postthisdata = function(url, callbck, data){
     if (window.XMLHttpRequest) {
         // code for modern browsers
         xhr = new XMLHttpRequest();
-     } else {
+     } else if (window.ActiveXObject){
         // code for old IE browsers
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }  

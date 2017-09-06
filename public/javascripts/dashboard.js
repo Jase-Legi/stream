@@ -27,9 +27,16 @@ var creatnewcompprofile = function(createurl, callback){
     var vals = {};
     for(var i=0;i<inputcomp.length;i++){
         if(inputcomp[i].getAttribute('class') != 'notincluded'){
-            if(inputcomp[i].value == '' || inputcomp[i].value == 0) {
-                errcnt ++;
-                console.log(inputcomp[i].tagName+'++++');
+            if(inputcomp[i].getAttribute("type") != "range"){            
+                if(inputcomp[i].value == '') {
+                    errcnt ++;
+                    console.log(inputcomp[i].tagName+'++++');
+                }
+            }else{
+                if(inputcomp[i].value == 0) {
+                    errcnt ++;
+                    console.log(inputcomp[i].tagName+'++++');
+                }
             }
         }
     }
@@ -161,7 +168,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
                     var pooop = parseInt(info.id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
-                    d.innerHTML = '<div class="pluss" style="background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:30px;width:30px;border-radius:15px;text-align:center;" title="Invest in this company!"><a href="/investors" style="text-decoration:none;"><img id="invstincmp" class="svggg" height="100%" src="/images/iibanc resources/icons/invsticon.svg"/></a></div><div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
+                    d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     dashboardboxcont.prepend(d);
                 

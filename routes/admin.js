@@ -76,7 +76,7 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
                         }
                         
                         console.log('company inserted, results are :'+re);
-                        res.send({msg:'newcompadded',comp:companymodel, id: __id});
+                        res.send({msg:'newcompadded',comp:companymodel, id: __id,sessemail:req.session.user.local.email});
                     }
                 });
             //}

@@ -17,8 +17,8 @@ block content
                     input#compAmount(type='range', value=0,min= 1,max=50000, name='amount')
                     textarea#compDescr(name='Message',rows='5',type='text',placeholder='Message to company')
                     #invest_submit_bttn.submit_contnr
-                        .create_comp_button
-                            p(style="margin:0px;padding:0px;") INVEST
+                        input.create_comp_button(type="submit",value="INVEST")
+                        //p(style="margin:0px;padding:0px;") INVEST
     #compcreate_wrap(style='visibility:visible;')
         #compny_create_popout.modal_popout
         
@@ -47,7 +47,7 @@ block content
                 textarea#compDescr(name='description',type='text',placeholder='Description')
                 
                 
-                #create_comp_button.create_compbuffer.notincluded
+                #create_comp_button.submit_contnr.create_compbuffer.notincluded
                     #create_compclls.create_comp_button
                         p(style="margin:0px;padding:0px;") SUBMIT
                  
