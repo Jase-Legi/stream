@@ -177,3 +177,10 @@ textarea {
 }
 
 
+
+
+
+.pluss{
+    background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:30px;width:30px;border-radius:15px;text-align:center;
+}
+

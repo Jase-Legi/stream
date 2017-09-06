@@ -97,7 +97,7 @@ router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
     var bb=0, findss = [];
     cursr.toArray((er, findings)=>{
         for(var f = (findings.length-1);f>-1; f--){
-            console.log(findings[f]);
+            //console.log(findings[f]);
             findss[bb] = findings[f];
             bb++
         }
@@ -105,7 +105,8 @@ router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
             console.log(er);
             res.send({error:'Error occured : '+er});
         }else{
-            res.send({content:findss});
+            console.log(req.session.user);
+            res.send({content:findss, sessemail:req.session.user.local.email});
         }
     });
     
