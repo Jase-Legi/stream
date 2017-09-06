@@ -37,7 +37,7 @@ mongoclient.connect(process.env.DB_URI, (err, datab)=>{
         console.log("We are connected----");
     }else{
         //console.log(err);
-      
+      /*
         mongoclient.connect ( ( process.env.LOCALDB_URI), function(er, dat) {
             if(!er) {
                 db = dat;
@@ -51,6 +51,7 @@ mongoclient.connect(process.env.DB_URI, (err, datab)=>{
               
           }
       });
+      */
     }
 });
 

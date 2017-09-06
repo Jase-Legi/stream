@@ -40,6 +40,11 @@ a {
     width: 35px;height: 5px; background-color: #340E30;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
 }
 
+#menusymbol:hover .barrr, #menusymbol:active .barrr  {
+    background-color: #62AEC9;border-radius: 0px;-ms-transform: rotate(180deg); /* IE 9 */-webkit-transform: rotate(180deg); /* Safari */transform: rotate(180deg);
+}
+
+
 #menupopout{
     top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: inline-block;visibility: hidden;background-color:rgba(98,174,201,.95);
 }
