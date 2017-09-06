@@ -47,6 +47,7 @@ var creatnewcompprofile = function(createurl, callback){
             
             if(inputcomp[i].getAttribute('class') != 'notincluded'){
                 vals[inputcomp[i].getAttribute('name')] = inputcomp[i].value;
+                inputcomp[i].value = (inputcomp[i].getAttribute("type")=="range")?0:'';
             }
         }
         postthisdata(createurl,callback,vals);
