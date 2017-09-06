@@ -8,11 +8,11 @@ a {
  }
 
 #headrwrapper{
-    width:100%;height:100%;min-width: 445px;
+    width:100%;height:100%;min-width: 250px;
 }
 
 #header{
-    height: 50px;min-width: 445px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
+    height: 50px;min-width: 250px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
 }
 
 #logoheader{
@@ -46,7 +46,7 @@ a {
 
 
 #menupopout{
-    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: inline-block;visibility: hidden;background-color:rgba(98,174,201,.95);
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: none;background-color:rgba(98,174,201,.95);
 }
 
 .menue-item{

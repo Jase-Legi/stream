@@ -4,7 +4,7 @@ block content
     //h1= msg
     include header
     #invstnowwrap(style="display:none;")
-        .modal_popout
+        #invstnowwrapmodal_popout.modal_popout
             #close_investmodal.compny_create_close_popout
                 .compny_create_xdiv
                     h1 X
@@ -19,7 +19,7 @@ block content
                     #invest_submit_bttn.submit_contnr
                         input.create_comp_button(type="submit",value="INVEST")
                         //p(style="margin:0px;padding:0px;") INVEST
-    #compcreate_wrap(style='visibility:visible;')
+    #compcreate_wrap
         #compny_create_popout.modal_popout
         
         #compny_create_close_popout.compny_create_close_popout
@@ -74,7 +74,7 @@ block content
             #dshboardboxcont.dashboardboxcont
                 #utilitybar_dashboard
                     #dwrraap
-                        p Post Startup
+                        p Post your startup
             #dashboardboxcont.dashboardboxcont
             
                 //.featured-investments-iconbox

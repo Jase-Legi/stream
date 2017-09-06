@@ -15,12 +15,12 @@ doc.addEventListener("DOMContentLoaded",function(event){
     //console.log(hedrlinks[1]);
     hedr_menu.addEventListener('click', function(ev){
         //ev.preventDefault();
-        menupopout.style.visibility = "visible";
+        menupopout.style.display = "inline-block";
     });
     
     menuclose.addEventListener('click', function(ev){
         //ev.preventDefault();
-        menupopout.style.visibility = "hidden";
+        menupopout.style.display = "none";
     });
    
     abtus.addEventListener('click', function(ev){

@@ -87,6 +87,21 @@ var postthisdata = function(url, callbck, data){
     xhr.send(JSON.stringify(data));
 };
 
+//CLOSES MODAL WINDOWS-- ACCEPTS ARRAY OF VALUES 2 CLOSE
+var close_modal_windows = function(closers, closees){
+    if(Array.isArray(closers)){
+        for(var v=0; v<closers.length;v++){
+            closers[v].addEventListener('click',()=>{
+                closees.style.display = "none";
+            });
+        }
+    }else{
+        closers.addEventListener('click',()=>{
+            doc.getElementById(closees).style.display = "none";
+        });
+    }
+};
+
 var loginn = function(postfunct,div,data){
     var errcount = 0;
     var fieldemptyerror = {};
