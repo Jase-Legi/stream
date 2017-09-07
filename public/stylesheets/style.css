@@ -1,3 +1,15 @@
+@font-face{
+    src: 
+        local('tahoma'),
+        local('tahoma'),
+        url('../fonts/tahoma.otf') 
+        format('opentype');
+    src: 
+        local('tahoma'),
+        local('tahoma'),
+        url('../fonts/tahoma.ttf') 
+        format('truetype');
+}
 
 body {
     margin: 0px; padding: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;/*background: url(../images/background/nycbigg.jpeg) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;*/
