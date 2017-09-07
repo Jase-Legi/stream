@@ -42,7 +42,7 @@ a {
     width: 80%;margin: 0px auto; height: auto;display: inline-block;max-width: 1000px;
 }
 
-@media all and (max-width: 300px) and (min-width: 0px) {
+@media all and (max-width: 300px) {
     .iconboxcont{
         width: 100%; margin: 0px auto; height: auto; display: block;
     }
@@ -58,11 +58,11 @@ a {
 
 @media all and (max-width: 510px)  and (min-width: 300px) {
     .iconboxcont{
-        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
+        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;box-sizing: border-box;
     }
 
     .iconbox{
-        opacity:1;display:inline-block;clear:both;float:none;height: auto;width:50%;margin: 0px;cursor:pointer;
+        opacity:1;display:inline-block;clear:both;float:none;height: auto;width:50%;margin: 0px;cursor:pointer;box-sizing: border-box;
     }
     
     .iconbox p{

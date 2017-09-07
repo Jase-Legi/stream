@@ -1,5 +1,5 @@
 body {
-    margin: 0px; padding: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background-color:#ffffff;
+    margin: 0px; padding: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background-color:#ffffff;box-sizing: border-box;
 }
 
 a {
@@ -8,33 +8,67 @@ a {
  }
 
 #headrwrapper{
-    width:100%;height:100%;min-width: 0px;
+    width:100%;height:100%;min-width: 140px;
 }
 
 #header{
-    height: 50px;min-width: 0px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
+    height: 50px;min-width: 140px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
 }
 
-#logoheader{
-    top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;;text-decoration: none;cursor: pointer;
+@media all and (min-width: 300px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;
+    }
+
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 0px;padding: none;float: right;display: inline-block;
+    }
 }
 
+@media all and (max-width: 300px) and (min-width: 170px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;overflow: hidden;
+    }
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 5px 7.5px 5px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 2px;padding: none;float: right;display: inline-block;
+    }
+}
+
+@media all and (max-width: 170px) and (min-width: 0px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 1px;text-decoration: none;cursor: pointer;overflow: hidden;
+    }
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 1px 7.5px 1px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 1px;padding: none;float: right;display: inline-block;
+    }
+}
 
 #legilogo{
     top:0px;opacity:1;clear:both;
 }
-
-.buttoncontt{
-        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
-}
-#menuheader{
-    height: 50px;width: auto;margin: 0px 10px;padding: none;float: right;display: inline-block;
-}
-
-#menusymbol{
-    display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
-}
-
 
 .bar1,.bar2,.bar3{
     width: 35px;height: 5px; background-color: #340E30;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
