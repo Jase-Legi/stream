@@ -4,11 +4,6 @@
         local('tahoma'),
         url('../fonts/tahoma.otf') 
         format('opentype');
-    src: 
-        local('tahoma'),
-        local('tahoma'),
-        url('../fonts/tahoma.ttf') 
-        format('truetype');
 }
 
 body {
