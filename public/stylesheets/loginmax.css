@@ -34,7 +34,7 @@ a {
 }
 
 #usrlogincontainerbox{
-    cursor: pointer;width: 96%;top:65px;right: 2%;left: 2%; height:auto; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;position: absolute;display: none;background-color: rgba(244,244,244,.99);/*border: solid 1px #CCCCCC;background-color:rgba(244,244,244,.99);box-shadow: 3px 3px 10px #555555;/* display: none;*/
+    cursor: pointer;width: 96%;top:65px;right: 2%;left: 2%; height:auto; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;position: absolute;display: none;background-color: rgba(244,244,244,.99); /*border: solid 1px #CCCCCC;background-color:rgba(244,244,244,.99);box-shadow: 3px 3px 10px #555555;/* display: none;*/
 }
 
 /*Touch/click event*/

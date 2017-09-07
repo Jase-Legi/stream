@@ -42,20 +42,43 @@ a {
     width: 80%;margin: 0px auto; height: auto;display: inline-block;max-width: 1000px;
 }
 
-.iconboxcont{
-    width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
+@media screen and (max-width: 250px) {
+    .iconboxcont{
+        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: block;
+    }
+    .iconbox{
+        opacity:1;display: block;height: auto;width:100%;margin: 0px;cursor:pointer;clear: both;float: none;
+    }    
 }
 
-.iconbox:hover img, .iconbox:active img{
-    -ms-transform: rotateZ(360deg); /* IE 9 */-webkit-transform: rotateZ(360deg); /* Safari */transform:rotateZ(360deg);-moz-transition: all 1s ease;-webkit-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;
+@media screen and (max-width: 450px)  and (min-width: 250px) {
+    .iconboxcont{
+        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
+    }
+
+    .iconbox{
+        opacity:1;display:inline-block;clear:both;float:none;height: auto;width:50%;margin: 0px;cursor:pointer;
+    }
+}
+
+@media screen and (min-width: 450px) {
+
+    .iconboxcont{
+        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
+    }
+
+    .iconbox{
+        opacity:1;float: left;height: auto;width:25%;margin: 0px;cursor:pointer;
+    }    
+
 }
 
 #abtpltfm{
     width: 100%;margin: 0px auto; height: auto; display: inline-block;background-color: #ccc; background-color:rgba(0,0,0,.3);
 }
 
-.iconbox{
-    opacity:1;float: left;height: auto;width:25%;margin: 0px;cursor:pointer;
+.iconbox:hover img, .iconbox:active img{
+    -ms-transform: rotateZ(360deg); /* IE 9 */-webkit-transform: rotateZ(360deg); /* Safari */transform:rotateZ(360deg);-moz-transition: all 1s ease;-webkit-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;
 }
 
 .iconinfo{
