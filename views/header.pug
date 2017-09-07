@@ -21,7 +21,7 @@ block content
                     .bar2.barrr
                     .bar3.barrr
             #menupopout
-                #menucont(style="width:80%;margin:20px auto;height:auto;width:auto;display:inline-block")
+                #menucont
                 .menue-item
                     #closemenu.close-item
                         h1(style="font-size:20px;cursor:pointer;") x
@@ -36,4 +36,5 @@ block content
 
     if mypageurl == '/'
         include index
-    
+    script(src = '/javascripts/header-effs.js')
+    script(src = '/javascripts/global.js')

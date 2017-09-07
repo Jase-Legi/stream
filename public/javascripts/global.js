@@ -377,16 +377,19 @@ var delmember = function(url, callbck, divv){
         }
         
     });
+    
     if(loginbuttn){
         loginbuttn.addEventListener("click", (event)=>{
                 loginn(postthisdata,loginbuttn,userdata);
         });
     
     }
+    
     if(log_out){
         log_out.addEventListener("click", function(event){
             //event.preventDefault();
             logout(logouturl);
         });
     }
+    
 })();

@@ -14,12 +14,6 @@ block content
             #logintoplatfrmpbutton.loginout(class=msg,title='Click to login.')
                 #logintoplatfrmpbuttoncont
                     p Log in
-
-        //-if (loginnow == true){
-            #loginwrapppp.wrappppactive
-        //-}else{
-            #loginwrapppp.wrappppinactive
-        //-}
         
         #loginwrapppp(class=(loginnow?'wrappppactive':'wrappppinactive'))
             #loginpopout
@@ -60,16 +54,4 @@ block content
                 #logoutbuttoncont
                     p Log out
     
-        
-    //else
-        
-            //#newmember
-                fieldset(style='border:none;')
-                    h2(style = 'clear:both;margin:10px auto;') Sign UP
-                    input#inputusrname(type='text',placeholder='Username',style='margin:10px auto;width:90%;height:30px;')
-                    input#inputemail(type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
-                    input#inputage(type='text',placeholder='Age',style='margin:10px auto;width:30%;height:30px;')
-                    input#inputgender(type='text',placeholder='Gender',style='margin:10px 0px;width:30%;height:30px;')
-                    input#inputlocation(type='text',placeholder='Location',style='margin:10px 0px;width:30%;height:30px;')
-                    #addmemberbutton.addmemberbutton 
-                        div(style="clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;")
+    script(src = '/javascripts/login-effs.js')

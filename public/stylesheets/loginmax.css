@@ -34,7 +34,7 @@ a {
 }
 
 #usrlogincontainerbox{
-    cursor: pointer;max-width: (100vw-64px);top:65px;right: 60px; height:auto; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;position: absolute;display: none;background-color: rgba(244,244,244,.99);/*border: solid 1px #CCCCCC;background-color:rgba(244,244,244,.99);box-shadow: 3px 3px 10px #555555;/* display: none;*/
+    cursor: pointer;width: 96%;top:65px;right: 2%;left: 2%; height:auto; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;position: absolute;display: none;background-color: rgba(244,244,244,.99);/*border: solid 1px #CCCCCC;background-color:rgba(244,244,244,.99);box-shadow: 3px 3px 10px #555555;/* display: none;*/
 }
 
 /*Touch/click event*/
@@ -71,7 +71,7 @@ a {
     clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;width:100px;
 }
 
-#logintoplatfrmpbuttoncont:hover {
+#logintoplatfrmpbutton:hover {
     background-color:#CCCCCC;color:#FFFFFF;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;
 }
 
@@ -123,7 +123,7 @@ a {
 }
 
 #login_to_memberprofle{
-    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+    left:1%;top:10%;right:1%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;width: 98%;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
 }
 
 #login_to_memberprofle input{
@@ -153,7 +153,7 @@ a {
 }
 
 #close_modal_login{
-    align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 5%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
+    align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 1%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
 }
 
 #close_modal_login:hover{

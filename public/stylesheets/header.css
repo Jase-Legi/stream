@@ -1,5 +1,5 @@
 body {
-    margin: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background: url(../images/background/IMG_20161122_130819016_HDR.jpg) no-repeat center center fixed;*/ -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;
+    margin: 0px;padding: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background: url(../images/background/IMG_20161122_130819016_HDR.jpg) no-repeat center center fixed;*/ -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;
 }
 
 a {
@@ -48,12 +48,16 @@ a {
     top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: none;background-color:rgba(98,174,201,.95);
 }
 
+#menucont{
+    width:80%;margin:20px auto;height:auto;width:auto;display:inline-block
+}
+
 .menue-item{
     color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
 }
 
 .close-item{
-    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
+    display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
     color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
 }
 

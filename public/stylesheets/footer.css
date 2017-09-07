@@ -1,3 +1,7 @@
+body{
+    margin: 0px;padding: 0px;
+}
+
 #footer{
     height: auto; width: 100%; bottom:0px; display: block;padding: 20px 0px;background-color: rgba(17,70,132,.4);border-top: 3px solid #CCC;clear: both;
 }
