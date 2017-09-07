@@ -12,7 +12,7 @@ a {
 }
 
 #header{
-    height: 50px;max-height: auto; width: 100%;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 5px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 7px 15px #111111;min-width: 130px;
+    height: 50px;max-height: auto; width: 100%;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 5px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 7px 15px #111111;min-width: 0px;
 }
 
 #logoheader{
@@ -32,7 +32,7 @@ a {
 }
 
 #menusymbol{
-    display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px  0px  7.5px  0px ;clear: both;max-width: 45px;
+    display: inline-block;cursor: pointer;align-items: center;min-width:35px;width: 45px;padding: 7.5px  0px  7.5px  0px ;clear: both;max-width: 45px;
 }
 
 
@@ -57,8 +57,7 @@ a {
 }
 
 .close-item{
-    display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
-    color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+    padding: 5px 0px;height: 50px;cursor: pointer;text-decoration:none;color: #62AEC9; display:inline-block; padding: 0px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
 }
 
 .close-item:hover{

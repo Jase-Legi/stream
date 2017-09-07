@@ -8,11 +8,11 @@ a {
  }
 
 #headrwrapper{
-    width:100%;height:100%;min-width: 250px;
+    width:100%;height:100%;min-width: 0px;
 }
 
 #header{
-    height: 50px;min-width: 250px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
+    height: 50px;min-width: 0px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
 }
 
 #logoheader{
@@ -58,8 +58,7 @@ a {
 }
 
 .close-item{
-    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
-    color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+    color: aliceblue; padding: 5px 0px;cursor: pointer;text-decoration:none; color: #62AEC9; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
 }
 
 .close-item:hover{
