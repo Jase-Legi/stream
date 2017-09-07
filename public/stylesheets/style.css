@@ -46,6 +46,10 @@ a {
     width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
 }
 
+.iconbox:hover img, .iconbox:active img{
+    -ms-transform: rotateZ(360deg); /* IE 9 */-webkit-transform: rotateZ(360deg); /* Safari */transform:rotateZ(360deg);-moz-transition: all 1s ease;-webkit-transition: all 1s ease;-o-transition: all 1s ease;transition: all 1s ease;
+}
+
 #abtpltfm{
     width: 100%;margin: 0px auto; height: auto; display: inline-block;background-color: #ccc; background-color:rgba(0,0,0,.3);
 }
