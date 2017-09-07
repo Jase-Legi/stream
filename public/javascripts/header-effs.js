@@ -23,7 +23,7 @@ doc.addEventListener("DOMContentLoaded",function(event){
         menupopout.style.display = "none";
     });
    
-    abtus.addEventListener('click', function(ev){
+    /*abtus.addEventListener('click', function(ev){
         ev.preventDefault();
         //window.location.href = '/about';
         var url = abtus.getAttribute("rel");
@@ -32,13 +32,14 @@ doc.addEventListener("DOMContentLoaded",function(event){
     });
     
     headrlogocontnr.addEventListener('click', function(ev){
-        ev.preventDefault();
+        //ev.preventDefault();
         //window.location.href = '/about';
         var url = headrlogocontnr.getAttribute("rel");
         window.location.href = url;
     
     });
-
+    */
+    
     investorlnk.addEventListener('click', function(ev){
         ev.preventDefault();
         var url = investorlnk.getAttribute("rel");
