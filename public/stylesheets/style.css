@@ -42,16 +42,21 @@ a {
     width: 80%;margin: 0px auto; height: auto;display: inline-block;max-width: 1000px;
 }
 
-@media screen and (max-width: 250px) {
+@media all and (max-width: 300px) and (min-width: 0px) {
     .iconboxcont{
-        width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: block;
+        width: 100%; margin: 0px auto; height: auto; display: block;
     }
     .iconbox{
         opacity:1;display: block;height: auto;width:100%;margin: 0px;cursor:pointer;clear: both;float: none;
-    }    
+    }
+
+    .iconbox p{
+        font-size:6vw;margin:5px 0px;
+    }
+
 }
 
-@media screen and (max-width: 450px)  and (min-width: 250px) {
+@media all and (max-width: 510px)  and (min-width: 300px) {
     .iconboxcont{
         width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
     }
@@ -59,9 +64,14 @@ a {
     .iconbox{
         opacity:1;display:inline-block;clear:both;float:none;height: auto;width:50%;margin: 0px;cursor:pointer;
     }
+    
+    .iconbox p{
+        font-size:3vw;margin:5px 0px;
+    }
+
 }
 
-@media screen and (min-width: 450px) {
+@media all and (min-width: 510px) {
 
     .iconboxcont{
         width: 100%; max-width: 1000px; margin: 0px auto; height: auto; display: inline-block;
