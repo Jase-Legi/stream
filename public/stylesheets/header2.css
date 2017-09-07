@@ -3,29 +3,19 @@
     src: 
         local('tahoma'),
         local('tahoma'),
-        url('../fonts/tahoma.otf') 
-        format('opentype');
-    src: 
-        local('tahoma'),
-        local('tahoma'),
         url('../fonts/tahoma.ttf') 
         format('truetype');
 }
 
 @font-face{
-    
-    font-weight:bold;
     font-family:'tahoma';
     src: 
         local('tahoma'),
         local('tahoma'),
-        url('../fonts/tahoma.otf') 
-        format('opentype');
-    src: 
-        local('tahoma'),
-        local('tahoma'),
-        url('../fonts/tahoma.ttf') 
+        url('../fonts/tahomabd.ttf') 
         format('truetype');
+    font-weight:bold;
+    font-style:normal;
 }
 
 body {
