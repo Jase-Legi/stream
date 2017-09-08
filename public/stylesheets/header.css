@@ -1,21 +1,12 @@
 @font-face{
     font-family:'tahoma';
-    src: 
-        local('tahoma'),
-        local('tahoma'),
-        url('../fonts/tahoma.ttf') 
-        format('truetype');
+    src:url('../fonts/tahoma.ttf');
 }
 
 @font-face{
     font-family:'tahoma';
-    src: 
-        local('tahoma'),
-        local('tahoma'),
-        url('../fonts/tahomabd.ttf') 
-        format('truetype');
+    src:url('../fonts/tahomabd.ttf');
     font-weight:bold;
-    font-style:normal;
 }
 
 body {
