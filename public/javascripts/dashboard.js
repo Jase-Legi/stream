@@ -103,11 +103,11 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
     }
     
 };
-
+/*
 var investinthiscomp = function(){
     
 }
-
+*/
 (function() {
 //doc.addEventListener("DOMContentLoaded",function(event){
     
