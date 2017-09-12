@@ -20,8 +20,9 @@ var doc = document,
     weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     Month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     compny_create_popout = doc.getElementById('compny_create_popout'),
+    companynamespanele = doc.getElementById("companynamespanele"),
     invstnowwrapmodal_popout = doc.getElementById("invstnowwrapmodal_popout");
-    
+
         
 var creatnewcompprofile = function(createurl, callback){
     var errcnt = 0;
@@ -67,7 +68,7 @@ var dispcompprofiles = function(compprofurls,divele){
             }else if(findings.content){
                 for(var p = 0;p<findings.content.length;p++){
                     
-                    //console.log(findings.content[p]);
+                    console.log(findings.content[p]);
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';
@@ -76,6 +77,7 @@ var dispcompprofiles = function(compprofurls,divele){
                     d.innerHTML +='<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.fundraiser.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     d.setAttribute("data-thisob-id", findings.content[p]._id);
+                    d.setAttribute("data-thisob-name", findings.content[p].profile.fundraiser.compname);
                     divele.appendChild(d);
                     
                 }
@@ -103,6 +105,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
     }
     
 };
+
 /*
 var investinthiscomp = function(){
     
@@ -142,6 +145,9 @@ var investinthiscomp = function(){
         if(ev.target.getAttribute("id") == "invstincmp"+ev.target.parentElement.parentElement.getAttribute("data-thisob-id")){
             console.log(ev.target.getAttribute("id"));
             invstnowwrap.style.display ='block';
+            invstnowwrap.setAttribute("data-thisob-id",ev.target.parentElement.parentElement.getAttribute("data-thisob-id"));
+            companynamespanele.innerHTML = " " + ev.target.parentElement.parentElement.getAttribute("data-thisob-name");
+            
         }
     });
     

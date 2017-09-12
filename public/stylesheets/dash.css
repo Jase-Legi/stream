@@ -177,6 +177,6 @@ textarea {
 
 
 .pluss{
-    background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:40px;width:40px;border-radius:20px;text-align:center;
+    background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:40px;width:40px;border-radius:20px;text-align:center;z-index: 2;
 }
 
