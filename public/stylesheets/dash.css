@@ -20,11 +20,14 @@ textarea {
 }
 
 #utilitybar_dashboard{
-    width: 100%;margin:0px 0px 10px 0px; display: inline-block;height: :50px;
+    width: 100%;margin:0px 0px 10px 0px; display: inline-block;height: :50px;background-color: #340E30;border-radius: 25px;
+}
+#utilitybar_dashboard p {
+    color: #F2F2F2;font-weight: 900;
 }
 
 #dwrraap{
-    padding: 0px;align-items: center; width: 100%;height: 100%;margin:0px;padding:0px;box-sizing: border-box;overflow: hidden;text-align: center;cursor: pointer;border: dashed 1px #340E30;
+    padding: 0px;align-items: center; width: 100%;height: 100%;margin:0px;padding:0px;box-sizing: border-box;overflow: hidden;text-align: center;cursor: pointer;/*border: dashed 1px #340E30;*/
 }
 
 
@@ -33,7 +36,10 @@ textarea {
 }
 
 #ziggsidebar{
-    height: 100%;width:29%;max-width: 300px; background-color: #414042/*#340E30 rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+    box-shadow: 0px 1px 2px #999999;border-radius: 4px; border:1px solid #F2F2F2;height: 100%;width:29%;max-width: 300px; background-color: #FFFFFF/*#340E30 rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+}
+#ziggsidebar p{
+    font-weight: 900;color: #340E30;
 }
 
 .admindatadock_one{
