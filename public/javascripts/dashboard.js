@@ -2,9 +2,9 @@
 
 var doc = document,
     win = window,
-    new_form = doc.getElementById('new_form'),
+    new_form = doc.getElementById("new_form"),
     inputcomp = new_form.children,
-    selectcomp = newcompany_form.getElementsByTagName('select'),
+    selectcomp = newcompany_form.getElementsByTagName("select"),
     textareacomp = newcompany_form.getElementsByTagName('textarea'),
     compDescr = doc.getElementById('compDescr'),
     comp_creat_submit_bttn = doc.getElementById('create_comp_button'),
@@ -104,6 +104,9 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
     
 };
 
+var investinthiscomp = function(){
+    
+}
 
 (function() {
 //doc.addEventListener("DOMContentLoaded",function(event){

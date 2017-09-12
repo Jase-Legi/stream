@@ -102,6 +102,10 @@ a {
 
 }
 
+.iconbox img{
+    width: 80%;height: auto; margin:10px 10%;
+}
+
 #abtpltfm{
     width: 100%;margin: 0px auto; height: auto; display: inline-block;background-color: #ccc; background-color:rgba(0,0,0,.3);
 }
