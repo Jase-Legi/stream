@@ -20,6 +20,7 @@ var doc = document,
     weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     Month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     compny_create_popout = doc.getElementById('compny_create_popout'),
+    invsamountforthscmp = doc.getElementById("invsamountforthscmp"),
     companynamespanele = doc.getElementById("companynamespanele"),
     invstnowwrapmodal_popout = doc.getElementById("invstnowwrapmodal_popout");
 
@@ -78,6 +79,7 @@ var dispcompprofiles = function(compprofurls,divele){
                     //console.log(divele)
                     d.setAttribute("data-thisob-id", findings.content[p]._id);
                     d.setAttribute("data-thisob-name", findings.content[p].profile.fundraiser.compname);
+                    d.setAttribute("data-thisob-amount", findings.content[p].profile.fundraiser.amount);
                     divele.appendChild(d);
                     
                 }
@@ -147,6 +149,8 @@ var investinthiscomp = function(){
             invstnowwrap.style.display ='block';
             invstnowwrap.setAttribute("data-thisob-id",ev.target.parentElement.parentElement.getAttribute("data-thisob-id"));
             companynamespanele.innerHTML = " " + ev.target.parentElement.parentElement.getAttribute("data-thisob-name");
+            invsamountforthscmp.innerHTML = ev.target.parentElement.parentElement.getAttribute("data-thisob-amount").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            
             
         }
     });

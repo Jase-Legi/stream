@@ -56,14 +56,8 @@ textarea {
     opacity:1;clear:both; display:inline-block; float: none; height: 250px; width:100%; max-width:1000px; margin: 0px 0px 0px 0px;cursor:pointer;background-color: #FFFFFF;padding: 0px;box-sizing: border-box;overflow: hidden;
 }
 
-.svggg {
-    -webkit-filter : grayscale(100%);
-    filter : grayscale(100%);
-}
-
-.svggg:hover {
-    -webkit-filter : grayscale(0%);
-    filter : grayscale(0%);
+.pluss:hover {
+    background-color:#F2F2F2;
 }
 
 .startup_boxes{
@@ -71,7 +65,7 @@ textarea {
 }
 
 .featured-investments-iconbox{
-    opacity:1;clear:both; display:block; float: none; height: 220px;width: calc(100%-10px);max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;
+    opacity:1;clear:both; display:block; float: none; height: 250px;width: calc(100%-10px);max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;overflow : hidden;
 }
 
 .featured-investments-logo{
@@ -177,6 +171,6 @@ textarea {
 
 
 .pluss{
-    background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;z-index:2px;font-size:25px;border:1px solid #F2F2F2;height:40px;width:40px;border-radius:20px;text-align:center;z-index: 2;
+    background-color:#FFFFFF;font-weight:bold;position:absolute;margin-top:0px;font-size:25px;border:1px solid #F2F2F2;height:40px;width:40px;border-radius:20px;text-align:center;z-index: 2;
 }
 
