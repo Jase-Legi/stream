@@ -89,7 +89,7 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
     
 });
 
-router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
+router.get('/getothercomps/', isloggedin, (req, res, next)=>{
     var db = req.db;
     var colltn = db.collection('comp');
     var cursr =  colltn.find();

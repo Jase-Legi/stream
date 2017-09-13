@@ -60,44 +60,49 @@ Userschema.methods.isloggedin = function(req, res, next){
     if(req.session.user){
         req.loggedstat = true;
         
+        //Loggedin redirects
         if(req.originalUrl == '/'){
             return res.redirect('/dashboard');
 
         }
         
-        if(req.originalUrl == '/about'){
-            next();
-        }
-        if(req.originalUrl == '/dashboard'){
-            next();
-        }
+        //Loggedin proceeds to next function
+        next();
         
-        if(req.originalUrl == '/users/userinfo/'){
-            //res.send({msg:'doorclosed'})
-            next();
-        }
-        
-        if(req.originalUrl == '/users/signup/'){
-            res.send({msg:'dooropen'});
-            //next();
-        }
-        
-        if(req.originalUrl == '/users/logout/'){
-            next();
-        }
-        
-        if(req.originalUrl == '/users/login/'){
-            res.send({msg:'dooropen'});
-        }
-        
-        if(req.originalUrl == '/admin/compcreate/'){
-            next();
-        }
+        /*
+            if(req.originalUrl == '/users/signup/'){
+                res.send({msg:'dooropen'});
+                //next();
+            }
+            if(req.originalUrl == '/about'){
+                next();
+            }
+            if(req.originalUrl == '/dashboard'){
+                next();
+            }
 
-        if(req.originalUrl == '/investors'){
-            next();
-        }
+            if(req.originalUrl == '/users/userinfo/'){
+                //res.send({msg:'doorclosed'})
+                next();
+            }
 
+
+            if(req.originalUrl == '/users/logout/'){
+                next();
+            }
+
+            if(req.originalUrl == '/users/login/'){
+                res.send({msg:'dooropen'});
+            }
+
+            if(req.originalUrl == '/admin/compcreate/'){
+                next();
+            }
+
+            if(req.originalUrl == '/investors'){
+                next();
+            }
+        */
     }
     else{
         //res.status(200).send({msg:'yanotloggedin'});

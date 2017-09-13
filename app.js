@@ -78,6 +78,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
+    path:'/',
     secret:(process.env.SESSIONSECRET),
     resave:false,
     saveUninitialized:true//,
