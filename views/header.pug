@@ -1,14 +1,15 @@
 extends headerlayout
 
 block content
+    
+            
     if msg == 'dooropen'
         -srcc = 'images/iibanc resources/logo alternates/iibanc2.svg'
     else
         -srcc = 'images/iibanc resources/logo alternates/iibanc.svg'
         
-        
+
     #headrwrapper
-        
         #header
             a(href="/",rel="/about", id="logoheader")
                 img#legilogo(height='100%', src=srcc)
@@ -39,3 +40,6 @@ block content
         
     script(src = '/javascripts/header-effs.js')
     script(src = '/javascripts/global.js')
+    noscript(style="z-index:1000;")
+        .noscriptmsg(style="font-weight:bold;font-size:20px;color:#FFFFFF;background-color:red;text-align:center;position:fixed;width:100%;")
+            h4 You don't have javascript enabled.  Good luck with that!
