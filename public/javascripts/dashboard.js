@@ -69,7 +69,7 @@ var dispcompprofiles = function(compprofurls,divele){
             }else if(findings.content){
                 for(var p = 0;p<findings.content.length;p++){
                     
-                    console.log(findings.content[p]);
+                    //console.log(findings.content[p]);
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
                     var d = doc.createElement('div');
                     d.className = 'featured-investments-iconbox';

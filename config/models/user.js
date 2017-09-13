@@ -61,9 +61,10 @@ Userschema.methods.isloggedin = function(req, res, next){
         req.loggedstat = true;
         
         if(req.originalUrl == '/'){
-            res.render('dashboard',myPagesmsg.dashboard.loggedin);
+            return res.redirect('/dashboard');
 
         }
+        
         if(req.originalUrl == '/about'){
             next();
         }

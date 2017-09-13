@@ -7,7 +7,7 @@ var myPagesmsg = {
             title:'Zuggerat',
             msg: 'dooropen',
             //loginnow:false,
-            mypageurl:'/'
+            mypageurl:'/dashboard'
         },
         loggedout:{ 
             title:'Zuggerat',

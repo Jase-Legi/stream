@@ -112,6 +112,4 @@ router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
     
 });
 
-
-
 module.exports = router;

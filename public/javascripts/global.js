@@ -138,14 +138,14 @@ var loginn = function(postfunct,div,data){
             }
         }
     }
-    console.log(data);
+    //console.log(data);
     if(errcount === 0){
         var errcount = 0;
         postfunct(loginurl,(er, info)=>{
             if(!er){
                 fieldemptyerror.email=0;
                 fieldemptyerror.password=0;
-                console.log(info.msg+'---'+er);
+                //console.log(info.msg+'---'+er);
                 for(var i=0; i<logininputs.length; i++){
                     logininputs[i].value = '';
                 }
