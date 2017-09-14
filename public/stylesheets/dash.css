@@ -16,7 +16,7 @@ textarea {
 }
 
 #warpdaasst{
-    margin:80px auto 0px auto;display:block;clear:both;min-width: 250px; width: 100%;padding: 5px;box-sizing: border-box;
+    margin:80px auto 0px auto;display:block;clear:both;min-width: 140px; width: 100%;padding: 5px;box-sizing: border-box;
 }
 
 #utilitybar_dashboard{
@@ -32,12 +32,37 @@ textarea {
 
 
 .dashboardiconboxcont{
-    display: block;clear: both;float: none; margin:5px auto;width: 100%;max-width: 1000px;min-width: 250px; align-items: center;align-content: center;height: auto;
+    display: block;clear: both;float: none; margin:5px auto;width: 100%;max-width: 1000px;min-width: 140px; align-items: center;align-content: center;height: auto;
 }
 
-#ziggsidebar{
-    box-shadow: 0px 1px 2px #999999;border-radius: 4px; border:1px solid #F2F2F2;height: 100%;width:29%;max-width: 300px; background-color: #FFFFFF/*#340E30 rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+
+
+@media all and (min-width: 500px) {
+    #ziggsidebar{
+        box-shadow: 0px 1px 2px #999999;border-radius: 4px; border:1px solid #F2F2F2;height: 100%;width:29%;max-width: 300px; background-color: #FFFFFF/*#340E30 rgba(52,14,48,.95)*/;float: left; clear: both;margin: 0px 1% 0px 0px; top: 0px;color: #FFFFFF;box-sizing: border-box;
+    }
+    #dshboardboxcont{
+        opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
+    }    
 }
+
+@media all and (max-width: 500px) and (min-width: 0px) {
+    #ziggsidebar{
+        display: none;
+    }
+    
+    #dshboardboxcont{
+        opacity:1;float: none;clear: both; height: auto; width: 100%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
+    } 
+}
+
+
+
+
+
+
+
+
 #ziggsidebar p{
     font-weight: 900;color: #340E30;
 }
@@ -46,12 +71,10 @@ textarea {
     height: 50px;width:calc(100%-20px);display:block;float: none; clear: both;margin: 0px;padding: 10px;box-sizing: content-box;
 }
 
-#dshboardboxcont{
-    opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
-}
+
 
 #dashboardboxcont{
-    opacity:1;float: none;clear: both; height: auto; width: 70%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
+    opacity:1;float: none;clear: both; height: auto; width: 100%; margin:0px 0px 0px 0px;cursor:pointer; display: inline-block;max-width: 700px;
 }
 
 #dashboard_startups_boxcont{
@@ -71,7 +94,7 @@ textarea {
 }
 
 .featured-investments-iconbox{
-    opacity:1;clear:both; display:block; float: none; height: 250px;width: calc(100%-10px);max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;overflow : hidden;
+    opacity:1;clear:both; display:block; float: none; height: 250px;width: 100%;max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;overflow : hidden;
 }
 
 .featured-investments-logo{
@@ -136,7 +159,7 @@ textarea {
 */
 
 .newcompany_form{
-    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 200px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 140px;max-width: 750px;min-height: 200px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
 }
 
 
