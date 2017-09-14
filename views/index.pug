@@ -3,7 +3,7 @@ block content
     
     //include header
         //#menupopout    
-    #wrapper
+    #wrapper(style="background-color:rgba(98, 174, 201,.7)")
         //h1= title
         //p Welcome to #{title}
         //h2 User List
@@ -21,7 +21,7 @@ block content
                     .nostyle
                         h4 delete?
         
-        #introbox.divsegments(style='background-color:rgba(17,70,132,.7);')
+        #introbox.divsegments
             .boxcont
                 h1(style='font-size:3.5vh;color:#fff;opacity:1.0;width:100%;margin:0px auto;') Connect with hospitality investors at the click of a button.
                 //.buttoncont
@@ -51,10 +51,10 @@ block content
                         h4 INVEST IN THE FUTURE
                         p Investors, and industry leaders interested in shaping the future can select from myriad hospitality (and related) projects to yield unmatched returns.
         
-        #aboutpltfrm.divsegments(style="background: url(../images/background/nycbigg.jpeg) no-repeat center center fixed; ;color:#FFF;font-size:15px;")
-            .iconboxcont(style="background-color:rgba(0,0,0,0);")
+        #aboutpltfrm.divsegments
+            .iconboxcont
                 #abtpltfm
-                    h1 ABOUT THE PLATFORM
+                    h1(style="font-weight:bold;")  ABOUT THE PLATFORM
                     p The platform will connect, Investors seeking lucrative and innovative investment oppportunities with inovative startups/individuals seeking financial backing to propel their business into profitability and consistent and exponential growth. 
 
         //#wrapit

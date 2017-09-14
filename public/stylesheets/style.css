@@ -35,6 +35,10 @@ a {
     cursor: pointer;width: 145px; height:45px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px auto;
 }
 
+#introbox{
+    background-color:rgba(17,70,132,.7);min-height: 200px;background: url(../images/background/gradientbckgrnd2.svg) center;background-size:cover;
+}
+
 #userlist{
     margin: 10px auto;clear: both;display:inline-block;width: auto;overflow: hidden;max-width: 100%;align-items: center;
 }
@@ -55,6 +59,10 @@ a {
 
 .divsegments{
     width:100%;background-color:rgba(98, 174, 201,.7);color: #FFF;/*background-color:#F2F2F2;*/height:auto;padding:10px 0px;text-align:center;display:inline-block;
+}
+
+#aboutpltfrm{
+    background: url(../images/background/gradientbckgrnd.svg) center;font-size:14px;background-size:cover;color:#DDC7E0;font-size:15px;height: auto;min-height: 240px;box-sizing: border-box;
 }
 
 .boxcont{
@@ -107,7 +115,7 @@ a {
 }
 
 #abtpltfm{
-    width: 100%;margin: 0px auto; height: auto; display: inline-block;background-color: #ccc; background-color:rgba(0,0,0,.3);
+    width: 100%;margin: 10px auto; height: calc(100% - 40px); display: inline-block;background-color: none;min-height: 200px;box-sizing: border-box;padding: 0px 10px;
 }
 
 .iconbox:hover img, .iconbox:active img{
