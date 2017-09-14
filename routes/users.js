@@ -80,16 +80,19 @@ router.post('/login/', isloggedin, (req, res,next)=>{
             if((usr[p].local.email === req.body.email)){
                 dbinstnce++;
                 if(user.methods.validpass(req.body.password,usr[p].local.password) == true){
+                    usr[p].local.password = null;
                     req.session.user = usr[p];
+                    //req.session.user.local.password = null;
+                    
                     if(req.session.user == usr[p]){
+
                         musjfkhgwhgh = true;
                         console.log(req.session);
                         console.log(req.session.user);
                     }else{
                         musjfkhgwhgh = false;
                     }
-                    
-                    //console.log(user.methods.validpass(req.body.password,usr[p].local.password));
+                     //console.log(user.methods.validpass(req.body.password,usr[p].local.password));
                     
                     indx["_"+dbinstnce] = p;
                 }else{
@@ -153,6 +156,7 @@ router.post('/signup/',isloggedin,(req, res)=>{
         if(dbinstance == 0){
             collctn.insert(user,(err,r)=>{
                 if(!err){
+                    user.local.password = null;
                     req.session.user = user;
                     //console.log(r)
                     //user.local.password = '';

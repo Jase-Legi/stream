@@ -68,51 +68,13 @@ Userschema.methods.isloggedin = function(req, res, next){
         
         //Loggedin proceeds to next function
         next();
-        
-        /*
-            if(req.originalUrl == '/users/signup/'){
-                res.send({msg:'dooropen'});
-                //next();
-            }
-            if(req.originalUrl == '/about'){
-                next();
-            }
-            if(req.originalUrl == '/dashboard'){
-                next();
-            }
-
-            if(req.originalUrl == '/users/userinfo/'){
-                //res.send({msg:'doorclosed'})
-                next();
-            }
-
-
-            if(req.originalUrl == '/users/logout/'){
-                next();
-            }
-
-            if(req.originalUrl == '/users/login/'){
-                res.send({msg:'dooropen'});
-            }
-
-            if(req.originalUrl == '/admin/compcreate/'){
-                next();
-            }
-
-            if(req.originalUrl == '/investors'){
-                next();
-            }
-        */
     }
     else{
-        //res.status(200).send({msg:'yanotloggedin'});
-        //res.send({title:'login',msg:'doorclosed'});
-        //res.send({title:'login',msg:'doorclosed', url: req.originalUrl});
-        //if(req.session.user){
         req.loggedstat = false;
 
         if(req.originalUrl === '/'){
             //myPagesmsg.index.msg = 'doorclosed';
+            //myPagesmsg.index.loggedout.loginnow = false;
             res.render('header',myPagesmsg.index.loggedout);
         }
         
@@ -122,7 +84,8 @@ Userschema.methods.isloggedin = function(req, res, next){
         }      
         
         if(req.originalUrl === '/dashboard'){
-            res.render('header',myPagesmsg.dashboard.loggedout)
+            //myPagesmsg.index.loggedout.loginnow = true;
+            return res.redirect('/');
         }
         
         if(req.originalUrl === '/users/userinfo/'){

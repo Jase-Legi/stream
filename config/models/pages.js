@@ -4,15 +4,15 @@ var router = express.Router();
 var myPagesmsg = {
     index:{
         loggedin:{ 
-            title:'Zuggerat',
+            title:'Dashboard',
             msg: 'dooropen',
-            //loginnow:false,
+            loginnow:false,
             mypageurl:'/dashboard'
         },
         loggedout:{ 
             title:'Zuggerat',
             msg: 'doorclosed',
-            //loginnow:true,
+            loginnow:false,
             mypageurl:'/'
         }
     },
@@ -41,7 +41,7 @@ var myPagesmsg = {
             title:'Dashboard',
             msg: 'doorclosed',
             loginnow:true,
-            mypageurl:'/dashboard'
+            mypageurl:'/'
         }        
     },
     investors:{
