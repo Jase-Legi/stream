@@ -6,6 +6,56 @@ var user = require('../config/models/user.js');
 var companymodel = require('../config/models/compdata.js');
 var isloggedin = user.methods.isloggedin;
 
+//CONNECT TO EXTERNAL API USING HTTPS GET REQUEST
+/*
+var prntfl;
+var username = 'fr6poyaa-0o86-zcih';
+var password = 'ofax-5e54isqv3684';
+var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+
+var https = require("https");
+var options = {
+    host : "api.printful.com",
+    path : "/files?limit=5",
+    json : true,
+    method : "GET",
+    
+    headers : {
+        Authorization : auth,
+        "content-type" : "application/json"
+    }
+    
+};
+var str = "";
+var callback = function(response) {
+      response.on('data', function (chunk) {
+        str += chunk;
+      });
+      response.on('end', function () {
+        //console.log(req.data);
+        prntfl = JSON.parse(str);
+        console.log(prntfl);
+      });
+    }
+
+var request = https.get(options, callback);
+request.end();
+*/
+
+router.post("/invest/:id",isloggedin, (req, res, next)=>{
+    var objid = rq.params.id;
+    var db = req.db;
+    var objectid = db.ObjectId;
+    var collction = db.collection("comp");
+    //var cursor = collction.find();
+    db.collection("comp",(err, comp)=>{
+        comp.find({_id: objectid(objid)},(er, thisobj)=>{
+            console.log(thisobj)
+        });
+    });
+});
+
+
 router.post('/compcreate/',isloggedin, (req, res, next)=>{
     var db = req.db;
     var collexist = 0;

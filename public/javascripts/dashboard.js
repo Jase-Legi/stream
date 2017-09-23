@@ -8,10 +8,14 @@ var doc = document,
     textareacomp = newcompany_form.getElementsByTagName('textarea'),
     compDescr = doc.getElementById('compDescr'),
     comp_creat_submit_bttn = doc.getElementById('create_comp_button'),
-    compcrturl = 'admin/compcreate/',
+    compcrturl = "admin/compcreate/",
     compcreate_wrap = doc.getElementById('compcreate_wrap'),
     invstthispop = doc.getElementById('invstthispop'),
     invstnowwrap = doc.getElementById('invstnowwrap'),
+    investoform = doc.getElementById('investoform'),
+        investoforminputs = (investoform)?investoform.children:'',
+    baseinstinthiscompurl = "admin/invest/",
+    invest_submit_bttn = doc.getElementById("invest_submit_bttn"),
     dwrraap = doc.getElementById('dwrraap'),
     comp_prof_urls = 'admin/getothercomps/',
     compny_create_close_popout = doc.getElementById('compny_create_close_popout'),
@@ -24,21 +28,59 @@ var doc = document,
     companynamespanele = doc.getElementById("companynamespanele"),
     invstnowwrapmodal_popout = doc.getElementById("invstnowwrapmodal_popout");
 
-        
-var creatnewcompprofile = function(createurl, callback){
+var show_val = function(ele,thisval){
+    ele.innerHTML = "$"+thisval;
+};
+
+var investinthiscomp = function(inputs,url,callbck){
+    //inputs = investoforminputs
+    //url = baseinstinthiscompurl+invstnowwrap.getAttribute("data-thisob-id")
+    //callbck = (e,res)=>{}
+    var jsonnames = ["amount","message"];
+    var sendvals = {};
+    var errs = 0;
+    
+    for(var p = 0; p <inputs.length;p++){
+        //console.log("tag name: "+ inputs[3].tagName);
+        //console.log("loop start");
+        if((inputs[p].tagName == "textarea" || "TEXTAREA") || (inputs[p].tagName == "input"||"INPUT")){
+            console.log("found tagnames" + inputs[p].tagName);
+            if(inputs[p].value == 0 || inputs[p].value == ""){
+                errs++;
+                console.log("error value = " + errs);
+                console.log(inputs[p].getAttribute("name") + " field is empty, please complete");
+            }else{
+                for(var n = 0; n<jsonnames.length;n++){
+                    if(jsonnames[n] == inputs[p].getAttribute("name")){
+                        sendvals[jsonnames[n]] = inputs[p].value;
+                    }
+                }
+            }
+        }
+    }
+    if(errs == 0){
+        //console.log(sendvals)
+        postthisdata(url,callbck,sendvals);
+    }else{
+        console.log("Please complete all fields.")
+    }
+    
+};
+
+var creatnewcompprofile = function(inputcop,createurl, callback){
     var errcnt = 0;
     var vals = {};
-    for(var i=0;i<inputcomp.length;i++){
-        if(inputcomp[i].getAttribute('class') != 'notincluded'){
-            if(inputcomp[i].getAttribute("type") != "range"){            
-                if(inputcomp[i].value == '') {
+    for(var i=0;i<inputcop.length;i++){
+        if(inputcop[i].getAttribute('class') != 'notincluded'){
+            if(inputcop[i].getAttribute("type") != "range"){
+                if(inputcop[i].value == '') {
                     errcnt ++;
-                    console.log(inputcomp[i].tagName+'++++');
+                    console.log(inputcop[i].tagName+'++++');
                 }
             }else{
-                if(inputcomp[i].value == 0) {
+                if(inputcop[i].value == 0) {
                     errcnt ++;
-                    console.log(inputcomp[i].tagName+'++++');
+                    console.log(inputcop[i].tagName+'++++');
                 }
             }
         }
@@ -46,11 +88,11 @@ var creatnewcompprofile = function(createurl, callback){
     
     console.log(errcnt);
     if(errcnt == 0){
-        for(var i=0;i<inputcomp.length;i++){
+        for(var i=0;i<inputcop.length;i++){
             
-            if(inputcomp[i].getAttribute('class') != 'notincluded'){
-                vals[inputcomp[i].getAttribute('name')] = inputcomp[i].value;
-                inputcomp[i].value = (inputcomp[i].getAttribute("type")=="range")?0:'';
+            if(inputcop[i].getAttribute('class') != 'notincluded'){
+                vals[inputcop[i].getAttribute('name')] = inputcop[i].value;
+                inputcop[i].value = (inputcop[i].getAttribute("type")=="range")?0:'';
             }
         }
         postthisdata(createurl,callback,vals);
@@ -61,12 +103,14 @@ var creatnewcompprofile = function(createurl, callback){
 var dispcompprofiles = function(compprofurls,divele){
 
     getjsn(compprofurls, (e, findings)=>{
+                
         if(e){
             console.log(e);
         }else{
             if(findings.error){
                 console.log(findings.error);
             }else if(findings.content){
+                
                 for(var p = 0;p<findings.content.length;p++){
                     
                     //console.log(findings.content[p]);
@@ -108,11 +152,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
     
 };
 
-/*
-var investinthiscomp = function(){
-    
-}
-*/
+///////////////////////////////
 (function() {
 //doc.addEventListener("DOMContentLoaded",function(event){
     
@@ -144,15 +184,33 @@ var investinthiscomp = function(){
     });
     
     doc.querySelector('body').addEventListener("click", (ev)=>{
+        
         if(ev.target.getAttribute("id") == "invstincmp"+ev.target.parentElement.parentElement.getAttribute("data-thisob-id")){
             console.log(ev.target.getAttribute("id"));
-            invstnowwrap.style.display ='block';
-            invstnowwrap.setAttribute("data-thisob-id",ev.target.parentElement.parentElement.getAttribute("data-thisob-id"));
+            
+            
+            investoform.setAttribute("data-thisob-id",ev.target.parentElement.parentElement.getAttribute("data-thisob-id"));
             companynamespanele.innerHTML = " " + ev.target.parentElement.parentElement.getAttribute("data-thisob-name");
             invsamountforthscmp.innerHTML = ev.target.parentElement.parentElement.getAttribute("data-thisob-amount").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             
+            invstnowwrap.style.display ='block';
+            
             
         }
+        
+        if(ev.target.getAttribute("id") == "bufferinvsclick"){
+            //console.log("it clicked!");
+            var thssurll = baseinstinthiscompurl + ev.target.parentElement.parentElement.getAttribute("data-thisob-id");
+            //console.log(thssurll);
+            investinthiscomp(investoforminputs,thssurll,(er,res)=>{
+                if(er){
+                    console.log(er);
+                }else{
+                    console.log(res);
+                }
+            });
+            
+        }        
     });
     
     //CLOSE CREATE COMPANY MODAL WINDOW
@@ -163,9 +221,9 @@ var investinthiscomp = function(){
     //CLOSE CREATE COMPANY MODAL WINDOW-- USES FUNCTION close_modal_windows FROM global.js accessed via header
     close_modal_windows([invstnowwrapmodal_popout,close_investmodal],invstnowwrap);
     ////////////////////////////////////
-    comp_creat_submit_bttn.addEventListener('click',()=>{
+    comp_creat_submit_bttn.addEventListener('click',(e)=>{
         
-        creatnewcompprofile(compcrturl,(e,info)=>{
+        creatnewcompprofile(inputcomp,compcrturl,(e,info)=>{
             if(e){
                 console.log(e+info.msg);
                 
@@ -176,12 +234,11 @@ var investinthiscomp = function(){
                 var pooop = parseInt(info.id.toString().substr(0,8), 16)*1000; 
                 var d = doc.createElement('div');
                 d.className = 'featured-investments-iconbox';
-                d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/Legiframework.png"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
+                d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                 //console.log(divele)
                 dashboardboxcont.prepend(d);    
             }
         });
     });
-    
-    
+
 })();

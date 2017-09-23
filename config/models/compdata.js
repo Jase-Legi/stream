@@ -8,7 +8,7 @@ var companyprofile = {
     profile:{
         investor:{
             status:false,
-            investments:[]
+            investments:[{compid:String, amount:0, message:String}]
         },
         fundraiser:{
             verified:false,

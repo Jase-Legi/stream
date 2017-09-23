@@ -122,7 +122,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// sets port 8080 to default or unless otherwise specified in the environment
+// sets port 8000 to default or unless otherwise specified in the environment
 //var port = normalizePort(process.env.PORT || 8000);
 //app.set( 'port', ( process.env.PORT || 8000));
 

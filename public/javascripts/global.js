@@ -138,6 +138,7 @@ var loginn = function(postfunct,div,data){
             }
         }
     }
+    
     //console.log(data);
     if(errcount === 0){
         var errcount = 0;
