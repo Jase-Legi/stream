@@ -29,7 +29,10 @@ var doc = document,
     invstnowwrapmodal_popout = doc.getElementById("invstnowwrapmodal_popout");
 
 var show_val = function(ele,thisval){
-    ele.innerHTML = "$"+thisval;
+    //win.addEventListener("mousemove",()=>{
+        ele.innerHTML = "$"+thisval.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //});
+    
 };
 
 var investinthiscomp = function(inputs,url,callbck){

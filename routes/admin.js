@@ -41,7 +41,7 @@ var callback = function(response) {
 var request = https.get(options, callback);
 request.end();
 */
-
+/*
 router.post("/invest/:id",isloggedin, (req, res, next)=>{
     var objid = rq.params.id;
     var db = req.db;
@@ -54,7 +54,7 @@ router.post("/invest/:id",isloggedin, (req, res, next)=>{
         });
     });
 });
-
+*/
 
 router.post('/compcreate/',isloggedin, (req, res, next)=>{
     var db = req.db;
