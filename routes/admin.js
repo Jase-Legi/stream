@@ -41,22 +41,31 @@ var callback = function(response) {
 var request = https.get(options, callback);
 request.end();
 */
-/*
-router.post("/invest/:id",isloggedin, (req, res, next)=>{
-    var objid = rq.params.id;
+
+router.post("/invest/:id", /*isloggedin,*/ (req, res, next)=>{
+    var objid = req.params.id;
+    console.log(objid);
     var db = req.db;
-    var objectid = db.ObjectId;
+    var objectid = req.ObjectId;
     var collction = db.collection("comp");
-    //var cursor = collction.find();
-    db.collection("comp",(err, comp)=>{
+    var cursor = collction.find({_id : objectid(objid)});
+    cursor.toArray((e, objs)=>{
+        if(e){
+            console.log(e);
+        }
+        console.log(objs);
+        res.send({msg:objs})
+    });
+    /*db.collection("comp",(err, comp)=>{
         comp.find({_id: objectid(objid)},(er, thisobj)=>{
-            console.log(thisobj)
+            //console.log(thisobj);
+            res.send({msg:thisobj});
         });
     });
+    */
 });
-*/
 
-router.post('/compcreate/',isloggedin, (req, res, next)=>{
+router.post( "/compcreate/",isloggedin, (req, res, next)=>{
     var db = req.db;
     var collexist = 0;
     

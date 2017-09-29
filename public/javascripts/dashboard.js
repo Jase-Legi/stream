@@ -4,8 +4,8 @@ var doc = document,
     win = window,
     new_form = doc.getElementById("new_form"),
     inputcomp = new_form.children,
-    selectcomp = newcompany_form.getElementsByTagName("select"),
-    textareacomp = newcompany_form.getElementsByTagName('textarea'),
+    //selectcomp = newcompany_form.getElementsByTagName("select"),
+    //textareacomp = newcompany_form.getElementsByTagName('textarea'),
     compDescr = doc.getElementById('compDescr'),
     comp_creat_submit_bttn = doc.getElementById('create_comp_button'),
     compcrturl = "admin/compcreate/",
@@ -13,7 +13,7 @@ var doc = document,
     invstthispop = doc.getElementById('invstthispop'),
     invstnowwrap = doc.getElementById('invstnowwrap'),
     investoform = doc.getElementById('investoform'),
-        investoforminputs = (investoform)?investoform.children:'',
+    investoforminputs = (investoform) ? investoform.children : '',
     baseinstinthiscompurl = "admin/invest/",
     invest_submit_bttn = doc.getElementById("invest_submit_bttn"),
     dwrraap = doc.getElementById('dwrraap'),
@@ -28,34 +28,31 @@ var doc = document,
     companynamespanele = doc.getElementById("companynamespanele"),
     invstnowwrapmodal_popout = doc.getElementById("invstnowwrapmodal_popout");
 
-var show_val = function(ele,thisval){
-    //win.addEventListener("mousemove",()=>{
-        ele.innerHTML = "$"+thisval.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //});
-    
+var show_val = function (ele, thisval) {
+    var dynamic_id = doc.getElementById("dynamic_id");
+    ele.innerHTML = (thisval > 0) ? (dynamic_id.style.backgroundColor = "red", "<span style='margin:0px 2%; padding:0px;width:auto;clear:both;float:none;'>$" + thisval.replace(/\B(?=(\d{3})+(?!\d))/g, ","))+"</span>" : (dynamic_id.style.backgroundColor = "");
 };
 
-var investinthiscomp = function(inputs,url,callbck){
+var investinthiscomp = function (inputs, url, callbck) {
     //inputs = investoforminputs
     //url = baseinstinthiscompurl+invstnowwrap.getAttribute("data-thisob-id")
     //callbck = (e,res)=>{}
-    var jsonnames = ["amount","message"];
-    var sendvals = {};
-    var errs = 0;
+    var jsonnames = ["amount", "message"], sendvals = {}, errs = 0, p, n;
     
-    for(var p = 0; p <inputs.length;p++){
+    for (p = 0; p < inputs.length; p++) {
         //console.log("tag name: "+ inputs[3].tagName);
         //console.log("loop start");
-        if((inputs[p].tagName == "textarea" || "TEXTAREA") || (inputs[p].tagName == "input"||"INPUT")){
-            console.log("found tagnames" + inputs[p].tagName);
-            if(inputs[p].value == 0 || inputs[p].value == ""){
+        if ((inputs[p].tagName === "textarea" || "TEXTAREA") || (inputs[p].tagName === "input" || "INPUT")) {
+            //console.log("found tagnames" + inputs[p].tagName);
+            if (inputs[p].value === 0 || inputs[p].value === "") {
                 errs++;
-                console.log("error value = " + errs);
-                console.log(inputs[p].getAttribute("name") + " field is empty, please complete");
-            }else{
-                for(var n = 0; n<jsonnames.length;n++){
-                    if(jsonnames[n] == inputs[p].getAttribute("name")){
+                //console.log("error value = " + errs);
+                //console.log(inputs[p].getAttribute("name") + " field is empty, please complete");
+            } else {
+                for (n = 0; n < jsonnames.length; n++) {
+                    if (jsonnames[n] === inputs[p].getAttribute("name")) {
                         sendvals[jsonnames[n]] = inputs[p].value;
+                        console.log(sendvals)
                     }
                 }
             }
@@ -71,18 +68,17 @@ var investinthiscomp = function(inputs,url,callbck){
 };
 
 var creatnewcompprofile = function(inputcop,createurl, callback){
-    var errcnt = 0;
-    var vals = {};
-    for(var i=0;i<inputcop.length;i++){
+    var errcnt = 0, vals = {}, i;
+    for(i=0;i<inputcop.length;i++){
         if(inputcop[i].getAttribute('class') != 'notincluded'){
             if(inputcop[i].getAttribute("type") != "range"){
-                if(inputcop[i].value == '') {
-                    errcnt ++;
+                if(inputcop[i].value === "") {
+                    errcnt++;
                     console.log(inputcop[i].tagName+'++++');
                 }
             }else{
                 if(inputcop[i].value == 0) {
-                    errcnt ++;
+                    errcnt++;
                     console.log(inputcop[i].tagName+'++++');
                 }
             }
@@ -91,7 +87,7 @@ var creatnewcompprofile = function(inputcop,createurl, callback){
     
     console.log(errcnt);
     if(errcnt == 0){
-        for(var i=0;i<inputcop.length;i++){
+        for(i=0;i<inputcop.length;i++){
             
             if(inputcop[i].getAttribute('class') != 'notincluded'){
                 vals[inputcop[i].getAttribute('name')] = inputcop[i].value;
@@ -196,6 +192,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
             companynamespanele.innerHTML = " " + ev.target.parentElement.parentElement.getAttribute("data-thisob-name");
             invsamountforthscmp.innerHTML = ev.target.parentElement.parentElement.getAttribute("data-thisob-amount").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             
+            doc.getElementById("invstincompAmount").setAttribute("max", ev.target.parentElement.parentElement.getAttribute("data-thisob-amount"));
             invstnowwrap.style.display ='block';
             
             
@@ -209,7 +206,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
                 if(er){
                     console.log(er);
                 }else{
-                    console.log(res);
+                    console.log(res.msg);
                 }
             });
             

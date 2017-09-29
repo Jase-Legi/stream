@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
-var router = express.Router();
-var bcrypt = require('bcrypt-nodejs');
+//var router = express.Router();
+//var bcrypt = require('bcrypt-nodejs');
 
 var companyprofile = {
     email:String,
