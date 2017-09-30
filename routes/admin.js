@@ -48,7 +48,7 @@ router.post("/invest/:id", /*isloggedin,*/ (req, res, next)=>{
     var db = req.db;
     var objectid = req.ObjectId;
     var collction = db.collection("comp");
-    var cursor = collction.find({_id : objectid(objid)});
+    /*var cursor = collction.find({_id : objectid(objid)});
     cursor.toArray((e, objs)=>{
         if(e){
             console.log(e);
@@ -56,13 +56,23 @@ router.post("/invest/:id", /*isloggedin,*/ (req, res, next)=>{
         console.log(objs);
         res.send({msg:objs})
     });
-    /*db.collection("comp",(err, comp)=>{
-        comp.find({_id: objectid(objid)},(er, thisobj)=>{
+    */
+    //companymodel.profile.fundraiser.investors = req.body;
+var invstrdata = req.body;
+    invstrdata.email = req.session.user.local.email
+    
+    console.log(invstrdata);
+    db.collection("comp",(err, comp)=>{
+        if(err){
+            console.log(err);
+        }
+        comp.update({_id: objectid(objid)}, {$push : {"profile.investors": invstrdata}}, (er, thisobj)=>{
             //console.log(thisobj);
             res.send({msg:thisobj});
         });
+        
     });
-    */
+    
 });
 
 router.post( "/compcreate/",isloggedin, (req, res, next)=>{
@@ -154,6 +164,7 @@ router.get('/getothercomps/', isloggedin, (req, res, next)=>{
     var cursr =  colltn.find();
     var tempjsn = {};
     var bb=0, findss = [];
+    //console.log("\n user session: " + req.session.user._id +" --");
     cursr.toArray((er, findings)=>{
         for(var f = (findings.length-1);f>-1; f--){
             //console.log(findings[f]);

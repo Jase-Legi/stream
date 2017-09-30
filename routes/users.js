@@ -87,8 +87,8 @@ router.post('/login/', isloggedin, (req, res,next)=>{
                     if(req.session.user == usr[p]){
 
                         musjfkhgwhgh = true;
-                        console.log(req.session);
-                        console.log(req.session.user);
+                        //console.log(req.session);
+                        //console.log(req.session.user);
                     }else{
                         musjfkhgwhgh = false;
                     }
@@ -174,7 +174,7 @@ router.post('/signup/',isloggedin,(req, res)=>{
             });
             
         }else{
-            for(var v=0;v<dbinstance;v++){
+            for(var v=0; v < dbinstance; v++){
                 console.log(item[index["_"+v]]);
             }
             res.send({msg: "alreadyexsits"});
