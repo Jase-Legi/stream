@@ -18,10 +18,10 @@ a {
   text-decoration: none;
 }
 #warpdat{
-    margin:70px 0px 0px 0px ;box-sizing: border-box;min-height: 80vh;text-align: left; 
+    margin:70px 0px 0px 0px ;box-sizing: border-box;min-height: 90vh;text-align: left; 
 }
 .founderinfobox{
-    margin: 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: antiquewhite;
+    margin: 0px 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: rgba(98, 174, 201,.7);height:100%;
 }
 
 .abouttitle{
