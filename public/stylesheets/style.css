@@ -64,6 +64,10 @@ a {
     background: url(../images/background/gradientbckgrnd.svg) center;font-size:14px;background-size:cover;color:#DDC7E0;font-size:15px;height: auto;min-height: 240px;box-sizing: border-box;
 }
 
+#besttalents{
+    background-color:rgba(52,14,48,.5);font-size:15px;height: auto;min-height: 240px;box-sizing: border-box;
+}
+
 .boxcont{
     width: 80%;margin: 0px auto; height: auto;display: inline-block;max-width: 600px;word-wrap: break-word;
 }
