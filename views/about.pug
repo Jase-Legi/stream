@@ -4,12 +4,14 @@ block content
     include header
     
     #warpdat
-        h1.abouttitle= title
+        .aboutsegments
+            h1.abouttitle= title
         //CONTENT
-        #missionstatement.aboutsegments
-            .aboutsegmentscont
-                h1 Mission Statement
-                span Ziggurat funding provides the unimaginable opportunity to access mass investors' funds necessary to fuel highly selective startups' with sustainable growth, promoting their unique successes, and secure mutual returns that guarantee successes.
+        .aboutsegments
+            #missionstatement
+                .aboutsegmentscont
+                    h1 Mission Statement
+                    span Ziggurat funding provides the unimaginable opportunity to access mass investors' funds necessary to fuel highly selective startups' with sustainable growth, promoting their unique successes, and secure mutual returns that guarantee successes.
             #foundersinfodiv
                 .aboutsegmentscont
                     h1 Founders
