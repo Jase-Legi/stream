@@ -1,13 +1,25 @@
-extends layout
+extends aboutlayout
 
 block content
     include header
     
-    #warpdat(style="margin:100px;")
-        h1= title
+    #warpdat
+        h1.abouttitle= title
         //CONTENT
-        // Co-founders Cal & Pierre
-        //BIO below
-        //Mission STatement
+        #missionstatement.aboutsegments
+            .aboutsegmentscont
+                h2 Mission Statement
+                span Ziggurat funding provides the unimaginable opportunity to access mass investors' funds necessary to fuel highly selective startups' with sustainable growth, promoting their unique successes, and secure mutual returns that guarantee successes.
+            #foundersinfodiv
+                .aboutsegmentscont
+                    h2 Founders
+                    .founderinfobox
+                        h3 Calvester Legister
+                        h4 Bio
+                    .founderinfobox
+                        h3 Pierre 
+                        h4 Bio
+            h2 Mission Statement
+            //Mission STatement
         
     include footer

@@ -18,13 +18,13 @@ var myPagesmsg = {
     },
     about:{
         loggedin:{ 
-            title:'About Us',
+            title:'ABOUT US',
             msg: 'dooropen',
             //loginnow:true,
             mypageurl:'/about'
         },
         loggedout:{ 
-            title:'About Us',
+            title:'ABOUT US',
             msg: 'doorclosed',
             //loginnow:true,
             mypageurl:'/about'
