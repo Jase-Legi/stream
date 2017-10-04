@@ -64,6 +64,14 @@ a {
     background: url(../images/background/gradientbckgrnd.svg) center;font-size:14px;background-size:cover;color:#DDC7E0;font-size:15px;height: auto;min-height: 240px;box-sizing: border-box;
 }
 
+#gotoforum{
+    background: url(../images/background/gradientbckgrnd3.svg) center; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;height: 40px;
+}
+
+.movingtext{
+    color:white;font-weight:bold;font-size:30px;
+}
+
 #besttalents{
     background-color:rgba(52,14,48,.5);font-size:15px;height: auto;min-height: 240px;box-sizing: border-box;
 }
