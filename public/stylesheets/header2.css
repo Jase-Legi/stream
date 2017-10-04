@@ -106,7 +106,7 @@ a {
 
 
 #menupopout{
-    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: none;background-color:rgba(52,14,48,.95);
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;/*background-color: #340E30;*/overflow:hidden;display: none;background-color:rgba(52,14,48,.95);
 }
 
 #menucont{

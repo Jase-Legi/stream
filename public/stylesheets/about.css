@@ -34,15 +34,15 @@ a {
 }
 
 .abouttitle{
-    text-align: center;color: #333333;
+    text-align: center;color:  #340E30;font-weight: 900;
 }
 
 .aboutsegments{
-    width:100%;color: #FFF;/*background-color:#F2F2F2;*/height:auto;padding:10px 0px;text-align:center;display:inline-block;
+    width:100%;color: #FFF;/*background-color:#F2F2F2;*/height:auto;padding:10px 0px;text-align:center;display:inline-block;word-wrap: break-word;
 }
 
 .aboutsegmentscont{
-    max-width: 1000px;margin: 0px auto;clear: both;float: none;font-weight:900;
+    max-width: 1000px;margin: 0px auto;clear: both;float: none;font-weight:bold;
 }
 
 #missionstatement{
