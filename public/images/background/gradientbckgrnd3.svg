@@ -219,7 +219,7 @@
 </pattern>
 <radialGradient id="SVGID_1_" cx="654.1667" cy="68.75" r="1014.9809" gradientUnits="userSpaceOnUse">
 	<stop  offset="0" style="stop-color:#781F81"/>
-	<stop  offset="1" style="stop-color:#662D91"/>
+	<stop  offset="1" style="stop-color:#5700B2"/>
 </radialGradient>
 <rect y="-250" class="st2" width="1000" height="1000"/>
 <pattern  id="SVGID_2_" xlink:href="#Sticks" patternTransform="matrix(1 0 0 -1 -29.1 -18186.1973)">
