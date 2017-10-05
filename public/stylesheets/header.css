@@ -9,8 +9,10 @@
     font-weight:bold;
 }
 
+@-ms-viewport{width:auto!important}
+
 body {
-    margin: 0px;padding: 0px; clear: both;width: calc(100vw - (100vw - 100%));height: 100%;font-size:12px;font-family:tahoma; color: #414042;
+    margin: 0px;padding: 0px; clear: both;width: 100%!important;height: 100%;font-size:12px;font-family:tahoma; color: #414042;box-sizing: border-box;
 }
 
 a {
@@ -19,61 +21,94 @@ a {
  }
 
 #headrwrapper{
-    width:calc(100vw - (100vw - 100%));height:100%;min-width: 140px;
+    width:100%!important;height:73px;min-width: 140px;
 }
 
 #header{
-    height: 50px; width: calc(100vw - (100vw - 100%));position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 3px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 2px 6px #111111;min-width: 140px;
+    height: 73px; width:  100%!important;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 3px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 2px 6px #111111;min-width: 140px;box-sizing: border-box;
 }
 
-@media all and (min-width: 300px) {
+@media all and (min-width: 520px) {
+    .formfillautocheck{
+        display:inline-block!important;height:50px;width:110px;clear:both;max-width: 
+    }
+    
     #logoheader{
-        top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;
+        top:0px;opacity:1;height: 50px;min-height: 50px;width: auto;max-width: 175px; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;position: relative;
     }
 
     #menusymbol{
-        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
+        cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;display: inline-block;
     }
 
     .buttoncontt{
-        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+        cursor: pointer;width:50px; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;clear: both;display: inline-block;
     }
     #menuheader{
-        height: 50px;width: auto;margin: 0px 0px;padding: none;float: right;display: inline-block;
+        height: 50px;max-height: 50px;width: auto;margin: 0px;padding: none;display: inline-block;position: absolute;top: 10px;right: 0px;
+    }  
+}
+
+@media all and (min-width: 300px) and (max-width: 520px) {
+    .formfillautocheck{
+        display: none !important;
+    }
+    
+    #logoheader{
+        top:0px;opacity:1;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;overflow: hidden;position:relative;
+    }
+
+    #menusymbol{
+        cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;display: inline-block;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width:50px; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;clear: both;display: inline-block;
+    }
+    #menuheader{
+        height: 50px;max-height: 50px;width: auto;margin: 0px;padding: none;display: inline-block;position: absolute;top: 10px;right: 0px;
     }
 }
 
 @media all and (max-width: 300px) and (min-width: 170px) {
+    .formfillautocheck{
+        display: none!important;
+    }
+    
     #logoheader{
-        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;overflow: hidden;
+        top:0px;opacity:1;height: 50px;width: 50px;max-width: 50px;margin: 10px 0px 0px 10px;text-decoration: none;cursor: pointer;overflow: hidden;position:absolute;
     }
     #menusymbol{
-        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 5px 7.5px 5px;clear: both;max-width: 45px;
+        cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 5px 7.5px 5px;clear: both;max-width: 45px;display: inline-block;
     }
 
     .buttoncontt{
-        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+        cursor: pointer;width: 50px; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;display: inline-block;
     }
     
     #menuheader{
-        height: 50px;width: auto;margin: 0px 2px;padding: none;float: right;display: inline-block;
+        height: 50px;max-height: 50px;width: auto;margin: 0px;padding: none;display: inline-block;position: absolute;top: 10px;right: 2px;
     }
 }
 
 @media all and (max-width: 170px) and (min-width: 0px) {
+    .formfillautocheck{
+        display: none!important ;
+    }
+    
     #logoheader{
-        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 1px;text-decoration: none;cursor: pointer;overflow: hidden;
+        top:0px;opacity:1;height: 50px;width: 50px;max-width: 50px;margin: 10px 0px 0px 1px;text-decoration: none;cursor: pointer;overflow: hidden;position:absolute;
     }
     #menusymbol{
-        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 1px 7.5px 1px;clear: both;max-width: 45px;
+        cursor: pointer;align-items: center;max-width:35px;width: 35px;padding: 7.5px 1px 7.5px 1px;clear: both;
     }
 
     .buttoncontt{
-        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+        cursor: pointer;width: 40px; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;
     }
     
     #menuheader{
-        height: 50px;width: auto;margin: 0px 1px;padding: none;float: right;display: inline-block;
+        height: 50px;max-height: 50px;width: auto;margin: 0px;padding: none;display: inline-block;position: absolute;top: 10px;right: 1px;
     }
 }
 
@@ -82,7 +117,7 @@ a {
 }
 
 .bar1,.bar2,.bar3{
-    width: 35px;height: 5px; background-color: #114684;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
+    width: 100%;height: 5px; background-color: #114684;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
 }
 
 #menusymbol:hover .barrr, #menusymbol:active .barrr  {

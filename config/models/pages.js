@@ -54,10 +54,10 @@ var myPagesmsg = {
             mypageurl:'/investors'
         },
         loggedout:{ 
-            title:'Investors',
+            title:'Zuggerat',
             msg: 'doorclosed',
             loginnow:true,
-            mypageurl:'/investors'
+            mypageurl:'/'
         }
     }
 };

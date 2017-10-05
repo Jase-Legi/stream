@@ -12,9 +12,11 @@ block content
     #headrwrapper
         #header
             a(href="/",rel="/about", id="logoheader")
-                img#legilogo(height='100%', src=srcc)
-
+                img#legilogo(height='100%', src=srcc)  
             #menuheader
+                .formfillautocheck
+                    fieldest(style="height:100%;width:100%;")
+                        input(type="text", placeholder="Email address", style="height:35px;margin:7.5px 0px;border-radius:5px;border:none;color:#999999;width:100%;") 
                 .buttoncontt
                     include login
                 #menusymbol
@@ -33,7 +35,6 @@ block content
                     h1 Top Investors
                 .menue-item
                     h1 Find a Startup
-    #spaceitoutdivtomakesurpageloawer(style="margin:0px 0px 70px 0px;")
 
     if mypageurl == '/'
         include index
