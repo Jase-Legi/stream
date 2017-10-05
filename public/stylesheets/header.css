@@ -28,9 +28,17 @@ a {
     height: 73px; width:  100%!important;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 3px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 2px 6px #111111;min-width: 140px;box-sizing: border-box;
 }
 
+.formfillautocheck fieldset{
+    height:50px;width:100px;border: none;box-sizing:border-box;padding: 7.5px 0px;margin: 0px;
+}
+
+.formfillautocheck fieldset input{
+    height:35px;margin: 0px;border-radius:5px;border:none;color:#999999;width:100px;box-sizing: border-box;
+}
+
 @media all and (min-width: 520px) {
     .formfillautocheck{
-        display:inline-block!important;height:50px;width:110px;clear:both;max-width: 
+        display:none;height:50px;width:100px;clear:both;margin: 0px;padding: 0px;box-sizing: border-box;
     }
     
     #logoheader{
