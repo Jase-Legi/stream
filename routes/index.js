@@ -4,7 +4,7 @@ var userloggedinfo = require('../config/models/user.js');
 var myPagesmsg = require('../config/models/pages.js');
 var isloggedin = userloggedinfo.methods.isloggedin;
 /* GET home page. */
-var myPages = ["/","/about","/dashboard","/investors"];
+var myPages = ["/","/about","/dashboard", "/investors"];
 
 
 
@@ -17,6 +17,10 @@ for(var o = 0; o < myPages.length;o++){
         }
         
         if(req.originalUrl == '/dashboard'){
+            //myPagesmsg.dashboard.loggedin.data.id = null;
+            console.log(myPagesmsg.dashboard.loggedin.data)
+            
+            
             res.render('dashboard',myPagesmsg.dashboard.loggedin);
         }
         

@@ -35,6 +35,8 @@ var myPagesmsg = {
             title:'Dashboard',
             msg: 'dooropen',
             loginnow:false,
+            showcomp:Boolean,
+            data:{},
             mypageurl:'/dashboard'
         },
         loggedout:{ 

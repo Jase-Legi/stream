@@ -183,11 +183,11 @@ var populateTable = function(url,divv,msg, deldiv){
             if(e == null){
 
                 //var data = /*JSON.parse(data)*/
-                if(data.msg ==='doorclosed'){
+                if(data.msg === "doorclosed"){
                     console.log('you can\'t do that because you\'re not logged in. msg returned:'+data.msg);
                 }
 
-                if(msg === 'deleted'){
+                if(msg.stat === "deleted"){
                     var arr = deldiv.match(/del(.*)/);
                     if (arr != null) { // Did it match?
                         var indexofdiv = parseInt(arr[1]);
@@ -216,7 +216,7 @@ var populateTable = function(url,divv,msg, deldiv){
                             for(var key in data[i].local){
 
                                 if (key === nameofkey){
-                                    if(msg === 'update' || msg === 'newuser' ){
+                                    if(msg.stat === "update" || msg.stat === "newuser"){
                                         if(i === (data.length-1)){
                                             var z = document.createElement('div');
                                             z.className = "content";
@@ -236,7 +236,7 @@ var populateTable = function(url,divv,msg, deldiv){
 
                             }
 
-                            if(msg === 'update' || msg === 'newuser'){
+                            if(msg.stat === "update" || msg.stat === "newuser"){
                                 if(i === (data.length-1)){
 
                                     if(nameofkey === "delete"){
@@ -338,14 +338,14 @@ var delmember = function(url, callbck, divv){
 
             addnewMEMBER(addmemberurl,(e, data)=>{
                 if(e == null){
-                    console.log(data.msg);
-                    populateTable(url,usrlist,data.msg);
+                    //console.log(data.msg);
+                    //populateTable(url,usrlist,data.msg);
                     
                     for(var i=0; i<inputs.length; i++){
                         inputs[i].value = '';
                     }
                     
-                    window.location.href = '/dashboard';
+                    window.location.href = "/dashboard";
                 }else{
                     console.log('error occured at global in admember function at line 280. Error deatails:'+data.msg)
                 }
@@ -360,7 +360,7 @@ var delmember = function(url, callbck, divv){
         if (event.target.getAttribute('class') === "delthis") {
             
             delmember(delmemberurl, (er, data)=>{
-                console.log(event.target.getAttribute('id'));
+                //console.log(event.target.getAttribute('id'));
 
                 if(er === null ){
                     console.log(data.msg);

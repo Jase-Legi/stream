@@ -2,6 +2,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
+var mypages = require('../config/models/pages.js');
 var user = require('../config/models/user.js');
 var isloggedin = user.methods.isloggedin;
 //var session = require('express-session');
@@ -160,12 +161,21 @@ router.post('/signup/',isloggedin,(req, res)=>{
                     req.session.user = user;
                     //console.log(r)
                     //user.local.password = '';
+                    var resjson ={};
+                    //
+                    //var hashedid = user.methods.generatehash(user._id);
+                    resjson.id = user._id;
+                    
+                    resjson.stat = "newuser";
+                    resjson.info = user;
+                    
+                    mypages.dashboard.loggedin.showcomp = true;
                     if(user._id){
                         delete user._id;
                     }
-                    console.log(user);
+                    //console.log(user);
                     
-                    res.send({msg : "newuser"});
+                    res.send({msg : resjson});
                     
                 }else{
                     res.send({msg: "ERROR occured, error status:" + err});

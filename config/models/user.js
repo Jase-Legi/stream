@@ -88,6 +88,11 @@ Userschema.methods.isloggedin = function(req, res, next){
             return res.redirect('/');
         }
         
+        if(req.originalUrl === '/dashboard/:id'){
+            //myPagesmsg.index.loggedout.loginnow = true;
+            return res.redirect('/');
+        }
+        
         if(req.originalUrl === '/users/userinfo/'){
             res.send({msg: 'doorclosed',loginnow: false})
             //next();
