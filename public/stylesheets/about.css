@@ -29,10 +29,6 @@ a {
     font-size: 16px;
 }
 
-.founderinfobox{
-    margin: 0px 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: rgba(98, 174, 201,.5);height:100%;
-}
-
 .abouttitle{
     text-align: center;color:  #FFFFFF;font-weight: 900;font-size: 40px;
 }
@@ -59,4 +55,26 @@ a {
 
 #missionstatement{
     height: auto;padding: 15px 5px;box-sizing: border-box;
+}
+
+.founderinfobox{
+    margin: 0px 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: rgba(98, 174, 201,.5);height:100%;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+
+
+.founderinfobox .front{
+
+}
+
+.founderinfobox .back{
+    tra
 }
