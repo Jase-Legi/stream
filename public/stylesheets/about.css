@@ -26,7 +26,7 @@ a {
 }
 
 #actualmissionstatement{
-    
+    font-size: 16px;
 }
 
 .founderinfobox{
@@ -34,7 +34,7 @@ a {
 }
 
 .abouttitle{
-    text-align: center;color:  #FFFFFF;font-weight: 900;
+    text-align: center;color:  #FFFFFF;font-weight: 900;font-size: 40px;
 }
 
 .aboutsegments{
@@ -54,7 +54,7 @@ a {
 }
 
 .aboutsegmentscont h1 {
-    font-size: 30px;
+    font-size: 40px;
 }
 
 #missionstatement{
