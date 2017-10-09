@@ -42,7 +42,7 @@ var request = https.get(options, callback);
 request.end();
 */
 
-router.post("/invest/:id", /*isloggedin,*/ (req, res, next)=>{
+router.post("/invest/:id", isloggedin, (req, res, next)=>{
     var objid = req.params.id;
     console.log(objid);
     var db = req.db;
@@ -67,6 +67,13 @@ var invstrdata = req.body;
             console.log(err);
         }
         comp.update({_id: objectid(objid)}, {$push : {"profile.investors": invstrdata}}, (er, thisobj)=>{
+            if(er){
+                console.log("An error occured:" + er)
+            }else{
+                var cllctn = db.collection("user");
+                var cursr =  cllctn.fint({"local.email" : req.session.user.local.email});
+                
+            }
             //console.log(thisobj);
             res.send({msg:thisobj});
         });
