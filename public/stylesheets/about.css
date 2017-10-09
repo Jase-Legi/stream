@@ -26,7 +26,7 @@ a {
 }
 
 #actualmissionstatement{
-    font-weight:900;
+    
 }
 
 .founderinfobox{
@@ -34,7 +34,7 @@ a {
 }
 
 .abouttitle{
-    text-align: center;color:  #340E30;font-weight: 900;
+    text-align: center;color:  #FFFFFF;font-weight: 900;
 }
 
 .aboutsegments{
@@ -42,7 +42,7 @@ a {
 }
 
 .aboutsegmentscont{
-    max-width: 800px;margin: 0px auto;clear: both;float: none;font-weight:bold;
+    max-width: 800px;margin: 0px auto;clear: both;float: none;
 }
 
 #missionstatement{
