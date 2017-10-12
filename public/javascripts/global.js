@@ -327,6 +327,9 @@ var delmember = function(url, callbck, divv){
 };
 
 (function() {
+    function flip() {
+        this.classList.toggle('flipped');
+    }
 //doc.addEventListener("DOMContentLoaded",function(event){
     console.log(window.location.pathname);
     //setInterval(populateTable(url,usrlist), 1000);

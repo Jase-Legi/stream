@@ -58,23 +58,57 @@ a {
 }
 
 .founderinfobox{
-    margin: 0px 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: rgba(98, 174, 201,.5);height:100%;
+    margin: 0px 1%; width: 46%;box-sizing: border-box;display: inline-block;clear: both;float: none;border-radius: 5px;background-color: rgba(98, 174, 201,.5);height:auto;
+    perspective: 1000px;
+    
+    /*-webkit-transform-origin: 50% 50%;
+*/}
+
+.founderinfobox:hover .flipper, .founderinfobox.hover .flipper {
+		transform: rotateY(180deg);
+}
+
+.flipper{
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
     transition: transform 1s;
+    transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 50% 50%;
+    height: auto;clear: both;position: relative;
+}
+
+.front, .back{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    top: 0px;
 }
 
 
-.founderinfobox .front{
-
+.front{
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY( 0deg );
+    -moz-transform: rotateY( 0deg );
+    -o-transform: rotateY( 0deg );
+    z-index: 2;width: auto;
 }
 
-.founderinfobox .back{
-    tra
+.back{
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    top: 0px;position: absolute;
+    padding: 10px;
+}
+
+.founderinfobox.flipped{
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
 }
