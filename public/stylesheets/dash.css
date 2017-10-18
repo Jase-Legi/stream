@@ -102,7 +102,7 @@ textarea {
 }
 
 .featured-investments-iconbox{
-    opacity:1;clear:both; display:block; float: none; height: 250px;width: 100%;max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;overflow : hidden;
+    opacity:1;clear:both; display:block; float: none; height: 280px;width: 100%;max-width:1000px; margin: 0px 0px 10px 0px;cursor:pointer;background-color: #FFFFFF;padding: 5px;box-sizing: border-box;border: 1px solid #F2F2F2;border-radius: 2px;box-shadow: 0px 1px 2px #999999;overflow : hidden;
 }
 
 .featured-investments-logo{

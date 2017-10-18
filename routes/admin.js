@@ -71,7 +71,7 @@ var invstrdata = req.body;
                 console.log("An error occured:" + er)
             }else{
                 var cllctn = db.collection("user");
-                var cursr =  cllctn.fint({"local.email" : req.session.user.local.email});
+                var cursr =  cllctn.find({"local.email" : req.session.user.local.email});
                 
             }
             //console.log(thisobj);
@@ -115,10 +115,10 @@ router.post( "/compcreate/",isloggedin, (req, res, next)=>{
     var crsor = collction.find();
     var occrence;
     companymodel.email=eml;
-    companymodel.profile.fundraiser.compname = req.body.compname;
-    companymodel.profile.fundraiser.industry = req.body.industry;
-    companymodel.profile.fundraiser.amount = req.body.amount;
-    companymodel.profile.fundraiser.description = req.body.description;
+    companymodel.profile.compname = req.body.compname;
+    companymodel.profile.industry = req.body.industry;
+    companymodel.profile.amount = req.body.amount;
+    companymodel.profile.description = req.body.description;
     //console.log(companymodel);
     
     crsor.toArray((e,usr)=>{

@@ -118,11 +118,11 @@ var dispcompprofiles = function(compprofurls,divele){
                     d.className = 'featured-investments-iconbox';
                     d.innerHTML = (findings.sessemail == findings.content[p].email)?'':'<div id="invstthispop'+findings.content[p]._id+'" class="pluss" title="Invest in this company!">'
                     +'<img id="invstincmp'+findings.content[p]._id+'" class="svggg" height="100%" src="/images/iibanc resources/icons/invsticon.svg"/></div>';
-                    d.innerHTML +='<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.fundraiser.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
+                    d.innerHTML +='<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.description + '</p><span>Seeking: $' + parseInt(findings.content[p].profile.amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</span></br><div style="height:6px;width:100%;margin: 3px auto;background-color:red;border-radius:3px;"><div style="height:100%;width:25%;background-color:green;border-radius:3px;"></div></div><p style="font-size:9px;margin:0px auto;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     d.setAttribute("data-thisob-id", findings.content[p]._id);
-                    d.setAttribute("data-thisob-name", findings.content[p].profile.fundraiser.compname);
-                    d.setAttribute("data-thisob-amount", findings.content[p].profile.fundraiser.amount);
+                    d.setAttribute("data-thisob-name", findings.content[p].profile.compname);
+                    d.setAttribute("data-thisob-amount", findings.content[p].profile.amount);
                     divele.appendChild(d);
                     
                 }
@@ -234,7 +234,7 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
                 var pooop = parseInt(info.id.toString().substr(0,8), 16)*1000; 
                 var d = doc.createElement('div');
                 d.className = 'featured-investments-iconbox';
-                d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.fundraiser.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.fundraiser.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
+                d.innerHTML = '<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + info.comp.profile.compname+ '</h4><p style="margin:0px;">email: ' + info.comp.email+ '<br/>bio:' + info.comp.profile.description + '</p><p style="font-size:9px;">Created: '+ weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                 //console.log(divele)
                 dashboardboxcont.prepend(d);    
             }
