@@ -58,6 +58,7 @@ router.post("/invest/:id", isloggedin, (req, res, next)=>{
     });
     */
     //companymodel.profile.fundraiser.investors = req.body;
+    
 var invstrdata = req.body;
     invstrdata.email = req.session.user.local.email
     
@@ -66,7 +67,7 @@ var invstrdata = req.body;
         if(err){
             console.log(err);
         }
-        comp.update({_id: objectid(objid)}, {$push : {"profile.investors": invstrdata}}, (er, thisobj)=>{
+        comp.update({_id: objectid(objid)}, {$push : {"profile.investors": invstrdata}, $inc : {"profile.raised":parseFloat(invstrdata.amount)}}, (er, thisobj)=>{
             if(er){
                 console.log("An error occured:" + er)
             }else{
@@ -182,7 +183,7 @@ router.get('/getothercomps/', isloggedin, (req, res, next)=>{
             console.log(er);
             res.send({error:'Error occured : '+er});
         }else{
-            console.log(req.session.user);
+            console.log(/*req.session.user*/findss);
             res.send({content:findss, sessemail:req.session.user.local.email});
         }
     });

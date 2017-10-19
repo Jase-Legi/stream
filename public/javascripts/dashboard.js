@@ -30,7 +30,7 @@ var doc = document,
 
 var show_val = function (ele, thisval) {
     var dynamic_id = doc.getElementById("dynamic_id");
-    ele.innerHTML = (thisval > 0) ? (dynamic_id.style.backgroundColor = "red", "<span style='margin:0px 2%; padding:0px;width:auto;clear:both;float:none;'>$" + thisval.replace(/\B(?=(\d{3})+(?!\d))/g, ","))+"</span>" : (dynamic_id.style.backgroundColor = "");
+    ele.innerHTML = (thisval > 0) ? (dynamic_id.style.backgroundColor = "red", "<span style='margin:0px 2%; padding:0px;width:auto;clear:both;float:none;'>$" + doc.getElementById("invstincompAmount").value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + "</span>" : (dynamic_id.style.backgroundColor = "");
 };
 
 var investinthiscomp = function (inputs, url, callbck) {
@@ -111,6 +111,7 @@ var dispcompprofiles = function(compprofurls,divele){
             }else if(findings.content){
                 
                 for(var p = 0;p<findings.content.length;p++){
+                    var amountpercent = parseFloat((findings.content[p].profile.raised/findings.content[p].profile.amount)*100)
                     
                     //console.log(findings.content[p]);
                     var pooop = parseInt(findings.content[p]._id.toString().substr(0,8), 16)*1000; 
@@ -118,11 +119,12 @@ var dispcompprofiles = function(compprofurls,divele){
                     d.className = 'featured-investments-iconbox';
                     d.innerHTML = (findings.sessemail == findings.content[p].email)?'':'<div id="invstthispop'+findings.content[p]._id+'" class="pluss" title="Invest in this company!">'
                     +'<img id="invstincmp'+findings.content[p]._id+'" class="svggg" height="100%" src="/images/iibanc resources/icons/invsticon.svg"/></div>';
-                    d.innerHTML +='<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.description + '</p><span>Seeking: $' + parseInt(findings.content[p].profile.amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</span></br><div style="height:6px;width:100%;margin: 3px auto;background-color:red;border-radius:3px;"><div style="height:100%;width:25%;background-color:green;border-radius:3px;"></div></div><p style="font-size:9px;margin:0px auto;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
+                    d.innerHTML +='<div class="featured-investments-logo"><img height="100%" src="images/iibanc resources/icons/ziggurat  watermark.svg"/></div><div class="featured-investments-iconinfo"><h4 style="margin:0px;">' + findings.content[p].profile.compname + '</h4><p style="margin:0px;">email: '+ findings.content[p].email + '<br/>bio: '+findings.content[p].profile.description + '</p><span>Seeking: $' + parseInt(findings.content[p].profile.amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '</span></br><div style="height:6px;width:100%;margin: 3px auto;background-color:red;border-radius:3px;"><div style="height:100%;width:'+ amountpercent+'%;background-color:green;border-radius:3px;"></div></div><p style="font-size:9px;margin:0px auto;">Created: '+weekday[new Date(pooop).getDay()] +':- '+ Month[new Date(pooop).getMonth()] +', '+ new Date(pooop).getDate()+',  '+ new Date(pooop).getFullYear() +'</p></div>';
                     //console.log(divele)
                     d.setAttribute("data-thisob-id", findings.content[p]._id);
                     d.setAttribute("data-thisob-name", findings.content[p].profile.compname);
                     d.setAttribute("data-thisob-amount", findings.content[p].profile.amount);
+                    d.setAttribute("data-thisob-raised", findings.content[p].profile.raised);
                     divele.appendChild(d);
                     
                 }
@@ -190,9 +192,13 @@ var get_dynamic_ele = function(ele,id,classs,thefunc){
             
             investoform.setAttribute("data-thisob-id",ev.target.parentElement.parentElement.getAttribute("data-thisob-id"));
             companynamespanele.innerHTML = " " + ev.target.parentElement.parentElement.getAttribute("data-thisob-name");
-            invsamountforthscmp.innerHTML = ev.target.parentElement.parentElement.getAttribute("data-thisob-amount").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             
-            doc.getElementById("invstincompAmount").setAttribute("max", ev.target.parentElement.parentElement.getAttribute("data-thisob-amount"));
+            var maxamnt = parseFloat(parseFloat(ev.target.parentElement.parentElement.getAttribute("data-thisob-amount")) - parseFloat(ev.target.parentElement.parentElement.getAttribute("data-thisob-raised")));
+            
+            invsamountforthscmp.innerHTML = maxamnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            //invsamountforthscmp.innerHTML = ev.target.parentElement.parentElement.getAttribute("data-thisob-amount").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        
+            doc.getElementById("invstincompAmount").setAttribute("max", maxamnt);
             invstnowwrap.style.display ='block';
             
             
