@@ -118,3 +118,21 @@ a {
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
+
+#popoutbio{
+    width:100%;position:absolute;min-height:100%;top:0px;left: 0px;background-color: #F2F2F2;box-sizing: border-box;z-index:100;height: auto;display:none;
+}
+
+.biotextwrap{
+    box-sizing: border-box; padding: 15px; background-color: none/*aquamarine*/;height: 100%;width: 100%;max-width: 900px;margin:0px auto;
+}
+
+.insertbio{
+    word-wrap: break-word;
+}
+#legibio{
+    display:none;
+}
+#Pierrebio{
+    display:none;
+}

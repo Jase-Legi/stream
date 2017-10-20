@@ -327,6 +327,10 @@ var delmember = function(url, callbck, divv){
 };
 
 (function() {
+    function showfounderbio(){
+        
+    }
+    
     function flip() {
         this.classList.toggle('flipped');
     }
