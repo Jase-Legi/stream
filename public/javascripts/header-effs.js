@@ -10,8 +10,13 @@ var doc = document,
     investorlnk = doc.getElementById("investorlink"),
     headrlogo = doc.getElementById("legilogo"),
     headrlogocontnr = doc.getElementById("logoheader");
+    
 
 doc.addEventListener("DOMContentLoaded",function(event){
+    
+    //showfounderbios(Legibox, legiopenees);
+    
+
     //console.log(hedrlinks[1]);
     hedr_menu.addEventListener('click', function(ev){
         //ev.preventDefault();

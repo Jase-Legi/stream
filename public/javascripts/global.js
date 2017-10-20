@@ -102,6 +102,38 @@ var close_modal_windows = function(closers, closees){
     }
 };
 
+var showfounderbio = function (openers, openees){
+    
+    if(Array.isArray(openers)){
+        for(var v=0; v<openers.length;v++){
+            if(Array.isArray(openees)){
+                for(var b =0; b<openees.length;b++){
+                    openers[v].addEventListener("click",()=>{
+                        openees[b].style.display = "block";
+                    });
+                }
+            }else{
+                openers[v].addEventListener("click",()=>{
+                    openees.style.display = "block";
+                });
+            }   
+        }
+    }else{
+        if(Array.isArray(openees)){
+            for(var b =0; b<openees.length;b++){
+                console.log(openees);
+                openers.addEventListener("click",()=>{
+                    openees[b].style.display = "block";
+                });
+            }
+        }else{
+            openers.addEventListener("click",()=>{
+                openees.style.display = "block";
+            });   
+        }
+    }
+};
+
 var loginn = function(postfunct,div,data){
     var errcount = 0;
     var fieldemptyerror = {};
@@ -326,10 +358,13 @@ var delmember = function(url, callbck, divv){
     
 };
 
+
 (function() {
-    function showfounderbio(){
-        
-    }
+    
+    //var legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")];
+    
+    //showfounderbio(doc.getElementById("Legibox"), legiopenees);
+    
     
     function flip() {
         this.classList.toggle('flipped');
