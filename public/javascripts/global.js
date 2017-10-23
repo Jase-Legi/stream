@@ -361,7 +361,7 @@ var delmember = function(url, callbck, divv){
 
 (function() {
     
-    //var legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")];
+    //var legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")];;
     
     //showfounderbio(doc.getElementById("Legibox"), legiopenees);
     

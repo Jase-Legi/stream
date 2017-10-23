@@ -1,9 +1,9 @@
 'use strict';
-var doc = document,
-    win = window,
-    legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")],
-    pierreopenees = [doc.getElementById("Pierrebio"), doc.getElementById("popoutbio")],
-    Legibox = [doc.getElementById("Legibox"), doc.getElementById("pierrebox")];
+var doc = document;
+var win = window;
+var legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")];
+var pierreopenees = [doc.getElementById("Pierrebio"), doc.getElementById("popoutbio")];
+var Legibox = [doc.getElementById("Legibox"), doc.getElementById("pierrebox")];
 
 /*var showfounderbios = function (openers, openees){
     
@@ -21,6 +21,7 @@ var doc = document,
 };*/
 
 (function() {
+    
     Legibox[0].addEventListener("click",function(){
         legiopenees[0].style.display = "block";
         legiopenees[1].style.display = "block";

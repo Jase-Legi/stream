@@ -24,9 +24,10 @@ block content
                 #invest_submit_bttn.submit_contnr.notincluded
                     #bufferinvsclick.create_comp_button
                         p(style="margin:0px;padding:0px;") INVEST
-                     
-    if showcomp == true
-        #compcreate_wrap.compcreate_wrap_active    
+    - var activeclass = (showcomp == true)? "compcreate_wrap_active" : "compcreate_wrap_inactive"
+        //if showcomp == true //move if statement reverse tabs
+        
+        //#compcreate_wrap.compcreate_wrap_active   
             #compny_create_popout.modal_popout
 
             #compny_create_close_popout.compny_create_close_popout
@@ -58,8 +59,9 @@ block content
                     #create_comp_button.submit_contnr.create_compbuffer.notincluded
                         #create_compclls.create_comp_button
                             p(style="margin:0px;padding:0px;") SUBMIT
-    else
-        #compcreate_wrap.compcreate_wrap_inactive
+        //else
+        //        #compcreate_wrap.compcreate_wrap_inactive
+        #compcreate_wrap(class=(showcomp == true)? "compcreate_wrap_active" : "compcreate_wrap_inactive")
             #compny_create_popout.modal_popout
 
             #compny_create_close_popout.compny_create_close_popout
@@ -71,7 +73,7 @@ block content
                     input#id(name="ID",type='file',placeholder='ID')
                     input#ein(name="EIN",type='password',placeholder='EIN')
                     input#compName(type='text',name='compname',placeholder='Company Name')
-                    p.notincluded(style='margin:10px 0px 0px 5%;width:90%;height:15px;') Industry
+                    p.notincluded(style="font-weight:bold;") Industry
                     select#compIndustry(name='industry') Industry
                         option(value='')
                         option(value='Technology') Technology
@@ -80,11 +82,12 @@ block content
                         option(value='Hotel') Hotel
                         option(value='Service') Service
                         option(value='Financial') Financial
+                    span(style="font-weight:bold;").notincluded Seeking Amount?    
                     #rangeExtremes.notincluded
                         p(style='display:inline-block;margin:0px;width:20%;height:15px;') $0
                         p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $500,000
                     input#compAmount(type='range', value=0,min= 0,max=500000, name='amount')
-                    span(style="margin:10px 0px 0px 5%;width:90%;height:15px;") Upload Proformer
+                    span(style="font-weight:bold;") Upload Proformer
                     input#proformer(type="file", value="Proformer")
                     textarea#compDescr(name='description',type='text',placeholder='Description')
 
