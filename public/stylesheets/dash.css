@@ -175,7 +175,7 @@ textarea {
 */
 
 .newcompany_form{
-    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 140px;max-width: 750px;min-height: 200px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:absolute; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 140px;max-width: 750px;border-radius: 5px;color: #222222; z-index: 100;
 }
 
 
