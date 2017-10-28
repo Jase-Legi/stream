@@ -34,11 +34,11 @@ var Legibox = [doc.getElementById("Legibox"), doc.getElementById("pierrebox")];
     
     legiopenees[1].addEventListener("click",function(){
         //(legiopenees[0])? this.style.display = "none":"";
-        (legiopenees[1])?(legiopenees[0].style.display = "none", this.style.display = "none"):"";
+        (legiopenees[1])?(legiopenees[0].style.display = "none",     legiopenees[1].style.display = "none"):"";
     });
     
     pierreopenees[1].addEventListener("click",function(){
-        (pierreopenees[0])? (pierreopenees[0].style.display = "block", this.style.display = "none"):"";
+        (pierreopenees[0])? (pierreopenees[0].style.display = "none", pierreopenees[1].style.display = "none"):"";
         //(pierreopenees[1])? pierreopenees[1].style.display = "block":"";
     });
 })();
