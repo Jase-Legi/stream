@@ -118,6 +118,10 @@ Userschema.methods.isloggedin = function(req, res, next){
         if(req.originalUrl == '/investors'){
             res.render('header',myPagesmsg.dashboard.loggedout)
         }        
+
+        if(req.originalUrl == "/comingsoon"){
+            res.render('landingpage',myPagesmsg.comingsoon.loggedout)
+        }        
     }
 };
 

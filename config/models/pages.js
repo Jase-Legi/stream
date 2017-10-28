@@ -59,6 +59,20 @@ var myPagesmsg = {
             loginnow:true,
             mypageurl:'/'
         }
+    },
+    comingsoon:{
+        loggedin:{ 
+            title:'Coming Soon',
+            msg: 'dooropen',
+            loginnow:false,
+            mypageurl:"/comingsoon"
+        },
+        loggedout:{ 
+            title:'Coming Soon',
+            msg: 'doorclosed',
+            loginnow:false,
+            mypageurl:"/comingsoon"
+        }
     }
 };
 

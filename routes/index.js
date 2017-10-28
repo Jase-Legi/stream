@@ -4,7 +4,7 @@ var userloggedinfo = require('../config/models/user.js');
 var myPagesmsg = require('../config/models/pages.js');
 var isloggedin = userloggedinfo.methods.isloggedin;
 /* GET home page. */
-var myPages = ["/","/about","/dashboard", "/investors"];
+var myPages = ["/","/about","/dashboard", "/investors", "/comingsoon"];
 
 
 
@@ -14,6 +14,10 @@ for(var o = 0; o < myPages.length;o++){
     //console.log("This is the current session: "+req.session.user);
         if(req.originalUrl == '/about'){
             res.render('about', myPagesmsg.about.loggedin);
+        }
+        
+        if(req.originalUrl == "/comingsoon"){
+            res.render('landingpage', myPagesmsg.about.loggedin);
         }
         
         if(req.originalUrl == '/dashboard'){
