@@ -20,6 +20,10 @@ a {
   text-decoration: none;
  }
 
+fieldset{
+    border: none;
+}
+
 #headrwrapper{
     width:100%!important;height:73px;min-width: 140px;
 }
@@ -28,21 +32,27 @@ a {
     height: 73px; width:  100%!important;position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.99);border-bottom: 3px solid #62AEC9/*#BE1E2D*/;box-shadow: 0px 2px 6px #111111;min-width: 140px;box-sizing: border-box;
 }
 
-.formfillautocheck fieldset{
-    height:50px;width:100px;border: none;box-sizing:border-box;padding: 7.5px 0px;margin: 0px;
-}
+/*
+.formfillautocheck{
+        display:inline-block;height:50px;width:150px;clear:both;margin: 0px;padding: 0px;box-sizing: border-box;margin: 0px;top: 0px;
+}*/
 
-.formfillautocheck fieldset input{
-    height:35px;margin: 0px;border-radius:5px;border:none;color:#999999;width:100px;box-sizing: border-box;
-}
+
 
 @media all and (min-width: 520px) {
     .formfillautocheck{
-        display:none;height:50px;width:100px;clear:both;margin: 0px;padding: 0px;box-sizing: border-box;
+        display:inline-block;height:50px;width:110px;clear:both;padding: 0px;box-sizing: border-box;position: absolute; top: 10px;right:110px;
     }
     
+    .formfillautocheck fieldset{
+        height:50px;width:100%;border: none;box-sizing:border-box;padding: 7.5px 0px;margin: 0px;display: inline-block;clear: both;
+    }
+    
+    .formfillautocheck fieldset input{
+        height:35px;margin: 0px;border-radius:5px;border:none;color:#999999;width:100%;box-sizing: border-box;
+    }    
     #logoheader{
-        top:0px;opacity:1;height: 50px;min-height: 50px;width: auto;max-width: 175px; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;position: relative;
+        top:0px;opacity:1;height: 50px;min-height: 50px;width: auto;max-width: 175px; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;
     }
 
     #menusymbol{
