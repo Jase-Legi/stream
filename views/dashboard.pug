@@ -3,40 +3,99 @@ extends dashlayout
 block content
     //h1= msg
     include header
-    
-    #compcreate_wrap(style='visibility:visible;')
-        #compny_create_popout
-        
-        #compny_create_close_popout
-            #compny_create_xdiv
+    #invstnowwrap(style="display:none;")
+        #invstnowwrapmodal_popout.modal_popout
+        #close_investmodal.compny_create_close_popout
+            .compny_create_xdiv
                 h1 X
-        #newcompany_form
-            fieldset#new_form(action='admin/compcreate/')
-                h2#compFormtitle.notincluded Company profile
+        .newcompany_form
+            fieldset#investoform
+                h2.compFormtitle.notincluded Invest in
+                    span#companynamespanele
                 
-                input#compName(type='text',name='compname',placeholder='Company Name')
-                p.notincluded(style='margin:10px 0px 0px 5%;width:90%;height:15px;') Industry
-                select#compIndustry(name='industry') Industry
-                    option(value='')
-                    option(value='Technology') Technology
-                    option(value='Retail') Retail
-                    option(value='Food') Restaurant
-                    option(value='Hotel') Hotel
-                    option(value='Service') Service
-                    option(value='Financial') Financial
                 #rangeExtremes.notincluded
-                    p(style='display:inline-block;margin:0px;width:20%;height:15px;') $0
-                    p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $50,000
-                input#compAmount(type='range', value=0,min= 0,max=50000, name='amount')
-                
-                textarea#compDescr(name='description',rows='5',type='text',placeholder='Description')
-                
-                
-                #create_comp_button.create_compbuffer.notincluded
-                    #create_compclls.create_comp_button
-                        p(style="margin:0px;padding:0px;") SUBMIT
-                 
-    
+                    p(style='display:inline-block;margin:0px;width:15px;height:15px;') $0
+                    -preeval= "dynamic_id"
+                    span(id=preeval,style='z-index:300;position:absolute;font-weight:bold;left:calc( 50% - 35px); margin-top:0px; float:none;clear:both;color:white;border-radius:3px;width:70px;height:30px;box-sizing: border-box;padding:7px 5px;')
+                    p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $
+                        span#invsamountforthscmp
+                input#invstincompAmount(type="range", value=0,min= 0, name='amount',oninput="show_val("+preeval+",this.value)")
+                textarea#compDescr(name="message",rows='5',type='text',placeholder="Message to company")
+                #invest_submit_bttn.submit_contnr.notincluded
+                    #bufferinvsclick.create_comp_button
+                        p(style="margin:0px;padding:0px;") INVEST
+    - var activeclass = (showcomp == true)? "compcreate_wrap_active" : "compcreate_wrap_inactive"
+        //if showcomp == true //move if statement reverse tabs
+        
+        //#compcreate_wrap.compcreate_wrap_active   
+            #compny_create_popout.modal_popout
+
+            #compny_create_close_popout.compny_create_close_popout
+                #compny_create_xdiv.compny_create_xdiv
+                    h1 X
+            #newcompany_form.newcompany_form
+                fieldset#new_form(action='admin/compcreate/')
+                    h2#compFormtitle.compFormtitle.notincluded New Company
+                    input#id(name="ID",type='file',placeholder='ID')
+                    input#ein(name="EIN",type='password',placeholder='EIN')
+                    input#compName(type='text',name='compname',placeholder='Company Name')
+                    p.notincluded(style='margin:10px 0px 0px 5%;width:90%;height:15px;') Industry
+                    select#compIndustry(name='industry') Industry
+                        option(value='')
+                        option(value='Technology') Technology
+                        option(value='Retail') Retail
+                        option(value='Food') Restaurant
+                        option(value='Hotel') Hotel
+                        option(value='Service') Service
+                        option(value='Financial') Financial
+                    #rangeExtremes.notincluded
+                        p(style='display:inline-block;margin:0px;width:20%;height:15px;') $0
+                        p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $500,000
+                    input#compAmount(type='range', value=0,min= 0,max=500000, name='amount')
+
+                    textarea#compDescr(name='description',type='text',placeholder='Description')
+
+
+                    #create_comp_button.submit_contnr.create_compbuffer.notincluded
+                        #create_compclls.create_comp_button
+                            p(style="margin:0px;padding:0px;") SUBMIT
+        //else
+        //        #compcreate_wrap.compcreate_wrap_inactive
+        #compcreate_wrap(class=(showcomp == true)? "compcreate_wrap_active" : "compcreate_wrap_inactive")
+            #compny_create_popout.modal_popout
+
+            #compny_create_close_popout.compny_create_close_popout
+                #compny_create_xdiv.compny_create_xdiv
+                    h1 X
+            #newcompany_form.newcompany_form
+                fieldset#new_form(action='admin/compcreate/')
+                    h2#compFormtitle.compFormtitle.notincluded New Company
+                    input#id(name="ID",type='file',placeholder='ID')
+                    input#ein(name="EIN",type='password',placeholder='EIN')
+                    input#compName(type='text',name='compname',placeholder='Company Name')
+                    p.notincluded(style="font-weight:bold;") Industry
+                    select#compIndustry(name='industry') Industry
+                        option(value='')
+                        option(value='Technology') Technology
+                        option(value='Retail') Retail
+                        option(value='Food') Restaurant
+                        option(value='Hotel') Hotel
+                        option(value='Service') Service
+                        option(value='Financial') Financial
+                    span(style="font-weight:bold;").notincluded Seeking Amount?    
+                    #rangeExtremes.notincluded
+                        p(style='display:inline-block;margin:0px;width:20%;height:15px;') $0
+                        p(style='display:inline-block;margin:0px;float:right;width:45px;height:15px;') $500,000
+                    input#compAmount(type='range', value=0,min= 0,max=500000, name='amount')
+                    span(style="font-weight:bold;") Upload Proformer
+                    input#proformer(type="file", value="Proformer")
+                    textarea#compDescr(name='description',type='text',placeholder='Description')
+
+
+                    #create_comp_button.submit_contnr.create_compbuffer.notincluded
+                        #create_compclls.create_comp_button
+                            p(style="margin:0px;padding:0px;") SUBMIT
+
         
     #warpdaasst
         #dashboard_startups_boxcont
@@ -50,17 +109,17 @@ block content
         .dashboardiconboxcont
             include writepost        
             #ziggsidebar
-                #admindatadock_one
-                    p Search Investors
-                #admindatadock_one
+                a.admindatadock_one(href="/investors",rel="/investors",style="text-decoration: none !important;")
+                    p Investors
+                .admindatadock_one
                     p Startups
-                #admindatadock_one
+                .admindatadock_one
                     p Explore        
             #dshboardboxcont.dashboardboxcont
                 #utilitybar_dashboard
                     #dwrraap
-                        p Post Startup
-            #dashboardboxcont.dashboardboxcont
+                        p Post your startup
+                #dashboardboxcont.dashboardboxcont
             
                 //.featured-investments-iconbox
                     #dwrraap(style='border: dashed 1px #222222;')
@@ -69,7 +128,5 @@ block content
                         h2 POST NEW COMPANY
          
 
-
-
-    
+    script(src = '/javascripts/dashboard.js')
     include footer

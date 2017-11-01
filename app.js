@@ -25,7 +25,7 @@ var configdburl = require('./config/database.js');
 var db;
 var ObjectId = mongo.ObjectID;
 // Connect to the db
-mongoclient.connect( (process.env.DB_URI||'mongodb://127.0.0.1:27017/testapp'), function(err, datab) {
+mongoclient.connect(process.env.DB_URI, (err, datab)=>{
     if(!err) {
         db = datab;
         db.listCollections().toArray((er,coll)=>{
@@ -33,10 +33,39 @@ mongoclient.connect( (process.env.DB_URI||'mongodb://127.0.0.1:27017/testapp'), 
                 console.log((i+1)+') collection name: '+coll[i].name);
             }
         });
-    console.log("We are connected----");
-  }else{
-      console.log(err);
-  }});
+        
+        console.log("We are connected----");
+    }else{
+      
+        mongoclient.connect ( ( process.env.LOCALDB_URI), function(er, dat) {
+            if(!er) {
+                db = dat;
+                db.listCollections().toArray((er,coll)=>{
+                    for(var i=0;i<coll.length;i++){
+                        console.log((i+1)+') collection name: '+coll[i].name);
+                    }
+                });
+            console.log("We are connected- To local");
+          }else{
+            console.log(er);
+          }
+      });
+      
+    }
+});
+
+//var request = require('request');
+/*
+app.get(
+    'https://api.printful.com/products',
+    { json: { "fr6poyaa-0o86-zcih":"ofax-5e54isqv3684"} },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }
+    }
+);
+*/
 
 //MAKE ROUTES ACCESSIBLE
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,12 +78,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
-    secret:(process.env.SESSIONSECRRET || 'jhhkgjghjgjh'),
+    path:'/',
+    secret:(process.env.SESSIONSECRET),
     resave:false,
     saveUninitialized:true//,
     //cookie: { maxAge: 1800*6000*1000 }
 }));
 console.log(session);
+
 app.use(function(req,res,next){
     req.db = db;
     req.ObjectId = ObjectId;
@@ -91,7 +122,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// sets port 8080 to default or unless otherwise specified in the environment
+// sets port 8000 to default or unless otherwise specified in the environment
 //var port = normalizePort(process.env.PORT || 8000);
 //app.set( 'port', ( process.env.PORT || 8000));
 

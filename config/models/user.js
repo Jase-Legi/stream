@@ -60,48 +60,21 @@ Userschema.methods.isloggedin = function(req, res, next){
     if(req.session.user){
         req.loggedstat = true;
         
+        //Loggedin redirects
         if(req.originalUrl == '/'){
-            res.render('dashboard',myPagesmsg.dashboard.loggedin);
+            return res.redirect('/dashboard');
 
         }
-        if(req.originalUrl == '/about'){
-            next();
-        }
-        if(req.originalUrl == '/dashboard'){
-            next();
-        }
         
-        if(req.originalUrl == '/users/userinfo/'){
-            //res.send({msg:'doorclosed'})
-            next();
-        }
-        
-        if(req.originalUrl == '/users/signup/'){
-            res.send({msg:'dooropen'});
-            //next();
-        }
-        
-        if(req.originalUrl == '/users/logout/'){
-            next();
-        }
-        
-        if(req.originalUrl == '/users/login/'){
-            res.send({msg:'dooropen'});
-        }
-        
-        if(req.originalUrl == '/admin/compcreate/'){
-            next();
-        }
-
-    }else{
-        //res.status(200).send({msg:'yanotloggedin'});
-        //res.send({title:'login',msg:'doorclosed'});
-        //res.send({title:'login',msg:'doorclosed', url: req.originalUrl});
-        //if(req.session.user){
+        //Loggedin proceeds to next function
+        next();
+    }
+    else{
         req.loggedstat = false;
 
         if(req.originalUrl === '/'){
             //myPagesmsg.index.msg = 'doorclosed';
+            //myPagesmsg.index.loggedout.loginnow = false;
             res.render('header',myPagesmsg.index.loggedout);
         }
         
@@ -111,7 +84,13 @@ Userschema.methods.isloggedin = function(req, res, next){
         }      
         
         if(req.originalUrl === '/dashboard'){
-            res.render('header',myPagesmsg.dashboard.loggedout)
+            //myPagesmsg.index.loggedout.loginnow = true;
+            return res.redirect('/');
+        }
+        
+        if(req.originalUrl === '/dashboard/:id'){
+            //myPagesmsg.index.loggedout.loginnow = true;
+            return res.redirect('/');
         }
         
         if(req.originalUrl === '/users/userinfo/'){
@@ -134,7 +113,19 @@ Userschema.methods.isloggedin = function(req, res, next){
         
         if(req.originalUrl == '/admin/compcreate/'){
             res.send({msg:req.body});
+        }
+        
+        if(req.originalUrl == '/investors'){
+            res.render('header',myPagesmsg.dashboard.loggedout)
         }        
+
+        if(req.originalUrl == "/comingsoon"){
+            res.render('landingpage',myPagesmsg.comingsoon.loggedout)
+        }
+        
+        if(req.originalUrl == "/vett"){
+            res.render('vett',myPagesmsg.vett.loggedout)
+        }
     }
 };
 

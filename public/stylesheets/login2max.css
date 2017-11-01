@@ -1,0 +1,133 @@
+body{
+    margin: 0px;padding: 0px;
+}
+
+#wrapppp{
+}
+.wrappppinactive{
+    margin: 0px;padding: 0px;width: auto;height: auto;display: none;
+}
+
+.wrappppactive{
+    margin: 0px;padding: 0px;width: auto;height: auto;display: block;
+}
+
+*:focus {
+    outline: none;
+}
+
+#usrsignuploginiconbutton{
+    cursor: pointer;width: auto; height:100%;background-color:none; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;/*border: solid 1px #62AEC9;*/margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;outline: none;
+}
+
+#usrsignuploginiconbuttoncont{
+    clear:both;padding: 2px;margin:0px auto;height:100%;width:auto;color:#fff; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+
+#usrsignuploginiconbuttoncont img{
+    clear:both;padding: 0px;height:100%;margin:0px auto;width:auto;color:#fff;
+}
+
+#usrlogincontainerbox{
+    cursor: pointer;width: 96%;top:70px;right: 2%;left: 2%; height:auto;background-color:rgba(244,244,244,.95); border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #CCCCCC;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;position: absolute;display: none;box-shadow: 3px 3px 10px #555555;/* display: none;*/
+}
+
+/*Touch/click event*/
+
+#usrsignuploginiconbutton:focus ~ #usrlogincontainerbox{
+    display: block;
+}
+
+#usrlogincontainerbox:hover{
+    display: block;
+}
+
+#logoutbutton{
+    cursor: pointer; height:100%;background-color:none; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;border-bottom: solid 1px #CCCCCC;margin: 0px 0px 0px 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;color: #555555;
+    
+    
+    /*cursor: pointer;width: 100%; height:100%;background-color:none; border-radius: 4px; font-size: 20px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #340E30;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;*/
+}
+
+#logoutbuttoncont{
+    clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;width:100px;
+}
+
+#logoutbutton:hover {
+    background-color:#CCCCCC;color:#FFFFFF;
+}
+/***********************SUBMIT BUTTON STYLING*********************/
+
+#addmemberbutton{
+    margin: 5px auto;
+}
+
+.addmemberbutton{
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #340E30; border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+}
+
+#signinmemberbutton{
+    margin: 5px auto;display: none;
+}
+
+.signinmemberbutton{
+    clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;background-color: #62AEC9;border-radius: 5px;font-size: 20px;font-weight: bold; text-align: center;
+}
+
+.signinmemberbutton p{
+    
+}
+/******************************************************************/
+
+
+
+#signupbuttoncont{
+    clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;
+}
+#logoutbuttoncont{
+    clear:both;padding: 11.5px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;
+}
+
+
+#signupbuttoncont p{
+    margin:0px;padding:0px;
+}
+#logoutbuttoncont p{
+    margin:0px;padding:0px;color: #340E30;
+}
+
+#clicklogin{
+    cursor: pointer;width: 100%; height:100%;background-color:none; border-radius: 4px; font-size: 16px;font-weight:bold; text-align: center;align-items: center;align-content: center;border: solid 1px #340E30;margin: 0px; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+
+#loginpopout{
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #62AEC9;overflow:hidden;display: inline-block;background-color:rgba(205,205,205,.975);
+}
+
+#newmember{
+    left:10%;top:10%;right:10%;bottom:10%; background-color:#F2F2F2;border-bottom: 3px solid #414042; display: block;position:fixed; clear: both;padding: 10px 0px;height: auto;margin:auto;min-width: 190px;max-width: 750px;min-height: 350px;max-height: 500px; border-radius: 5px;color: #222222; z-index: 100;
+}
+
+#newmember input{
+    z-index: 100;
+}
+
+#inputusrname{margin:10px auto;width:90%;height:30px;}
+
+.menue-item{
+    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px; width: 80%;text-align: center;cursor: pointer;text-decoration:none;
+}
+
+#close-modal-sign-up{
+    align-content: center;text-align: center;height: 50px;width: 50px; position: fixed;top: 5%;right: 5%;color: #FFFFFF;background-color: #222222;z-index: 102;cursor: pointer;
+}
+
+#xdiv{
+    width:30px;;height: 30px;margin: 10px;
+}
+
+#xdiv h1{
+    width:30px;;height: 30px;margin: 0px;-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+}
+

@@ -4,27 +4,27 @@ var router = express.Router();
 var myPagesmsg = {
     index:{
         loggedin:{ 
-            title:'Zuggerat',
+            title:'Dashboard',
             msg: 'dooropen',
-            //loginnow:false,
-            mypageurl:'/'
+            loginnow:false,
+            mypageurl:'/dashboard'
         },
         loggedout:{ 
             title:'Zuggerat',
             msg: 'doorclosed',
-            //loginnow:true,
+            loginnow:false,
             mypageurl:'/'
         }
     },
     about:{
         loggedin:{ 
-            title:'About Us',
+            title:'ABOUT US',
             msg: 'dooropen',
             //loginnow:true,
             mypageurl:'/about'
         },
         loggedout:{ 
-            title:'About Us',
+            title:'ABOUT US',
             msg: 'doorclosed',
             //loginnow:true,
             mypageurl:'/about'
@@ -35,14 +35,58 @@ var myPagesmsg = {
             title:'Dashboard',
             msg: 'dooropen',
             loginnow:false,
+            showcomp:Boolean,
+            data:{},
             mypageurl:'/dashboard'
         },
         loggedout:{ 
             title:'Dashboard',
             msg: 'doorclosed',
             loginnow:true,
-            mypageurl:'/dashboard'
+            mypageurl:'/'
         }        
+    },
+    investors:{
+        loggedin:{ 
+            title:'Investors',
+            msg: 'dooropen',
+            loginnow:false,
+            mypageurl:'/investors'
+        },
+        loggedout:{ 
+            title:'Zuggerat',
+            msg: 'doorclosed',
+            loginnow:true,
+            mypageurl:'/'
+        }
+    },
+    comingsoon:{
+        loggedin:{ 
+            title:'Coming Soon',
+            msg: 'dooropen',
+            loginnow:false,
+            mypageurl:"/comingsoon"
+        },
+        loggedout:{ 
+            title:'Coming Soon',
+            msg: 'doorclosed',
+            loginnow:false,
+            mypageurl:"/comingsoon"
+        }
+    },
+    vett:{
+        loggedin:{ 
+            title:'Vetting for talent',
+            msg: 'dooropen',
+            loginnow:false,
+            mypageurl:"/vett"
+        },
+        loggedout:{ 
+            title:'Coming Soon',
+            msg: 'doorclosed',
+            loginnow:false,
+            mypageurl:"/vett"
+        }
     }
 };
 

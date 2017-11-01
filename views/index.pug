@@ -3,11 +3,11 @@ block content
     
     //include header
         //#menupopout    
-    #wrapper
+    #wrapper(style="background-color:rgba(98, 174, 201,.7)")
         //h1= title
         //p Welcome to #{title}
         //h2 User List
-        h1= msg
+        //h1= msg
         if msg === 'doorclosed' 
         else
             #userlist
@@ -20,81 +20,51 @@ block content
                 #delete
                     .nostyle
                         h4 delete?
+        a(href="/vett")#gotoforum.divsegments
+            span.movingtext Watch live V.E.T.S: Vet for Executive Talents! 
         
-        #introbox.divsegments(style='background-color:rgba(0,0,0,.5);')
+        #introbox.divsegments
             .boxcont
-                h1(style='font-size:5vw;color:#fff;opacity:1.0;width:100%;margin:0px auto;') Connect with hospitality investors at the click of a button.
+                h1(style='font-size:35px;color:#ffffff;opacity:1.0;width:100%;margin:0px;text-align:left;') The Smarter, faster way to invest or get your business up & running.
+                p(style='font-size:18px;color:#ffffff;opacity:1.0;width:100%;margin:0px;text-align:left;') Connect with investors,talent and other start-ups at the click of a button.
                 //.buttoncont
                     include login
         //h1=isloggedin()
+            
         .divsegments
             .iconboxcont
-                .iconbox
-                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/FCC-registered.png")
+                #iconboxxx.iconbox
+                    img(src="images/iibanc resources/icons/FCC-registered.svg")
                     .iconinfo
                         h4 FULLY REGULATED
-                        p We are registered and regulated by the FCC. We are also managed and owned by financial and hospitality professionals.
+                        p We are registered and regulated by the FCC. We are also managed and owned by financial and hospitality industry experts.
                 .iconbox
-                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/connect.png")
+                    img(src="images/iibanc resources/icons/connect.svg")
                     .iconinfo
                         h4 CONNECT
-                        p Connect with other industry startups in the same industry.
+                        p  Connect with other startups, talents and professionals in the hospitality industry.
 
                 .iconbox
-                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/get-investment-to-foster-growth.png")
+                    img(src="images/iibanc resources/icons/get-investment-to-foster-growth.svg")
                     .iconinfo
                         h4 ATTRACT INVESTORS
-                        p Allocate funds via the trusted investors and industriy leaders on our platform, to fuel your growth and increase your impact.
+                        p Allocate funds via trusted, tried and proven investors to fuel your projects’ phenomenal growth.
                 .iconbox
-                    img(style="width:80%;margin:10px 10%;", src="images/iibanc resources/icons/invest-in-potentially-lucrative.png")
+                    img( src="images/iibanc resources/icons/invest-in-potentially-lucrative.svg")
                     .iconinfo
                         h4 INVEST IN THE FUTURE
-                        p Investors, or industry leaders interested in help shaping the future can choose from a myriad of startup projects to invest for the greatest returns.
+                        p Investors, and industry leaders interested in shaping the future can select from myriad hospitality (and related) projects to yield unmatched returns.
         
-        #aboutpltfrm.divsegments(style="background: url(../images/background/nycc.jpg) no-repeat center center fixed; ;color:#FFF;font-size:15px;")
-            .iconboxcont(style="background-color:rgba(0,0,0,0);")
+        //#aboutpltfrm.divsegments
+            .iconboxcont
                 #abtpltfm
-                    h1 ABOUT THE PLATFORM
-                    p The platform will connect, Investors seeking lucrative and innovative investment oppportunities with inovative startups/individuals seeking financial backing to propel their business into profitability and consistent and exponential growth. 
+                    h1(style="font-weight:bold;") SECURE THE BEST TALENT
+                    p We utilize real-time (live) expert screening to secure the best talent to help speed up your project growth.
         
-        //#addmember
-            fieldset(style='border:none;')
-                h2(style = 'clear:both;margin:10px auto;') Sign UP
-                input#inputusrname(type='text',placeholder='Username',style='margin:10px auto;width:90%;height:30px;')
-                input#inputemail(type='text',placeholder='Email',style='margin:10px 0px;width:90%;height:30px;')
-                input#inputage(type='text',placeholder='Age',style='margin:10px auto;width:30%;height:30px;')
-                input#inputgender(type='text',placeholder='Gender',style='margin:10px 0px;width:30%;height:30px;')
-                input#inputlocation(type='text',placeholder='Location',style='margin:10px 0px;width:30%;height:30px;')
-                #addmemberbutton.addmemberbutton 
-                    div(style="clear:both;padding: 10px;margin:0px auto;height:25px;width:auto;color:#fff;width:100px;")
-                        p(style="margin:0px;padding:0px;") SUBMIT
-
-        //#wrapit
-          #plyr-wrap
-            #ctrlcnt
-              #vidbox
-                video#coolvid.coolvid(loop='', preload='auto')
-                  object(width='640', height='360', type='application/x-shockwave-flash', data='__FLASH__.SWF')
-                    // Firefox uses the `data` attribute above, IE/Safari uses the param below
-                    param(name='movie', value='__FLASH__.SWF')
-                    param(name='flashvars', value='controlbar=over&image=__POSTER__.JPG&file=__VIDEO__.MP4')
-                    // fallback image. note the title field below, put the title of the video there
-                    img(src='__VIDEO__.JPG', width='640', height='360', alt='__TITLE__', title='No video playback capabilities, please download the video below')
-              #vidCtrl
-                #playbttn(title='Play')
-                  img#playpause(width='18px', height='18px', style='margin-top:1px;clear:both;opacity:1;', src='images/playbutton.png')
-                #progwrpp
-                  #progress
-                    p#prgress(style='position:relative; left:0; top:0; background-color:#ccc; height:100%; width:0%; font-size:0px;border-right:2px solid #F00;')  
-                #optnwrp(style='float:right; display:inline-block;position:relative;margin:0px;padding:0px;')
-                  #currtme(style='text-align: center;')
-                    p#cchldtme(style='font-size:8px;font-family:sans-serif;')
-                  #volbttn
-                    img#volimg(title='click to mute', width='17px', height='17px', style='clear:both;opacity:1;cursor: pointer;', src='images/volbttn.png')
-                    #volwrp
-                      #voladj
-                        p#volprg  
-                  #fullscrn
-                    img#fullscreen(title='Enter fullscreen', width='17px', height='17px', style='cursor:pointer;', src='images/fullscreen.png')
+        #besttalents.divsegments
+            .iconboxcont
+                #abtpltfm
+                    h1(style="font-weight:bold;")  ABOUT THE PLATFORM
+                    p The platform connects Investors seeking lucrative innovative investment oppportunities with progressive startups/individuals seeking financial backing to propel their business into profitability, consistency and exponential growth. 
 
     include footer

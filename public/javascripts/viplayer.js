@@ -27,7 +27,7 @@ frctn, durtn, curr, diff, rto, cw, plw, optw,
 num1, num11, num2, num22, srcbtn;
 //var vidsrc = '../Videos/Tommy Lee Sparta - Numb - Official Music Video.mp4',
 var fllder = "videos/",
-vidsrc = fllder+"Lil Uzi Vert - Do What I Want [Official Music Video].mp4",
+vidsrc = fllder+"18731302_512607845737705_6463616225007108096_n.mp4",
 vName = vidsrc.replace(/^.*(\\|\/|\:)/, ''),
 vtype = vName.substr((vName.lastIndexOf('.') + 1)),
 lghtbx = doc.getElementById('lightbx');

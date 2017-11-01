@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var doc = document, 
     win = window,
     userlistdata = [],
@@ -10,11 +10,14 @@ var doc = document,
     usrlist = doc.getElementById("userlist"),
     uusrnme = doc.getElementById("username"),
     emmail = doc.getElementById("email"),
-    addmemberbutton = doc.getElementById("addmemberbutton"),
-    addmember = doc.getElementById("newmember"),
-    delusr = doc.getElementById("delete"),
-    inputs = addmember.getElementsByTagName("input"),
-    inputFirstname = doc.getElementById('inputFirstname'),
+    addmemberbutton = doc.getElementById("addmemberbutton");
+var delusr = doc.getElementById("delete");
+var addmember = doc.getElementById("newmember");
+var inputs =(addmember)? addmember.getElementsByTagName("input"):null;
+
+var login_to_memberprofle = doc.getElementById("login_to_memberprofle");
+var logininputs =(login_to_memberprofle)? login_to_memberprofle.getElementsByTagName("input"):null;
+var inputFirstname = doc.getElementById('inputFirstname'),
     inputLastname = doc.getElementById('inputLastname'),
     inputemail = doc.getElementById("inputemail"),
     inputlocation = doc.getElementById("inputlocation"),
@@ -31,7 +34,7 @@ var getjsn = function(url,callback, method){
     if (window.XMLHttpRequest) {
         // code for modern browsers
         xhr = new XMLHttpRequest();
-     } else {
+     } else if (window.ActiveXObject){
         // code for old IE browsers
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -60,7 +63,7 @@ var postthisdata = function(url, callbck, data){
     if (window.XMLHttpRequest) {
         // code for modern browsers
         xhr = new XMLHttpRequest();
-     } else {
+     } else if (window.ActiveXObject){
         // code for old IE browsers
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }  
@@ -84,49 +87,100 @@ var postthisdata = function(url, callbck, data){
     xhr.send(JSON.stringify(data));
 };
 
+//CLOSES MODAL WINDOWS-- ACCEPTS ARRAY OF VALUES 2 CLOSE
+var close_modal_windows = function(closers, closees){
+    if(Array.isArray(closers)){
+        for(var v=0; v<closers.length;v++){
+            closers[v].addEventListener('click',()=>{
+                closees.style.display = "none";
+            });
+        }
+    }else{
+        closers.addEventListener('click',()=>{
+            doc.getElementById(closees).style.display = "none";
+        });
+    }
+};
+
+var showfounderbio = function (openers, openees){
+    
+    if(Array.isArray(openers)){
+        for(var v=0; v<openers.length;v++){
+            if(Array.isArray(openees)){
+                for(var b =0; b<openees.length;b++){
+                    openers[v].addEventListener("click",()=>{
+                        openees[b].style.display = "block";
+                    });
+                }
+            }else{
+                openers[v].addEventListener("click",()=>{
+                    openees.style.display = "block";
+                });
+            }   
+        }
+    }else{
+        if(Array.isArray(openees)){
+            for(var b =0; b<openees.length;b++){
+                console.log(openees);
+                openers.addEventListener("click",()=>{
+                    openees[b].style.display = "block";
+                });
+            }
+        }else{
+            openers.addEventListener("click",()=>{
+                openees.style.display = "block";
+            });   
+        }
+    }
+};
+
 var loginn = function(postfunct,div,data){
     var errcount = 0;
     var fieldemptyerror = {};
+    
     fieldemptyerror.errmsg = function(em,pss){
         if((pss == 1) && (em == 1)){
             return 'Please complete all fields.'; 
-        }else if(pss == 1){
+        }
+        if(pss == 1){
             return 'Please enter your password.'; 
-        }else if (em == 1){
+        }
+        if (em == 1){
             return 'Please enter your email address.'; 
         }
     };
     var loginurl = div.getAttribute('rel');
     
-    for(var i=0; i<inputs.length; i++){
-        if(inputs[i].value === ''){
-            if(inputs[i].getAttribute('name') =='email'){
+    for(var i=0; i<logininputs.length; i++){
+        if(logininputs[i].value == ''){
+            if(logininputs[i].getAttribute('name') =='email'){
                 errcount++;
                 fieldemptyerror.email = 1;
-            }else if(inputs[i].getAttribute('name') =='password'){
+            }else if(logininputs[i].getAttribute('name') =='password'){
                 errcount++;
                 fieldemptyerror.password = 1;
             }
         }else{
-            if(inputs[i].getAttribute('name') == 'email'){
-                data.email = inputs[i].value;
+            if(logininputs[i].getAttribute('name') == 'email'){
+                data.email = logininputs[i].value;
             }
 
-            if(inputs[i].getAttribute('name') == 'password'){
-                data.password = inputs[i].value;
+            if(logininputs[i].getAttribute('name') == 'password'){
+                data.password = logininputs[i].value;
             }
         }
     }
-    console.log(data);
+    
+    //console.log(data);
     if(errcount === 0){
         var errcount = 0;
         postfunct(loginurl,(er, info)=>{
             if(!er){
                 fieldemptyerror.email=0;
                 fieldemptyerror.password=0;
-                console.log(info.msg+'---'+er);
-                for(var i=0; i<inputs.length; i++){
-                    inputs[i].value = '';
+                //console.log(info.msg+'---'+er);
+                for(var i=0; i<logininputs.length; i++){
+                    logininputs[i].value = '';
                 }
                 //wrapholder.style.visibility = "hidden";
                 window.location.href = '/dashboard';
@@ -145,7 +199,7 @@ var logout = function(logoutur){
     getjsn(logoutur,(e, data)=>{
         if(e == null){
             console.log('after logout msg sent is: '+data.msg);
-            window.location.href = '/'
+            window.location.href = '/';
             //populateTable(url,usrlist,data.msg);
         }else{
             console.log("an error occured. ERROR: "+data.msg)
@@ -161,11 +215,11 @@ var populateTable = function(url,divv,msg, deldiv){
             if(e == null){
 
                 //var data = /*JSON.parse(data)*/
-                if(data.msg ==='doorclosed'){
+                if(data.msg === "doorclosed"){
                     console.log('you can\'t do that because you\'re not logged in. msg returned:'+data.msg);
                 }
 
-                if(msg === 'deleted'){
+                if(msg.stat === "deleted"){
                     var arr = deldiv.match(/del(.*)/);
                     if (arr != null) { // Did it match?
                         var indexofdiv = parseInt(arr[1]);
@@ -194,7 +248,7 @@ var populateTable = function(url,divv,msg, deldiv){
                             for(var key in data[i].local){
 
                                 if (key === nameofkey){
-                                    if(msg === 'update' || msg === 'newuser' ){
+                                    if(msg.stat === "update" || msg.stat === "newuser"){
                                         if(i === (data.length-1)){
                                             var z = document.createElement('div');
                                             z.className = "content";
@@ -214,7 +268,7 @@ var populateTable = function(url,divv,msg, deldiv){
 
                             }
 
-                            if(msg === 'update' || msg === 'newuser'){
+                            if(msg.stat === "update" || msg.stat === "newuser"){
                                 if(i === (data.length-1)){
 
                                     if(nameofkey === "delete"){
@@ -304,7 +358,17 @@ var delmember = function(url, callbck, divv){
     
 };
 
+
 (function() {
+    
+    //var legiopenees = [doc.getElementById("legibio"), doc.getElementById("popoutbio")];;
+    
+    //showfounderbio(doc.getElementById("Legibox"), legiopenees);
+    
+    
+    function flip() {
+        this.classList.toggle('flipped');
+    }
 //doc.addEventListener("DOMContentLoaded",function(event){
     console.log(window.location.pathname);
     //setInterval(populateTable(url,usrlist), 1000);
@@ -312,16 +376,18 @@ var delmember = function(url, callbck, divv){
     
     if(addmemberbutton){
         addmemberbutton.addEventListener('click', (event)=>{
-            event.preventDefault();
+            //event.preventDefault();
 
             addnewMEMBER(addmemberurl,(e, data)=>{
                 if(e == null){
-                    console.log(data.msg);
-                    populateTable(url,usrlist,data.msg);
+                    //console.log(data.msg);
+                    //populateTable(url,usrlist,data.msg);
+                    
                     for(var i=0; i<inputs.length; i++){
                         inputs[i].value = '';
                     }
-                    window.location.href = '/dashboard';
+                    
+                    window.location.href = "/dashboard";
                 }else{
                     console.log('error occured at global in admember function at line 280. Error deatails:'+data.msg)
                 }
@@ -331,12 +397,12 @@ var delmember = function(url, callbck, divv){
     
     
     doc.querySelector('body').addEventListener('click', function(event) {
-        event.preventDefault();
+        //event.preventDefault();
         
         if (event.target.getAttribute('class') === "delthis") {
             
             delmember(delmemberurl, (er, data)=>{
-                console.log(event.target.getAttribute('id'));
+                //console.log(event.target.getAttribute('id'));
 
                 if(er === null ){
                     console.log(data.msg);
@@ -349,20 +415,24 @@ var delmember = function(url, callbck, divv){
                     console.log(data.msg);
                     populateTable(url,usrlist);
 
-                }   
+                }
             }, event.target.getAttribute('id'));
         }
         
-    }); 
+    });
     
-    loginbuttn.addEventListener('click', (event)=>{
-            loginn(postthisdata,loginbuttn,userdata);
-    });    
+    if(loginbuttn){
+        loginbuttn.addEventListener("click", (event)=>{
+                loginn(postthisdata,loginbuttn,userdata);
+        });
+    
+    }
     
     if(log_out){
-        log_out.addEventListener('click', function(event){
+        log_out.addEventListener("click", function(event){
             //event.preventDefault();
             logout(logouturl);
         });
     }
+    
 })();

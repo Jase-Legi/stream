@@ -2,15 +2,19 @@ doctype html
 html
     head
         title= header
+        meta(name="viewport", content="width=device-width, initial-scale=1" )
+        meta(charset="utf-8")        
         if msg == 'dooropen'
             link(rel='stylesheet', href='stylesheets/header2.css')
         else
             link(rel='stylesheet', href='stylesheets/header.css')
-        link(rel='stylesheet', href='stylesheets/style.css')
+            //link(rel='stylesheet', media="(max-width: 300px)",href="stylesheets/headermax.css")
+        if mypageurl == '/'
+            link(rel='stylesheet', href='stylesheets/style.css')
+        link(href="/fonts/tahoma.ttf", rel="stylesheet")
         //meta(name="viewport" content="width=device-width, initial-scale=1")
 
     body
-        block content
-        //script(src = 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-        script(src = '/javascripts/header-effs.js')
-        script(src = '/javascripts/global.js')
+        block content        
+        //script(src = '/javascripts/header-effs.js')
+        //script(src = '/javascripts/global.js')

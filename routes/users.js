@@ -2,6 +2,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
+var mypages = require('../config/models/pages.js');
 var user = require('../config/models/user.js');
 var isloggedin = user.methods.isloggedin;
 //var session = require('express-session');
@@ -80,16 +81,19 @@ router.post('/login/', isloggedin, (req, res,next)=>{
             if((usr[p].local.email === req.body.email)){
                 dbinstnce++;
                 if(user.methods.validpass(req.body.password,usr[p].local.password) == true){
+                    usr[p].local.password = null;
                     req.session.user = usr[p];
+                    //req.session.user.local.password = null;
+                    
                     if(req.session.user == usr[p]){
+
                         musjfkhgwhgh = true;
-                        console.log(req.session);
-                        console.log(req.session.user);
+                        //console.log(req.session);
+                        //console.log(req.session.user);
                     }else{
                         musjfkhgwhgh = false;
                     }
-                    
-                    //console.log(user.methods.validpass(req.body.password,usr[p].local.password));
+                     //console.log(user.methods.validpass(req.body.password,usr[p].local.password));
                     
                     indx["_"+dbinstnce] = p;
                 }else{
@@ -139,7 +143,7 @@ router.post('/signup/',isloggedin,(req, res)=>{
     var cursor = collctn.find();
     cursor.toArray((e, item)=>{
         if(e){
-            console.log(e);
+            console.log("Error occured while searching database: " + e);
             res.send({msg:e})
         }
         
@@ -151,33 +155,39 @@ router.post('/signup/',isloggedin,(req, res)=>{
         }
         //console.log(user)
         if(dbinstance == 0){
-            
             collctn.insert(user,(err,r)=>{
                 if(!err){
-                    console.log(err);
+                    user.local.password = null;
                     req.session.user = user;
-                    
-                    console.log(user)
                     //console.log(r)
                     //user.local.password = '';
+                    var resjson ={};
+                    //
+                    //var hashedid = user.methods.generatehash(user._id);
+                    resjson.id = user._id;
+                    
+                    resjson.stat = "newuser";
+                    resjson.info = user;
+                    
+                    mypages.dashboard.loggedin.showcomp = true;
                     if(user._id){
                         delete user._id;
                     }
-                    console.log(user);
+                    //console.log(user);
                     
-                    res.send({msg:'newuser'});
+                    res.send({msg : resjson});
                     
                 }else{
-                    res.send({msg: 'ERROR occured, error status:'+err});
+                    res.send({msg: "ERROR occured, error status:" + err});
                 }
                     
             });
             
         }else{
-            for(var v=0;v<dbinstance;v++){
+            for(var v=0; v < dbinstance; v++){
                 console.log(item[index["_"+v]]);
             }
-            res.send({msg: 'alreadyexsits'});
+            res.send({msg: "alreadyexsits"});
         }
     });
 });

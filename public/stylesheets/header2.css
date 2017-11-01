@@ -1,42 +1,120 @@
+@font-face{
+    font-family:'tahoma';
+    src: 
+        local('tahoma'),
+        local('tahoma'),
+        url('../fonts/tahoma.ttf') 
+        format('truetype');
+}
+
+@font-face{
+    font-family:'tahoma';
+    src: 
+        local('tahoma'),
+        local('tahoma'),
+        url('../fonts/tahomabd.ttf') 
+        format('truetype');
+    font-weight:bold;
+}
+
+h1{
+    font-weight:bolder;
+}
+
+h4{
+    font-weight: bolder;
+}
 body {
-    margin: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background-color:#ffffff;
+    margin: 0px; padding: 0px; clear: both;width: 100%;height: 100%;font-size:12px;font-family:tahoma; color: #414042;background-color:#ffffff;box-sizing: border-box;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+ }
+
+.formfillautocheck{
+        display:none;height:50px;width:110px;clear:both;padding: 0px;box-sizing: border-box;position: absolute; top: 10px;right:110px;
 }
 
 #headrwrapper{
-    width:100%;height:100%;min-width: 445px;
+    width:100%;height:100%;min-width: 140px;
 }
 
 #header{
-    height: 50px;min-width: 445px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 5px solid #340E30/*#BE1E2D*/;box-shadow: 0px 7px 20px #999999;
+    height: 50px;min-width: 140px;max-height: auto; width: 100%; position: fixed; z-index: 10; top:0px; display: block;padding: 10px 0px;background-color:#F2F2F2;background-color:rgba(244,244,244,.95);border-bottom: 3px solid #340E30/*#BE1E2D;*/;box-shadow: 0px 1px 4px #555555
 }
 
-#logoheader{
-    top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;;text-decoration: none;cursor: pointer;
+@media all and (min-width: 300px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: auto;max-width: auto; margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;
+    }
+
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 0px;padding: none;float: right;display: inline-block;
+    }
 }
 
+@media all and (max-width: 300px) and (min-width: 170px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 10px;text-decoration: none;cursor: pointer;overflow: hidden;
+    }
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 5px 7.5px 5px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 2px;padding: none;float: right;display: inline-block;
+    }
+}
+
+@media all and (max-width: 170px) and (min-width: 0px) {
+    #logoheader{
+        top:0px;opacity:1;float: left;height: 50px;width: 50px;max-width: 50px;margin: 0px 0px 0px 1px;text-decoration: none;cursor: pointer;overflow: hidden;
+    }
+    #menusymbol{
+        display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px 1px 7.5px 1px;clear: both;max-width: 45px;
+    }
+
+    .buttoncontt{
+        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
+    }
+    
+    #menuheader{
+        height: 50px;width: auto;margin: 0px 1px;padding: none;float: right;display: inline-block;
+    }
+}
 
 #legilogo{
     top:0px;opacity:1;clear:both;
 }
 
-.buttoncontt{
-        cursor: pointer;width: auto; height:50px;background-color:none; text-align: center;align-items: center;align-content: center;margin: 0px;float: left;
-}
-#menuheader{
-    height: 50px;width: auto;margin: 0px 10px;padding: none;float: right;display: inline-block;
-}
-
-#menusymbol{
-    display: inline-block;cursor: pointer;align-items: center;max-width:35px;width: 45px;padding: 7.5px;clear: both;max-width: 45px;
-}
-
-
 .bar1,.bar2,.bar3{
     width: 35px;height: 5px; background-color: #340E30;margin: 5px auto; transition: 0.4s;clear: both;max-width: 45px;max-height: 5px;border-radius: 3px;
 }
 
+#menusymbol:hover .barrr, #menusymbol:active .barrr  {
+    background-color: #62AEC9;border-radius: 0px;-ms-transform: rotate(180deg); /* IE 9 */-webkit-transform: rotate(180deg); /* Safari */transform: rotate(180deg);
+}
+
+
 #menupopout{
-    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;background-color: #340E30;overflow:hidden;display: inline-block;visibility: hidden;background-color:rgba(98,174,201,.95);
+    top:0;left: 0; position: fixed;width: 100%;height: 100%;z-index: 99;/*background-color: #340E30;*/overflow:hidden;display: none;background-color:rgba(52,14,48,.95);
+}
+
+#menucont{
+    width:80%;margin:20px auto;height:auto;width:auto;display:inline-block
 }
 
 .menue-item{
@@ -44,7 +122,9 @@ body {
 }
 
 .close-item{
-    color: aliceblue; display:block; margin: 10px auto; padding: 5px 0px;height: 50px;width: 80%;text-align: center;cursor: pointer;text-decoration:none;
-    
-    color: #340E30; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+    padding: 5px 0px;cursor: pointer;text-decoration:none; color: #340E30; display:inline-block; padding: 0px;height: 50px;width: 50px;text-align: center;border-radius: 5px;background-color: aliceblue;margin: 0px;float: right;right: 20px;top: 20px;
+}
+
+.close-item:hover{
+    background-color: red;
 }

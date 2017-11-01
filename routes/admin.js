@@ -6,7 +6,84 @@ var user = require('../config/models/user.js');
 var companymodel = require('../config/models/compdata.js');
 var isloggedin = user.methods.isloggedin;
 
-router.post('/compcreate/',isloggedin, (req, res, next)=>{
+//CONNECT TO EXTERNAL API USING HTTPS GET REQUEST
+/*
+var prntfl;
+var username = 'fr6poyaa-0o86-zcih';
+var password = 'ofax-5e54isqv3684';
+var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+
+var https = require("https");
+var options = {
+    host : "api.printful.com",
+    path : "/files?limit=5",
+    json : true,
+    method : "GET",
+    
+    headers : {
+        Authorization : auth,
+        "content-type" : "application/json"
+    }
+    
+};
+var str = "";
+var callback = function(response) {
+      response.on('data', function (chunk) {
+        str += chunk;
+      });
+      response.on('end', function () {
+        //console.log(req.data);
+        prntfl = JSON.parse(str);
+        console.log(prntfl);
+      });
+    }
+
+var request = https.get(options, callback);
+request.end();
+*/
+
+router.post("/invest/:id", isloggedin, (req, res, next)=>{
+    var objid = req.params.id;
+    console.log(objid);
+    var db = req.db;
+    var objectid = req.ObjectId;
+    var collction = db.collection("comp");
+    /*var cursor = collction.find({_id : objectid(objid)});
+    cursor.toArray((e, objs)=>{
+        if(e){
+            console.log(e);
+        }
+        console.log(objs);
+        res.send({msg:objs})
+    });
+    */
+    //companymodel.profile.fundraiser.investors = req.body;
+    
+var invstrdata = req.body;
+    invstrdata.email = req.session.user.local.email
+    
+    console.log(invstrdata);
+    db.collection("comp",(err, comp)=>{
+        if(err){
+            console.log(err);
+        }
+        comp.update({_id: objectid(objid)}, {$push : {"profile.investors": invstrdata}, $inc : {"profile.raised":parseFloat(invstrdata.amount)}}, (er, thisobj)=>{
+            if(er){
+                console.log("An error occured:" + er)
+            }else{
+                var cllctn = db.collection("user");
+                var cursr =  cllctn.find({"local.email" : req.session.user.local.email});
+                
+            }
+            //console.log(thisobj);
+            res.send({msg:thisobj});
+        });
+        
+    });
+    
+});
+
+router.post( "/compcreate/",isloggedin, (req, res, next)=>{
     var db = req.db;
     var collexist = 0;
     
@@ -39,11 +116,11 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
     var crsor = collction.find();
     var occrence;
     companymodel.email=eml;
-    companymodel.profile.fundraiser.compname = req.body.compname;
-    companymodel.profile.fundraiser.industry = req.body.industry;
-    companymodel.profile.fundraiser.amount = req.body.amount;
-    companymodel.profile.fundraiser.description = req.body.description;
-    console.log(companymodel);
+    companymodel.profile.compname = req.body.compname;
+    companymodel.profile.industry = req.body.industry;
+    companymodel.profile.amount = req.body.amount;
+    companymodel.profile.description = req.body.description;
+    //console.log(companymodel);
     
     crsor.toArray((e,usr)=>{
         console.log(e);
@@ -76,7 +153,7 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
                         }
                         
                         console.log('company inserted, results are :'+re);
-                        res.send({msg:'newcompadded',comp:companymodel, id: __id});
+                        res.send({msg:'newcompadded',comp:companymodel, id: __id,sessemail:req.session.user.local.email});
                     }
                 });
             //}
@@ -89,15 +166,16 @@ router.post('/compcreate/',isloggedin, (req, res, next)=>{
     
 });
 
-router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
+router.get('/getothercomps/', isloggedin, (req, res, next)=>{
     var db = req.db;
     var colltn = db.collection('comp');
     var cursr =  colltn.find();
     var tempjsn = {};
     var bb=0, findss = [];
+    //console.log("\n user session: " + req.session.user._id +" --");
     cursr.toArray((er, findings)=>{
         for(var f = (findings.length-1);f>-1; f--){
-            console.log(findings[f]);
+            //console.log(findings[f]);
             findss[bb] = findings[f];
             bb++
         }
@@ -105,7 +183,8 @@ router.get('/getothercomps/', /*isloggedin,*/ (req, res, next)=>{
             console.log(er);
             res.send({error:'Error occured : '+er});
         }else{
-            res.send({content:findss});
+            console.log(/*req.session.user*/findss);
+            res.send({content:findss, sessemail:req.session.user.local.email});
         }
     });
     
