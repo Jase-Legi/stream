@@ -1,10 +1,4 @@
 .env
-<<<<<<< HEAD
 "node_modules" 
-"npm-debug.log" 
-=======
-
-node_modules
-
-*.lock
->>>>>>> dc32ed6b7e8fae97b38d020c34a23e3bad8fa94c
+"npm-debug.log"
+"package-lock.json"

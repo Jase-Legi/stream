@@ -73,7 +73,6 @@ var myPagesmsg = {
             loginnow:false,
             mypageurl:"/comingsoon"
         }
-<<<<<<< HEAD
     },
     vett:{
         loggedin:{ 
@@ -83,13 +82,11 @@ var myPagesmsg = {
             mypageurl:"/vett"
         },
         loggedout:{ 
-            title:'Coming Soon',
+            title:'Vetting for talent',
             msg: 'doorclosed',
             loginnow:false,
             mypageurl:"/vett"
         }
-=======
->>>>>>> dc32ed6b7e8fae97b38d020c34a23e3bad8fa94c
     }
 };
 

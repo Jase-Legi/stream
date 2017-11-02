@@ -4,11 +4,7 @@ var userloggedinfo = require('../config/models/user.js');
 var myPagesmsg = require('../config/models/pages.js');
 var isloggedin = userloggedinfo.methods.isloggedin;
 /* GET home page. */
-<<<<<<< HEAD
 var myPages = ["/","/about","/dashboard", "/investors", "/comingsoon","/vett"];
-=======
-var myPages = ["/","/about","/dashboard", "/investors", "/comingsoon"];
->>>>>>> dc32ed6b7e8fae97b38d020c34a23e3bad8fa94c
 
 
 
@@ -21,15 +17,11 @@ for(var o = 0; o < myPages.length;o++){
         }
         
         if(req.originalUrl == "/comingsoon"){
-<<<<<<< HEAD
             res.render('landingpage', myPagesmsg.comingsoon.loggedin);
         }
 
         if(req.originalUrl == "/vett"){
             res.render('vett', myPagesmsg.about.loggedin);
-=======
-            res.render('landingpage', myPagesmsg.about.loggedin);
->>>>>>> dc32ed6b7e8fae97b38d020c34a23e3bad8fa94c
         }
         
         if(req.originalUrl == '/dashboard'){
