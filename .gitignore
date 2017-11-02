@@ -1,5 +1,4 @@
 .env
-"node_modules" 
-"npm-debug.log"
-"data"
-"package-lock.json"
+'node_modules
+'npm-debug.log'
+'data'
